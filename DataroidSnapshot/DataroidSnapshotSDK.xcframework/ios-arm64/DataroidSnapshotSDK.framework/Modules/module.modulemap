@@ -1,0 +1,11 @@
+framework module DataroidSnapshotSDK {
+  umbrella header "DataroidSnapshotSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module DataroidSnapshotSDK.Swift {
+  header "DataroidSnapshotSDK-Swift.h"
+  requires objc
+}

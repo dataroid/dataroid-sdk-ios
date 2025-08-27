@@ -1,0 +1,43 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "DataroidSnapshotSDK",
+    "printedName": "DataroidSnapshotSDK",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "DataroidSDK",
+        "printedName": "DataroidSDK",
+        "declKind": "Import",
+        "moduleName": "DataroidSnapshotSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSnapshotSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "QuartzCore",
+        "printedName": "QuartzCore",
+        "declKind": "Import",
+        "moduleName": "DataroidSnapshotSDK"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Snapshot\/DataroidSnapshot\/SnapshotWriter.swift",
+      "kind": "StringLiteral",
+      "offset": 577,
+      "length": 5,
+      "value": "\"jpg\""
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+    "enable": {
+        "value": true
+    },
+    "system": {
+        "limits": {
+            "value": 500
+        },
+        "tracking_period": {
+            "value": 86400000
+        },
+        "blocked_period": {
+            "value": 259200000
+        },
+        "enable_id_alloc": {
+            "value": true
+        },
+        "aid_cache_duration": {
+            "value": 3024000000
+        },
+        "whitelist": [
+            {
+                "event": "device.update.settings"
+            },
+            {
+                "event": "device.update.language"
+            },
+            {
+                "event": "device.update.pushToken"
+            },
+            {
+                "event": "user.update"
+            },
+            {
+                "event": "device.update.blocked"
+            },
+            {
+                "event": "device.update.unblocked"
+            },
+            {
+                "event": "notificationReceived"
+            },
+            {
+                "event": "notificationDismiss"
+            },
+            {
+                "event": "notificationOpen"
+            },
+            {
+                "event": "notificationButtonClick"
+            },
+            {
+                "event": "inappMessageButtonClick"
+            },
+            {
+                "event": "inappMessageRead"
+            },
+            {
+                "event": "inappMessageClose"
+            },
+            {
+                "event": "clientSessionStart"
+            },
+            {
+                "event": "clientSessionStop"
+            },
+            {
+                "event": "goalAchieved"
+            },
+            {
+                "event": "crash"
+            }
+        ],
+        "e_min_batch": {
+            "value": 15
+        },
+        "e_max_batch": {
+            "value": 200
+        },
+        "e_bckf_max_interval": {
+            "value": 21600000
+        },
+        "e_bckf_scale_factor": {
+            "value": 1
+        },
+        "e_bckf_base": {
+            "value": 2
+        },
+        "ios_offset_index": {
+            "value": 1000000000
+        },
+        "ios_offset_minutes": {
+            "value": 0
+        },
+        "e_bckf_scale_factor_ao": {
+            "value": 5
+        },
+        "e_bckf_base_ao": {
+            "value": 2
+        },
+        "a_bckf_scale_factor_ao": {
+            "value": 5
+        },
+        "a_bckf_base_ao": {
+            "value": 2
+        },
+        "e_retention": {
+            "value": 259200000
+        },
+        "e_sessionDuration": {
+            "value": 86400000
+        },
+        "e_viewDuration": {
+            "value": 86400000
+        },
+        "a_min_batch": {
+            "value": 15
+        },
+        "a_max_batch": {
+            "value": 200
+        },
+        "a_bckf_max_interval": {
+            "value": 21600000
+        },
+        "a_bckf_scale_factor": {
+            "value": 1
+        },
+        "a_bckf_base": {
+            "value": 2
+        },
+        "a_retention": {
+            "value": 259200000
+        },
+        "config_fetch_period_session": {
+            "value": 180000
+        },
+        "config_fetch_period_background": {
+            "value": 43200000
+        },
+        "push_token_cache_expire_in_min": {
+            "value": 43200
+        },
+        "e_compression_level": {
+            "value": 0
+        },
+        "a_compression_level": {
+            "value": 0
+        },
+        "c_min_batch": {
+            "value": 5
+        },
+        "c_max_batch": {
+            "value": 10
+        },
+        "c_compression_level": {
+            "value": 6
+        },
+        "c_retention": {
+            "value": 259200000
+        },
+        "c_bckf_max_interval": {
+            "value": 21600000
+        },
+        "c_bckf_base": {
+            "value": 2
+        },
+        "c_bckf_base_ao": {
+            "value": 2
+        },
+        "c_bckf_scale_factor": {
+            "value": 1
+        },
+        "c_bckf_scale_factor_ao": {
+            "value": 5
+        },
+        "cap_reset_in_days": {
+            "value": 35
+        },
+        "ctx_reset_in_days": {
+            "value": 14
+        },
+        "immediateEventList": [
+            {
+                "event": "device.update.pushToken"
+            },
+            {
+                "event": "device.update.blocked"
+            },
+            {
+                "event": "device.update.unblocked"
+            },
+            {
+                "event": "user.consent.update"
+            },
+            {
+                "event": "user.update"
+            },
+            {
+                "event": "clientSessionStop"
+            },
+            {
+                "event": "notificationReceived"
+            },
+            {
+                "event": "notificationDismiss"
+            },
+            {
+                "event": "notificationOpen"
+            },
+            {
+                "event": "notificationButtonClick"
+            },
+            {
+                "event": "inappMessageButtonClick"
+            },
+            {
+                "event": "inappMessageRead"
+            },
+            {
+                "event": "inappMessageClose"
+            },
+            {
+                "event": "goalAchieved"
+            }
+        ]
+    },
+    "events": {
+        "blacklist": [
+            {
+                "event": "textChange"
+            }
+        ]
+    },
+    "features": {
+        "custom": {
+            "value": true
+        },
+        "component_interaction": {
+            "value": false
+        },
+        "screen_interaction": {
+            "value": false
+        },
+        "apm": {
+            "value": false
+        },
+        "commerce": {
+            "value": true
+        },
+        "geolocation": {
+            "value": false
+        },
+        "geofence": {
+            "value": true
+        },
+        "crash_reporting": {
+            "value": false
+        },
+        "crash_reporting_threads": {
+            "value": false
+        },
+        "snapshot": {
+            "value": true
+        },
+        "context_trigger": {
+            "value": false
+        }
+    },
+    "feature_configs": {
+        "ios_geof_fore_min_disp": {
+            "value": 1000
+        },
+        "ios_geof_fore_loc_acc": {
+            "value": 100
+        },
+        "ios_geof_back_loc_time_int": {
+            "value": 600000
+        }
+    }
+}

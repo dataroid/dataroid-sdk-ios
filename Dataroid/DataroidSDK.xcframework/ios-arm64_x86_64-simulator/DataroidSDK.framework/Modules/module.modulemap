@@ -1,0 +1,11 @@
+framework module DataroidSDK {
+  umbrella header "DataroidSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module DataroidSDK.Swift {
+  header "DataroidSDK-Swift.h"
+  requires objc
+}
