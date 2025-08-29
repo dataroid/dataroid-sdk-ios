@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-    s.name = 'DataroidSnapshot'
+    s.name = 'DataroidCore'
     s.version = '4.0.0-alpha.7'
-    s.summary = 'Snapshot utility for Dataroid framework'
+    s.summary = 'Analytics and Customer Engagement Tool'
     s.homepage = 'https://github.com/dataroid/dataroid-sdk-ios'
 
     s.author = { 'Dataroid SDK Team' => 'sdk@dataroid.com' }
@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
 
     s.platform = :ios
     s.source = { :git => 'https://github.com/dataroid/dataroid-sdk-ios.git', :tag => s.version.to_s }
+    s.preserve_paths = ['Dataroid/upload_dsym.sh']
 
     s.ios.deployment_target = '15.0'
-    s.ios.vendored_frameworks = 'DataroidSnapshot/DataroidSnapshotSDK.xcframework'
+    s.ios.vendored_frameworks = 'Dataroid/DataroidSDK.xcframework'
 end

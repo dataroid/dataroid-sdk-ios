@@ -69562,8 +69562,15 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Geofence\/LocationMonitor.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1154,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Geofence\/LocationMonitor.swift",
       "kind": "StringLiteral",
-      "offset": 1164,
+      "offset": 1205,
       "length": 25,
       "value": "\"DataroidGeofenceMonitor\""
     },
