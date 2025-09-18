@@ -1586,7 +1586,7 @@ SWIFT_CLASS_NAMED("MutableHttpCallAttributes")
 SWIFT_CLASS_NAMED("MutableNetworkErrorAttributes")
 @interface DTRMutableNetworkErrorAttributes : NSObject
 /// Custom message
-@property (nonatomic, copy) NSString * _Nullable message;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
 /// Object that holds custom attributes
 @property (nonatomic, strong) DTRAPMAttributes * _Nullable attributes;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1609,25 +1609,22 @@ SWIFT_CLASS("_TtC11DataroidSDK13NetworkConfig")
 
 @class DTRNetworkErrorType;
 
-/// Object that holds network errors and relevant properties
-/// for the purpose of sending to server
 SWIFT_CLASS_NAMED("NetworkErrorAttributes")
 @interface DTRNetworkErrorAttributes : NSObject
 @property (nonatomic, copy) NSString * _Nonnull url;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable headers;
-@property (nonatomic, strong) DTRNetworkErrorType * _Nullable type;
+@property (nonatomic, strong) DTRNetworkErrorType * _Nullable errorType;
 @property (nonatomic, copy) NSString * _Nullable exception;
-@property (nonatomic, copy) NSString * _Nullable message;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
 /// Object that holds custom attributes
 @property (nonatomic, strong) DTRAPMAttributes * _Nullable attributes;
 - (nonnull instancetype)initWithUrl:(NSString * _Nonnull)url;
-- (nonnull instancetype)initWithUrl:(NSString * _Nonnull)url method:(enum DTRHTTPMethod)method duration:(NSTimeInterval)duration type:(DTRNetworkErrorType * _Nonnull)type exception:(NSString * _Nonnull)exception;
+- (nonnull instancetype)initWithUrl:(NSString * _Nonnull)url method:(enum DTRHTTPMethod)method duration:(NSTimeInterval)duration errorType:(DTRNetworkErrorType * _Nonnull)errorType exception:(NSString * _Nonnull)exception;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
-/// Network error types
 SWIFT_CLASS_NAMED("ErrorType")
 @interface DTRNetworkErrorType : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DTRNetworkErrorType * _Nonnull unknown;)
@@ -1888,7 +1885,7 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 ///
 /// \param name Tracking name for the view
 ///
-- (void)startTrackingWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
+- (void)startTrackingWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
 /// Starts tracking for view
 /// \param view View that will be tracked
 ///
@@ -1896,13 +1893,13 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 ///
 /// \param extras Extra attributes for tracking event
 ///
-- (void)startTrackingWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nullable)extras;
+- (void)startTrackingWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nullable)extras;
 /// Starts tracking for view
 /// \param viewClass ViewClass that will be tracked view’s class
 ///
 /// \param name Tracking name for the view
 ///
-- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
+- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 /// Starts tracking for view
 /// \param viewClass ViewClass that will be tracked view’s class
 ///
@@ -1910,30 +1907,30 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 ///
 /// \param extras Extra attributes for tracking event
 ///
-- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nullable)extras;
+- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nullable)extras;
 /// Stops tracking for view
 /// \param view View that is being tracked
 ///
 /// \param name Tracking name for the view
 ///
-- (void)stopTrackingWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
+- (void)stopTrackingWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
 /// Stops tracking for view
 /// \param viewClass ViewClass that will be tracked view’s class
 ///
 /// \param name Tracking name for the view
 ///
-- (void)stopTrackingWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
+- (void)stopTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 @end
 
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK28ScreenTrackingClientProtocol_")
 @protocol ScreenTrackingClientProtocol
-- (void)viewStartWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
-- (void)viewStartWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nonnull)extras;
-- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
-- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nonnull)extras;
-- (void)viewStopWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
-- (void)viewStopWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
+- (void)viewStartWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
+- (void)viewStartWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nonnull)extras;
+- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
+- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nonnull)extras;
+- (void)viewStopWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
+- (void)viewStopWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 @end
 
 
@@ -3845,7 +3842,7 @@ SWIFT_CLASS_NAMED("MutableHttpCallAttributes")
 SWIFT_CLASS_NAMED("MutableNetworkErrorAttributes")
 @interface DTRMutableNetworkErrorAttributes : NSObject
 /// Custom message
-@property (nonatomic, copy) NSString * _Nullable message;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
 /// Object that holds custom attributes
 @property (nonatomic, strong) DTRAPMAttributes * _Nullable attributes;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -3868,25 +3865,22 @@ SWIFT_CLASS("_TtC11DataroidSDK13NetworkConfig")
 
 @class DTRNetworkErrorType;
 
-/// Object that holds network errors and relevant properties
-/// for the purpose of sending to server
 SWIFT_CLASS_NAMED("NetworkErrorAttributes")
 @interface DTRNetworkErrorAttributes : NSObject
 @property (nonatomic, copy) NSString * _Nonnull url;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable headers;
-@property (nonatomic, strong) DTRNetworkErrorType * _Nullable type;
+@property (nonatomic, strong) DTRNetworkErrorType * _Nullable errorType;
 @property (nonatomic, copy) NSString * _Nullable exception;
-@property (nonatomic, copy) NSString * _Nullable message;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
 /// Object that holds custom attributes
 @property (nonatomic, strong) DTRAPMAttributes * _Nullable attributes;
 - (nonnull instancetype)initWithUrl:(NSString * _Nonnull)url;
-- (nonnull instancetype)initWithUrl:(NSString * _Nonnull)url method:(enum DTRHTTPMethod)method duration:(NSTimeInterval)duration type:(DTRNetworkErrorType * _Nonnull)type exception:(NSString * _Nonnull)exception;
+- (nonnull instancetype)initWithUrl:(NSString * _Nonnull)url method:(enum DTRHTTPMethod)method duration:(NSTimeInterval)duration errorType:(DTRNetworkErrorType * _Nonnull)errorType exception:(NSString * _Nonnull)exception;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
-/// Network error types
 SWIFT_CLASS_NAMED("ErrorType")
 @interface DTRNetworkErrorType : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DTRNetworkErrorType * _Nonnull unknown;)
@@ -4147,7 +4141,7 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 ///
 /// \param name Tracking name for the view
 ///
-- (void)startTrackingWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
+- (void)startTrackingWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
 /// Starts tracking for view
 /// \param view View that will be tracked
 ///
@@ -4155,13 +4149,13 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 ///
 /// \param extras Extra attributes for tracking event
 ///
-- (void)startTrackingWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nullable)extras;
+- (void)startTrackingWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nullable)extras;
 /// Starts tracking for view
 /// \param viewClass ViewClass that will be tracked view’s class
 ///
 /// \param name Tracking name for the view
 ///
-- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
+- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 /// Starts tracking for view
 /// \param viewClass ViewClass that will be tracked view’s class
 ///
@@ -4169,30 +4163,30 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 ///
 /// \param extras Extra attributes for tracking event
 ///
-- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nullable)extras;
+- (void)startTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nullable)extras;
 /// Stops tracking for view
 /// \param view View that is being tracked
 ///
 /// \param name Tracking name for the view
 ///
-- (void)stopTrackingWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
+- (void)stopTrackingWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
 /// Stops tracking for view
 /// \param viewClass ViewClass that will be tracked view’s class
 ///
 /// \param name Tracking name for the view
 ///
-- (void)stopTrackingWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
+- (void)stopTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 @end
 
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK28ScreenTrackingClientProtocol_")
 @protocol ScreenTrackingClientProtocol
-- (void)viewStartWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
-- (void)viewStartWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nonnull)extras;
-- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
-- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name extras:(DTRViewTrackingExtras * _Nonnull)extras;
-- (void)viewStopWithView:(id <NSObject> _Nonnull)view name:(NSString * _Nonnull)name;
-- (void)viewStopWithViewClass:(NSString * _Nonnull)viewClass name:(NSString * _Nonnull)name;
+- (void)viewStartWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
+- (void)viewStartWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nonnull)extras;
+- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
+- (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nonnull)extras;
+- (void)viewStopWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
+- (void)viewStopWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 @end
 
 

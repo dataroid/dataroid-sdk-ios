@@ -449,10 +449,10 @@ extension DataroidSDK.ModuleTag : Swift.CustomStringConvertible {
 }
 @available(iOS 13.0, *)
 extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func dataroidTracker(name: Swift.String) -> some SwiftUICore.View
+  @_Concurrency.MainActor @preconcurrency public func dataroidTracker(viewLabel: Swift.String) -> some SwiftUICore.View
   
-  @_Concurrency.MainActor @preconcurrency public func startTracking(name: Swift.String, extras: DataroidSDK.ViewTrackingExtras? = nil)
-  @_Concurrency.MainActor @preconcurrency public func stopTracking(name: Swift.String)
+  @_Concurrency.MainActor @preconcurrency public func startTracking(viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras? = nil)
+  @_Concurrency.MainActor @preconcurrency public func stopTracking(viewLabel: Swift.String)
 }
 @_inheritsConvenienceInitializers @objc(DTRAppListener) final public class ApplicationListener : ObjectiveC.NSObject {
   @objc final public func didFinishLaunching(with launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil)
@@ -520,12 +520,12 @@ public struct ActionBasedMessage : Swift.Codable {
   @objc deinit
 }
 @objc public protocol ScreenTrackingClientProtocol {
-  @objc func viewStart(view: any ObjectiveC.NSObjectProtocol, name: Swift.String)
-  @objc func viewStart(view: any ObjectiveC.NSObjectProtocol, name: Swift.String, extras: DataroidSDK.ViewTrackingExtras)
-  @objc func viewStart(viewClass: Swift.String, name: Swift.String)
-  @objc func viewStart(viewClass: Swift.String, name: Swift.String, extras: DataroidSDK.ViewTrackingExtras)
-  @objc func viewStop(view: any ObjectiveC.NSObjectProtocol, name: Swift.String)
-  @objc func viewStop(viewClass: Swift.String, name: Swift.String)
+  @objc func viewStart(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
+  @objc func viewStart(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras)
+  @objc func viewStart(viewClass: Swift.String, viewLabel: Swift.String)
+  @objc func viewStart(viewClass: Swift.String, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras)
+  @objc func viewStop(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
+  @objc func viewStop(viewClass: Swift.String, viewLabel: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers final public class APMConfig : ObjectiveC.NSObject {
   @objc final public var enabled: Swift.Bool
@@ -748,10 +748,10 @@ extension DataroidSDK.Dataroid : DataroidSDK.DeeplinkClientProtocol {
     @objc set
   }
   final public var method: DataroidSDK.HTTPMethod?
+  final public var duration: Foundation.TimeInterval?
   final public var statusCode: Swift.Int?
   final public var requestSize: Swift.Double?
   final public var responseSize: Swift.Double?
-  final public var duration: Swift.Double?
   final public var success: Swift.Bool?
   @objc final public var errorType: Swift.String?
   @objc final public var errorCode: Swift.String?
@@ -982,12 +982,12 @@ extension DataroidSDK.InAppMessageCappingRuleTimeUnit : Swift.CustomStringConver
   @objc func shouldHandleDeeplink(deeplink: Swift.String?)
 }
 @objc(DTRScreenTracker) public protocol ScreenTracker {
-  @objc func startTracking(view: any ObjectiveC.NSObjectProtocol, name: Swift.String)
-  @objc func startTracking(view: any ObjectiveC.NSObjectProtocol, name: Swift.String, extras: DataroidSDK.ViewTrackingExtras?)
-  @objc func startTracking(viewClass: Swift.String, name: Swift.String)
-  @objc func startTracking(viewClass: Swift.String, name: Swift.String, extras: DataroidSDK.ViewTrackingExtras?)
-  @objc func stopTracking(view: any ObjectiveC.NSObjectProtocol, name: Swift.String)
-  @objc func stopTracking(viewClass: Swift.String, name: Swift.String)
+  @objc func startTracking(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
+  @objc func startTracking(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras?)
+  @objc func startTracking(viewClass: Swift.String, viewLabel: Swift.String)
+  @objc func startTracking(viewClass: Swift.String, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras?)
+  @objc func stopTracking(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
+  @objc func stopTracking(viewClass: Swift.String, viewLabel: Swift.String)
 }
 @objc(DTRTrustPolicy) @objcMembers final public class DataroidTrustPolicy : ObjectiveC.NSObject {
   @objc public init(endpoint: Swift.String, certificates: [DataroidSDK.Certificate])
@@ -1198,18 +1198,18 @@ extension DataroidSDK.DeeplinkAttributes {
     @objc set
   }
   final public var method: DataroidSDK.HTTPMethod?
-  @objc final public var headers: [Swift.String : Swift.String]?
   final public var duration: Foundation.TimeInterval?
-  @objc final public var type: DataroidSDK.NetworkErrorAttributes.ErrorType?
+  @objc final public var headers: [Swift.String : Swift.String]?
+  @objc final public var errorType: DataroidSDK.NetworkErrorAttributes.ErrorType?
   @objc final public var exception: Swift.String?
-  @objc final public var message: Swift.String?
+  @objc final public var errorMessage: Swift.String?
   @objc final public var attributes: DataroidSDK.APMAttributes? {
     @objc get
     @objc set
   }
-  public init(url: Swift.String, method: DataroidSDK.HTTPMethod? = nil, duration: Foundation.TimeInterval? = nil, type: DataroidSDK.NetworkErrorAttributes.ErrorType? = nil, exception: Swift.String? = nil)
+  public init(url: Swift.String, method: DataroidSDK.HTTPMethod? = nil, duration: Foundation.TimeInterval? = nil, errorType: DataroidSDK.NetworkErrorAttributes.ErrorType? = nil, exception: Swift.String? = nil)
   @objc convenience public init(url: Swift.String)
-  @objc convenience public init(url: Swift.String, method: DataroidSDK.HTTPMethod, duration: Foundation.TimeInterval, type: DataroidSDK.NetworkErrorAttributes.ErrorType, exception: Swift.String)
+  @objc convenience public init(url: Swift.String, method: DataroidSDK.HTTPMethod, duration: Foundation.TimeInterval, errorType: DataroidSDK.NetworkErrorAttributes.ErrorType, exception: Swift.String)
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -1325,7 +1325,7 @@ extension DataroidSDK.Dataroid : DataroidSDK.WebBridgeClientProtocol {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTRMutableNetworkErrorAttributes) @objcMembers final public class MutableNetworkErrorAttributes : ObjectiveC.NSObject {
-  @objc final public var message: Swift.String?
+  @objc final public var errorMessage: Swift.String?
   @objc final public var attributes: DataroidSDK.APMAttributes?
   @objc override dynamic public init()
   @objc deinit

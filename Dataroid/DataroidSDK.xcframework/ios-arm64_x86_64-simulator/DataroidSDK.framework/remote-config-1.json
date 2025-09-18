@@ -260,7 +260,7 @@
             "value": false
         },
         "snapshot": {
-            "value": true
+            "value": false
         },
         "context_trigger": {
             "value": false
