@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mxnGk7ycKEgMj5aKYVHupcY6j9M=
+		eBKrnazg1fTcJLkxzCC3QQRYLWE=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5r7CPEm/TthLABIRhsoTl/AaRn4=
+		nC1ZCi9Th1i9e0iH86Df0J2M3Ao=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		j/vxVHB772BztgYePWIQ5x7gjjE=
+		ErR1zaHnVPpGcGWbquGpQrzsVyk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -191,7 +191,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b+mQGqsFJDCDkeA0Qwqa24u4tvL5dMQfuY638CH/tdE=
+			wTYPoR7q1FVNCKvh12WOMD1D8zm2DgpUPyw2ua5Bt4A=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -226,7 +226,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZPtv70STE7UqIY7RTh+7C9wuE3qJOb3mXgF2VWfAweg=
+			V4ZW0Yx3VIxpk7g2zEObNpEunYDYeOLekG9XGQ8lzyo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
