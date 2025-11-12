@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/DataroidSDK-Swift.h</key>
 		<data>
-		IcAsB5GOLNnjF4SZK7c/cnEemug=
+		piTGSX2K4PsQmMjzGvLZsphkD7Q=
 		</data>
 		<key>Headers/DataroidSDK.h</key>
 		<data>
@@ -38,47 +38,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mSYmW+lavU/wS8n6GSdHOeaFSH8=
+		yCiPZc1O9SZLkG42MRPldKrhw0k=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		8wbribRXpjpfp7XyMaah/pc3ni4=
+		EMtky/6c9SSxF4c23CrCGL1AYN4=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		bac0wKwQ5/aT4VDufWkaPo58XbM=
+		x6XZoSRYbS/sYg3RDdRNATvXy78=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		/jBLB/IXK+LYHt8ysW5tLRpWCw4=
+		8xY9m7Jpa7s69dW4RYS+iw0cIhI=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bac0wKwQ5/aT4VDufWkaPo58XbM=
+		x6XZoSRYbS/sYg3RDdRNATvXy78=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		nC1ZCi9Th1i9e0iH86Df0J2M3Ao=
+		6zXBbuIW4+LycflUfPtGDOyum24=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		8wbribRXpjpfp7XyMaah/pc3ni4=
+		EMtky/6c9SSxF4c23CrCGL1AYN4=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		nOg1lrweFFc+Oxwau5ryzyDWo2o=
+		oGzBaJITwvZ+F8b7VLcBASju2RQ=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		VcYnik7mwDT+PAH9mSCe87kQEgM=
+		wk5yAe9PTdsR7DRPtpArQ7Sio3I=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		nOg1lrweFFc+Oxwau5ryzyDWo2o=
+		oGzBaJITwvZ+F8b7VLcBASju2RQ=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ErR1zaHnVPpGcGWbquGpQrzsVyk=
+		S0zsrop1sFKVVyD+iRLKdRsCh0M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -149,7 +149,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w1c75vlpaYJRfnJRKupYKAeoOXownI8iJI631S0B4ok=
+			O2Zm3l2uBy2jjpYgHR7vjehKiI/p8xuAC1xiVXOeRl4=
 			</data>
 		</dict>
 		<key>Headers/DataroidSDK.h</key>
@@ -163,70 +163,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S28y8HJnspxEOGAwbHedeEiDlmjXsSmeZCV3ItvrGgw=
+			r469mQxoHWqF2fFJ50GfgjdlnlIKe9/GOso6o+GlcB4=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W+NVjjecvVYFfT4DBGDrYM/xTnFrP7Qq9OaTSERNjsE=
+			d8FFDKCfHJiLmFoK02aCOKpfJyoLJNOiXk9UN4qSzVk=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			33CpM32hUBFOzHUzIY07KahQU/HzGWrhrcxAupIZs4Y=
+			dLr3mj3I6Gbk3f1D1Mz92xUhgLGZz5LJQ5w4Kzya/LY=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W+NVjjecvVYFfT4DBGDrYM/xTnFrP7Qq9OaTSERNjsE=
+			d8FFDKCfHJiLmFoK02aCOKpfJyoLJNOiXk9UN4qSzVk=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wTYPoR7q1FVNCKvh12WOMD1D8zm2DgpUPyw2ua5Bt4A=
+			+62K7YhVTu2J/HNM4XEqjiAZVZ+8/swhnSpasvALENY=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S28y8HJnspxEOGAwbHedeEiDlmjXsSmeZCV3ItvrGgw=
+			r469mQxoHWqF2fFJ50GfgjdlnlIKe9/GOso6o+GlcB4=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2O6ywZua69BcuNX/l9PzQYCcGM+2P6OmWdIm/hPdLyk=
+			SnSWJthy92lJv2MyMqC5pSXTQwOcQ/tMxntQ3UY/dzA=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jlDYhhSC0mDP2ZD1r4olRhqYHJCqazBFEuj/vcAbhw0=
+			C1kspW9/DduE2p+e9Wcd4ygj/faQi4/7pSL3sOBZAiQ=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2O6ywZua69BcuNX/l9PzQYCcGM+2P6OmWdIm/hPdLyk=
+			SnSWJthy92lJv2MyMqC5pSXTQwOcQ/tMxntQ3UY/dzA=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V4ZW0Yx3VIxpk7g2zEObNpEunYDYeOLekG9XGQ8lzyo=
+			Q/fRK9KAh7aNGiGl27tq8AnhuqooG++EvXUAEuIj9BA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

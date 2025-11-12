@@ -665,7 +665,6 @@ SWIFT_CLASS_NAMED("DBAPMRecord")
 
 
 
-
 @interface DBAPMRecord (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable payload;
@@ -676,7 +675,6 @@ SWIFT_CLASS_NAMED("DBActionBased")
 @interface DBActionBased : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
@@ -696,7 +694,6 @@ SWIFT_CLASS_NAMED("DBEvent")
 
 
 
-
 @interface DBEvent (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) int64_t id;
 @property (nonatomic, copy) NSString * _Nullable payload;
@@ -707,7 +704,6 @@ SWIFT_CLASS_NAMED("DBGeofence")
 @interface DBGeofence : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 @interface DBGeofence (SWIFT_EXTENSION(DataroidSDK))
@@ -723,7 +719,6 @@ SWIFT_CLASS_NAMED("DBGoal")
 
 
 
-
 @interface DBGoal (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic, copy) NSString * _Nullable eventName;
 @property (nonatomic, copy) NSDate * _Nullable expDate;
@@ -736,7 +731,6 @@ SWIFT_CLASS_NAMED("DBInboxMessage")
 @interface DBInboxMessage : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
@@ -757,7 +751,6 @@ SWIFT_CLASS_NAMED("DBSession")
 @interface DBSession : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 @interface DBSession (SWIFT_EXTENSION(DataroidSDK))
@@ -865,6 +858,19 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
+@protocol GeofenceClientProtocol
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
+
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
@@ -882,19 +888,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
 - (void)setUser:(DataroidUser * _Nonnull)user;
 - (void)clearUser;
-@end
-
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
-@protocol GeofenceClientProtocol
-- (void)enableGeofencing;
-- (void)disableGeofencing;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
-- (void)enableGeofencing;
-- (void)disableGeofencing;
 @end
 
 
@@ -2921,7 +2914,6 @@ SWIFT_CLASS_NAMED("DBAPMRecord")
 
 
 
-
 @interface DBAPMRecord (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable payload;
@@ -2932,7 +2924,6 @@ SWIFT_CLASS_NAMED("DBActionBased")
 @interface DBActionBased : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
@@ -2952,7 +2943,6 @@ SWIFT_CLASS_NAMED("DBEvent")
 
 
 
-
 @interface DBEvent (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) int64_t id;
 @property (nonatomic, copy) NSString * _Nullable payload;
@@ -2963,7 +2953,6 @@ SWIFT_CLASS_NAMED("DBGeofence")
 @interface DBGeofence : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 @interface DBGeofence (SWIFT_EXTENSION(DataroidSDK))
@@ -2979,7 +2968,6 @@ SWIFT_CLASS_NAMED("DBGoal")
 
 
 
-
 @interface DBGoal (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic, copy) NSString * _Nullable eventName;
 @property (nonatomic, copy) NSDate * _Nullable expDate;
@@ -2992,7 +2980,6 @@ SWIFT_CLASS_NAMED("DBInboxMessage")
 @interface DBInboxMessage : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
@@ -3013,7 +3000,6 @@ SWIFT_CLASS_NAMED("DBSession")
 @interface DBSession : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 @interface DBSession (SWIFT_EXTENSION(DataroidSDK))
@@ -3121,6 +3107,19 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
+@protocol GeofenceClientProtocol
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
+
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
@@ -3138,19 +3137,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
 - (void)setUser:(DataroidUser * _Nonnull)user;
 - (void)clearUser;
-@end
-
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
-@protocol GeofenceClientProtocol
-- (void)enableGeofencing;
-- (void)disableGeofencing;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
-- (void)enableGeofencing;
-- (void)disableGeofencing;
 @end
 
 

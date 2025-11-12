@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Dataroid",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(
             name: "Dataroid",

@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DataroidSDK
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DataroidSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AdSupport
 import CommonCrypto
@@ -1663,9 +1663,6 @@ extension DataroidSDK.DBInboxMessage {
     @objc set
   }
 }
-extension DataroidSDK.DBInboxMessage : Swift.Identifiable {
-  public typealias ID = Swift.Int64
-}
 @_inheritsConvenienceInitializers @objc(DBAPMRecord) public class DBAPMRecord : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
@@ -1680,9 +1677,6 @@ extension DataroidSDK.DBAPMRecord {
     @objc get
     @objc set
   }
-}
-extension DataroidSDK.DBAPMRecord : Swift.Identifiable {
-  public typealias ID = Swift.String?
 }
 @_inheritsConvenienceInitializers @objc(DBEvent) public class DBEvent : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
@@ -1699,9 +1693,6 @@ extension DataroidSDK.DBEvent {
     @objc set
   }
 }
-extension DataroidSDK.DBEvent : Swift.Identifiable {
-  public typealias ID = Swift.Int64
-}
 @_inheritsConvenienceInitializers @objc(DBGeofence) public class DBGeofence : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
@@ -1717,9 +1708,6 @@ extension DataroidSDK.DBGeofence {
     @objc set
   }
 }
-extension DataroidSDK.DBGeofence : Swift.Identifiable {
-  public typealias ID = Swift.String?
-}
 @_inheritsConvenienceInitializers @objc(DBSession) public class DBSession : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
@@ -1734,9 +1722,6 @@ extension DataroidSDK.DBSession {
     @objc get
     @objc set
   }
-}
-extension DataroidSDK.DBSession : Swift.Identifiable {
-  public typealias ID = Swift.String?
 }
 @_inheritsConvenienceInitializers @objc(DBGoal) public class DBGoal : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
@@ -1760,9 +1745,6 @@ extension DataroidSDK.DBGoal {
     @objc get
     @objc set
   }
-}
-extension DataroidSDK.DBGoal : Swift.Identifiable {
-  public typealias ID = Swift.String?
 }
 @_inheritsConvenienceInitializers @objc(DBActionBased) public class DBActionBased : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
@@ -1790,9 +1772,6 @@ extension DataroidSDK.DBActionBased {
     @objc get
     @objc set
   }
-}
-extension DataroidSDK.DBActionBased : Swift.Identifiable {
-  public typealias ID = Swift.String?
 }
 extension DataroidSDK.Platform : Swift.Equatable {}
 extension DataroidSDK.Platform : Swift.Hashable {}
