@@ -479,12 +479,14 @@ SWIFT_CLASS_NAMED("ApplicationListener")
 - (nonnull instancetype)addIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)name;
 @end
 
+@class NSURLRequest;
 @class DTRMutableHttpCallAttributes;
 @class DTRMutableNetworkErrorAttributes;
 
 SWIFT_PROTOCOL_NAMED("AutoCollectingApmListener")
 @protocol DTRAutoCollectionApmListener
 @optional
+- (BOOL)shouldTrackWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableHttpCallAttributes * _Nonnull)willCollectHttpCallWithAttributes:(DTRHTTPCallAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableNetworkErrorAttributes * _Nonnull)willCollectNetworkErrorWithAttributes:(DTRNetworkErrorAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -826,17 +828,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 - (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
-@protocol LanguageClientProtocol
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
 @class DTRDeeplinkAttributes;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
@@ -850,11 +841,22 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
+@protocol LanguageClientProtocol
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
-- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
-- (void)collectEventWithName:(NSString * _Nonnull)name;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
+
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
+- (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
+- (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 @end
 
 
@@ -871,9 +873,9 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
-- (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
+- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
+- (void)collectEventWithName:(NSString * _Nonnull)name;
 @end
 
 @class DataroidUser;
@@ -2089,12 +2091,12 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
@@ -2183,16 +2185,12 @@ SWIFT_CLASS_NAMED("UserAttributes")
 
 SWIFT_CLASS("_TtC11DataroidSDK26UserNotificationIntegrator")
 @interface UserNotificationIntegrator : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull languageCode;
 @property (nonatomic, readonly, strong) DTRAppInbox * _Nullable inbox;
 + (UserNotificationIntegrator * _Nullable)initializeWithConfig:(DataroidConfig * _Nonnull)config SWIFT_WARN_UNUSED_RESULT;
 - (void)processWithContent:(UNMutableNotificationContent * _Nonnull)content completion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nonnull))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
-
 
 
 
@@ -2728,12 +2726,14 @@ SWIFT_CLASS_NAMED("ApplicationListener")
 - (nonnull instancetype)addIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)name;
 @end
 
+@class NSURLRequest;
 @class DTRMutableHttpCallAttributes;
 @class DTRMutableNetworkErrorAttributes;
 
 SWIFT_PROTOCOL_NAMED("AutoCollectingApmListener")
 @protocol DTRAutoCollectionApmListener
 @optional
+- (BOOL)shouldTrackWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableHttpCallAttributes * _Nonnull)willCollectHttpCallWithAttributes:(DTRHTTPCallAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableNetworkErrorAttributes * _Nonnull)willCollectNetworkErrorWithAttributes:(DTRNetworkErrorAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -3075,17 +3075,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 - (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
-@protocol LanguageClientProtocol
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
 @class DTRDeeplinkAttributes;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
@@ -3099,11 +3088,22 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
+SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
+@protocol LanguageClientProtocol
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
-- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
-- (void)collectEventWithName:(NSString * _Nonnull)name;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
+
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
+- (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
+- (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 @end
 
 
@@ -3120,9 +3120,9 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
-- (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
+- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
+- (void)collectEventWithName:(NSString * _Nonnull)name;
 @end
 
 @class DataroidUser;
@@ -4338,12 +4338,12 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
@@ -4432,16 +4432,12 @@ SWIFT_CLASS_NAMED("UserAttributes")
 
 SWIFT_CLASS("_TtC11DataroidSDK26UserNotificationIntegrator")
 @interface UserNotificationIntegrator : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull languageCode;
 @property (nonatomic, readonly, strong) DTRAppInbox * _Nullable inbox;
 + (UserNotificationIntegrator * _Nullable)initializeWithConfig:(DataroidConfig * _Nonnull)config SWIFT_WARN_UNUSED_RESULT;
 - (void)processWithContent:(UNMutableNotificationContent * _Nonnull)content completion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nonnull))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
-
 
 
 

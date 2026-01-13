@@ -956,9 +956,6 @@ extension DataroidSDK.InAppMessageCappingRuleTimeUnit : Swift.CustomStringConver
   @objc func contextTriggered(context: DataroidSDK.TriggeredContext)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class UserNotificationIntegrator : ObjectiveC.NSObject {
-  @objc final public var languageCode: Swift.String {
-    @objc get
-  }
   @objc final public var inbox: DataroidSDK.AppInbox? {
     @objc get
   }
@@ -1095,6 +1092,7 @@ precedencegroup ColumnAssignment {
 }
 infix operator <- : ColumnAssignment
 @objc(DTRAutoCollectionApmListener) public protocol AutoCollectingApmListener {
+  @objc optional func shouldTrack(request: Foundation.URLRequest) -> Swift.Bool
   @objc optional func willCollectHttpCall(attributes: DataroidSDK.HTTPCallAttributes) -> DataroidSDK.MutableHttpCallAttributes
   @objc optional func willCollectNetworkError(attributes: DataroidSDK.NetworkErrorAttributes) -> DataroidSDK.MutableNetworkErrorAttributes
 }

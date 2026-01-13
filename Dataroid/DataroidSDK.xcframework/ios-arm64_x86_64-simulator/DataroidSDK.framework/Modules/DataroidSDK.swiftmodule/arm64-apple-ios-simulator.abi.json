@@ -6905,6 +6905,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "InAppMessageDeliverySchedule",
         "printedName": "InAppMessageDeliverySchedule",
@@ -25040,6 +25050,26 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "AdSupport",
         "printedName": "AdSupport",
         "declKind": "Import",
@@ -25064,6 +25094,23 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK"
       },
       {
         "kind": "Import",
@@ -32120,52 +32167,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "languageCode",
-            "printedName": "languageCode",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)UserNotificationIntegrator(py)languageCode",
-            "mangledName": "$s11DataroidSDK26UserNotificationIntegratorC12languageCodeSSvp",
-            "moduleName": "DataroidSDK",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC"
-            ],
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)UserNotificationIntegrator(im)languageCode",
-                "mangledName": "$s11DataroidSDK26UserNotificationIntegratorC12languageCodeSSvg",
-                "moduleName": "DataroidSDK",
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "inbox",
             "printedName": "inbox",
             "children": [
@@ -32260,7 +32261,6 @@
             "declAttributes": [
               "Final",
               "AccessControl",
-              "RawDocComment",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -36093,6 +36093,39 @@
         "name": "AutoCollectingApmListener",
         "printedName": "AutoCollectingApmListener",
         "children": [
+          {
+            "kind": "Function",
+            "name": "shouldTrack",
+            "printedName": "shouldTrack(request:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@DataroidSDK@objc(pl)DTRAutoCollectionApmListener(im)shouldTrackWithRequest:",
+            "mangledName": "$s11DataroidSDK25AutoCollectingApmListenerP11shouldTrack7requestSb10Foundation10URLRequestV_tF",
+            "moduleName": "DataroidSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.AutoCollectingApmListener>",
+            "sugared_genericSig": "<Self where Self : DataroidSDK.AutoCollectingApmListener>",
+            "protocolReq": true,
+            "objc_name": "shouldTrackWithRequest:",
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Function",
             "name": "willCollectHttpCall",
@@ -65373,7 +65406,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Operations\/DataroidIdFetchOperation.swift",
       "kind": "BooleanLiteral",
-      "offset": 905,
+      "offset": 867,
       "length": 4,
       "value": "true"
     },
@@ -65561,8 +65594,15 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Requests\/FetchNearbyGeofencesRequest.swift",
+      "kind": "IntegerLiteral",
+      "offset": 565,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Requests\/FetchNearbyGeofencesRequest.swift",
       "kind": "StringLiteral",
-      "offset": 557,
+      "offset": 640,
       "length": 10,
       "value": "\"geofence\""
     },
@@ -65660,7 +65700,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Operations\/ActionBasedMessageFetchOperation.swift",
       "kind": "BooleanLiteral",
-      "offset": 935,
+      "offset": 897,
       "length": 4,
       "value": "true"
     },
@@ -66801,21 +66841,21 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Core\/NetworkManager.swift",
       "kind": "Array",
-      "offset": 1967,
+      "offset": 1965,
       "length": 10,
       "value": "[204, 205]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Core\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2022,
+      "offset": 2020,
       "length": 3,
       "value": "413"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Core\/NetworkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2078,
+      "offset": 2076,
       "length": 3,
       "value": "422"
     },
@@ -66864,154 +66904,154 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4103,
+      "offset": 4205,
       "length": 8,
       "value": "\"_super\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4140,
+      "offset": 4242,
       "length": 8,
       "value": "\"extras\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4188,
+      "offset": 4290,
       "length": 16,
       "value": "\"inappMessageId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4243,
+      "offset": 4345,
       "length": 10,
       "value": "\"buttonId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4288,
+      "offset": 4390,
       "length": 14,
       "value": "\"triggerEvent\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4348,
+      "offset": 4450,
       "length": 25,
       "value": "\"inappMessageCloseOption\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4417,
+      "offset": 4519,
       "length": 6,
       "value": "\"APNS\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4452,
+      "offset": 4554,
       "length": 8,
       "value": "\"viewId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4499,
+      "offset": 4601,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4533,
+      "offset": 4635,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4620,
+      "offset": 4722,
       "length": 7,
       "value": "\"INAPP\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4676,
+      "offset": 4778,
       "length": 19,
       "value": "\"ACTION_BASED_PUSH\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4765,
+      "offset": 4867,
       "length": 3,
       "value": "\"t\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4807,
+      "offset": 4909,
       "length": 4,
       "value": "\"mc\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4852,
+      "offset": 4954,
       "length": 4,
       "value": "\"pt\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4897,
+      "offset": 4999,
       "length": 4,
       "value": "\"pu\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4946,
+      "offset": 5048,
       "length": 4,
       "value": "\"dc\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 4993,
+      "offset": 5095,
       "length": 5,
       "value": "\"eid\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "BooleanLiteral",
-      "offset": 7738,
+      "offset": 7965,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "BooleanLiteral",
-      "offset": 8037,
+      "offset": 8264,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "BooleanLiteral",
-      "offset": 8751,
+      "offset": 8978,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "BooleanLiteral",
-      "offset": 8804,
+      "offset": 9031,
       "length": 4,
       "value": "true"
     },
@@ -67473,16 +67513,9 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig+EventConfig.swift",
       "kind": "StringLiteral",
-      "offset": 665,
-      "length": 10,
-      "value": "\"attr_cut\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig+EventConfig.swift",
-      "kind": "StringLiteral",
-      "offset": 704,
-      "length": 11,
-      "value": "\"attr_mask\""
+      "offset": 667,
+      "length": 6,
+      "value": "\"muts\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Snapshot\/SnapshotDispatchOperation.swift",
@@ -68234,6 +68267,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Requests\/FileDownloadRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 162,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Validation\/EventMaxLengthValidationRule.swift",
       "kind": "IntegerLiteral",
       "offset": 559,
@@ -68243,7 +68283,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Custom In-App\/CustomInAppMessageDownloader.swift",
       "kind": "StringLiteral",
-      "offset": 774,
+      "offset": 860,
       "length": 7,
       "value": "\"inapp\""
     },
@@ -68523,7 +68563,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Operations\/ContextTriggerFetchOperation.swift",
       "kind": "BooleanLiteral",
-      "offset": 920,
+      "offset": 882,
       "length": 4,
       "value": "true"
     },
@@ -68542,32 +68582,186 @@
       "value": "0"
     },
     {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Models\/InAppMessageSessionEndBehavior.swift",
       "kind": "StringLiteral",
-      "offset": 661,
+      "offset": 662,
+      "length": 13,
+      "value": "\"ALWAYS_OPEN\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Models\/InAppMessageSessionEndBehavior.swift",
+      "kind": "StringLiteral",
+      "offset": 772,
+      "length": 24,
+      "value": "\"CLOSE_ON_SESSION_START\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 5597,
+      "length": 5,
+      "value": "\"evt\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 5630,
+      "length": 6,
+      "value": "\"acts\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 6794,
+      "length": 46,
+      "value": "\"com.dataroid.remoteConfig.eventMatcher.regex\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "Dictionary",
+      "offset": 7029,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9381,
+      "length": 5,
+      "value": "\"CUT\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9412,
+      "length": 7,
+      "value": "\"LOWER\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9445,
+      "length": 7,
+      "value": "\"UPPER\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9480,
+      "length": 6,
+      "value": "\"REPL\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9511,
+      "length": 6,
+      "value": "\"HASH\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9611,
+      "length": 6,
+      "value": "\"KEEP\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9641,
+      "length": 5,
+      "value": "\"CUT\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9767,
+      "length": 5,
+      "value": "\"tgt\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 9802,
+      "length": 6,
+      "value": "\"args\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 10428,
+      "length": 6,
+      "value": "\"ptrn\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 10470,
+      "length": 6,
+      "value": "\"repl\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 10539,
+      "length": 6,
+      "value": "\"algo\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 11348,
       "length": 12,
       "value": "\"attributes\""
     },
     {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 703,
+      "offset": 11384,
       "length": 5,
       "value": "\"geo\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "StringLiteral",
-      "offset": 1023,
+      "offset": 672,
+      "length": 12,
+      "value": "\"attributes\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
+      "kind": "StringLiteral",
+      "offset": 714,
+      "length": 5,
+      "value": "\"geo\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
+      "kind": "StringLiteral",
+      "offset": 1034,
       "length": 51,
       "value": "\"com.dataroid.eventAttributeTransformer.regexCache\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "Dictionary",
-      "offset": 1244,
+      "offset": 1255,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Operations\/NotificationReceivedEventCollectOperation.swift",
+      "kind": "FloatLiteral",
+      "offset": 959,
+      "length": 4,
+      "value": "20.0"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Operations\/NotificationReceivedEventCollectOperation.swift",
+      "kind": "FloatLiteral",
+      "offset": 1091,
+      "length": 3,
+      "value": "5.0"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/Models\/DBAPMRecord+Helpers.swift",
@@ -68684,7 +68878,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Operations\/InAppMessageFetchOperation.swift",
       "kind": "BooleanLiteral",
-      "offset": 914,
+      "offset": 876,
       "length": 4,
       "value": "true"
     },
@@ -68750,6 +68944,20 @@
       "offset": 975,
       "length": 7,
       "value": "\"SWIPE\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessageHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 1950,
+      "length": 46,
+      "value": "\"com.dataroid.inAppMessageHandler.alertsQueue\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessageHandler.swift",
+      "kind": "Array",
+      "offset": 2157,
+      "length": 2,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Commerce\/Builder\/AddToWishListEventBuilder.swift",
@@ -68852,91 +69060,91 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 690,
+      "offset": 688,
       "length": 13,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 702,
+      "offset": 700,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 738,
+      "offset": 736,
       "length": 6,
       "value": "\".log\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 826,
+      "offset": 824,
       "length": 38,
       "value": "\"com.dataroid.loggerInstanceLockQueue\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 939,
+      "offset": 937,
       "length": 12,
       "value": "\"[Dataroid]\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 980,
+      "offset": 978,
       "length": 16,
       "value": "\"\n[Domain]: %@\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1025,
+      "offset": 1023,
       "length": 16,
       "value": "\"\n[Module]: %@\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1068,
+      "offset": 1066,
       "length": 17,
       "value": "\"\n[File]: %@:%d\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1115,
+      "offset": 1113,
       "length": 14,
       "value": "\"\n[Message]:\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "BooleanLiteral",
-      "offset": 1353,
+      "offset": 1351,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "Dictionary",
-      "offset": 1582,
+      "offset": 1580,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1696,
+      "offset": 1694,
       "length": 43,
       "value": "\"Log level changed as \""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/Logger.swift",
       "kind": "StringLiteral",
-      "offset": 1738,
+      "offset": 1736,
       "length": 2,
       "value": "\"\""
     },
@@ -69090,7 +69298,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13026,
+      "offset": 13209,
       "length": 5,
       "value": "false"
     },
@@ -69251,14 +69459,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Managers\/UserNotificationIntegrator.swift",
       "kind": "StringLiteral",
-      "offset": 621,
+      "offset": 598,
       "length": 9,
       "value": "\"push-id\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Managers\/UserNotificationIntegrator.swift",
       "kind": "StringLiteral",
-      "offset": 663,
+      "offset": 640,
       "length": 13,
       "value": "\"schedule-id\""
     },
@@ -69300,7 +69508,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Custom In-App\/CustomInAppMessagePresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 5386,
+      "offset": 5454,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Custom In-App\/CustomInAppMessagePresenter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5483,
       "length": 5,
       "value": "false"
     },
@@ -69733,29 +69948,8 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/FileLogger.swift",
-      "kind": "StringLiteral",
-      "offset": 542,
-      "length": 72,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/FileLogger.swift",
-      "kind": "StringLiteral",
-      "offset": 575,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/FileLogger.swift",
-      "kind": "StringLiteral",
-      "offset": 613,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/FileLogger.swift",
       "kind": "BooleanLiteral",
-      "offset": 766,
+      "offset": 586,
       "length": 5,
       "value": "false"
     },
@@ -70164,6 +70358,13 @@
       "offset": 588,
       "length": 10,
       "value": "\"KeyValue\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/SharedDatabase\/SharedStore.swift",
+      "kind": "StringLiteral",
+      "offset": 633,
+      "length": 7,
+      "value": "\"Event\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Attributes\/DeeplinkAttributes.swift",
@@ -70861,14 +71062,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Models\/InAppMessage.swift",
       "kind": "BooleanLiteral",
-      "offset": 1322,
+      "offset": 1343,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/Models\/InAppMessage.swift",
       "kind": "BooleanLiteral",
-      "offset": 1491,
+      "offset": 1512,
       "length": 5,
       "value": "false"
     },
