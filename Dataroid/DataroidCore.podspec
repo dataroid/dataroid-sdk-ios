@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'DataroidCore'
-    s.version = '4.2.0-alpha.1'
+    s.version = '4.2.0'
     s.summary = 'Analytics and Customer Engagement Tool'
     s.homepage = 'https://github.com/dataroid/dataroid-sdk-ios'
 
