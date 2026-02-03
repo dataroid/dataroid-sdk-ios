@@ -21715,6 +21715,122 @@
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectReactNativeError",
+            "printedName": "collectReactNativeError(uuid:exceptionType:reason:frames:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[DataroidSDK.ReactNativeExceptionFrame]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[DataroidSDK.ReactNativeExceptionFrame]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReactNativeExceptionFrame",
+                        "printedName": "DataroidSDK.ReactNativeExceptionFrame",
+                        "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@DataroidSDK@objc(pl)CrashReportingClientProtocol(im)collectReactNativeErrorWithUuid:exceptionType:reason:frames:",
+            "mangledName": "$s11DataroidSDK28CrashReportingClientProtocolP23collectReactNativeError4uuid13exceptionType6reason6framesySS_S2SSgSayAA0hI14ExceptionFrameCGSgtF",
+            "moduleName": "DataroidSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.CrashReportingClientProtocol>",
+            "sugared_genericSig": "<Self where Self : DataroidSDK.CrashReportingClientProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectReactNativeException",
+            "printedName": "collectReactNativeException(exceptionName:reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@DataroidSDK@objc(pl)CrashReportingClientProtocol(im)collectReactNativeExceptionWithExceptionName:reason:",
+            "mangledName": "$s11DataroidSDK28CrashReportingClientProtocolP27collectReactNativeException13exceptionName6reasonySS_SSSgtF",
+            "moduleName": "DataroidSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.CrashReportingClientProtocol>",
+            "sugared_genericSig": "<Self where Self : DataroidSDK.CrashReportingClientProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -36619,6 +36735,586 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "ReactNativeExceptionFrame",
+        "printedName": "ReactNativeExceptionFrame",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "line",
+            "printedName": "line",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)line",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4lineSivp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)line",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4lineSivg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "file",
+            "printedName": "file",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)file",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4fileSSSgvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)file",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4fileSSSgvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "methodName",
+            "printedName": "methodName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)methodName",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC10methodNameSSSgvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)methodName",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC10methodNameSSSgvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "column",
+            "printedName": "column",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)column",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC6columnSivp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)column",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC6columnSivg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "inProject",
+            "printedName": "inProject",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)inProject",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)inProject",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)setInProject:",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvs",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvM",
+                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvM",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(line:file:methodName:column:inProject:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ReactNativeExceptionFrame",
+                "printedName": "DataroidSDK.ReactNativeExceptionFrame",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)initWithLine:file:methodName:column:inProject:",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4line4file10methodName6column9inProjectACSi_SSSgAISiSbtcfc",
+            "moduleName": "DataroidSDK",
+            "objc_name": "initWithLine:file:methodName:column:inProject:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ReactNativeExceptionFrame",
+                "printedName": "DataroidSDK.ReactNativeExceptionFrame",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)init",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameCACycfc",
+            "moduleName": "DataroidSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ReactNativeExceptionFrame",
+                "printedName": "DataroidSDK.ReactNativeExceptionFrame",
+                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11DataroidSDK25ReactNativeExceptionFrameC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "DataroidSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11DataroidSDK25ReactNativeExceptionFrameC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC6encode2toys7Encoder_p_tKF",
+            "moduleName": "DataroidSDK",
+            "implicit": true,
+            "declAttributes": [
+              "Final"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame",
+        "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -43193,11 +43889,13 @@
             "usr": "c:@M@DataroidSDK@objc(cs)ScreenTrackingConfig(py)shouldTrackInnerViewController",
             "mangledName": "$s11DataroidSDK20ScreenTrackingConfigC30shouldTrackInnerViewControllerSbvp",
             "moduleName": "DataroidSDK",
+            "deprecated": true,
             "declAttributes": [
               "HasInitialValue",
               "Final",
               "HasStorage",
               "AccessControl",
+              "Available",
               "ObjC"
             ],
             "hasStorage": true,
@@ -43268,9 +43966,11 @@
                 "usr": "s:11DataroidSDK20ScreenTrackingConfigC30shouldTrackInnerViewControllerSbvM",
                 "mangledName": "$s11DataroidSDK20ScreenTrackingConfigC30shouldTrackInnerViewControllerSbvM",
                 "moduleName": "DataroidSDK",
+                "deprecated": true,
                 "implicit": true,
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "Available"
                 ],
                 "accessorKind": "_modify"
               }
@@ -45239,8 +45939,7 @@
         "objc_name": "DTRHTTPMethod",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "ObjC"
         ],
         "enumRawTypeName": "Int",
         "conformances": [
@@ -52233,6 +52932,122 @@
             "mangledName": "$s11DataroidSDK0A0C16collectException_10stacktraceySo11NSExceptionC_SaySSGtF",
             "moduleName": "DataroidSDK",
             "objc_name": "collectException:stacktrace:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectReactNativeError",
+            "printedName": "collectReactNativeError(uuid:exceptionType:reason:frames:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[DataroidSDK.ReactNativeExceptionFrame]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[DataroidSDK.ReactNativeExceptionFrame]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ReactNativeExceptionFrame",
+                        "printedName": "DataroidSDK.ReactNativeExceptionFrame",
+                        "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)collectReactNativeErrorWithUuid:exceptionType:reason:frames:",
+            "mangledName": "$s11DataroidSDK0A0C23collectReactNativeError4uuid13exceptionType6reason6framesySS_S2SSgSayAA0dE14ExceptionFrameCGSgtF",
+            "moduleName": "DataroidSDK",
+            "objc_name": "collectReactNativeErrorWithUuid:exceptionType:reason:frames:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectReactNativeException",
+            "printedName": "collectReactNativeException(exceptionName:reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)collectReactNativeExceptionWithExceptionName:reason:",
+            "mangledName": "$s11DataroidSDK0A0C27collectReactNativeException13exceptionName6reasonySS_SSSgtF",
+            "moduleName": "DataroidSDK",
+            "objc_name": "collectReactNativeExceptionWithExceptionName:reason:",
             "declAttributes": [
               "Final",
               "ObjC",
@@ -66141,301 +66956,301 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 720,
+      "offset": 713,
       "length": 23,
       "value": "\"device.update.blocked\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 837,
+      "offset": 830,
       "length": 25,
       "value": "\"device.update.unblocked\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 957,
+      "offset": 950,
       "length": 11,
       "value": "\"viewStart\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1061,
+      "offset": 1054,
       "length": 10,
       "value": "\"viewStop\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1188,
+      "offset": 1181,
       "length": 25,
       "value": "\"device.update.pushToken\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1327,
+      "offset": 1320,
       "length": 24,
       "value": "\"device.update.language\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1469,
+      "offset": 1462,
       "length": 13,
       "value": "\"user.update\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1592,
+      "offset": 1585,
       "length": 20,
       "value": "\"clientSessionStart\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1720,
+      "offset": 1713,
       "length": 19,
       "value": "\"clientSessionStop\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1857,
+      "offset": 1850,
       "length": 18,
       "value": "\"notificationOpen\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2001,
+      "offset": 1994,
       "length": 22,
       "value": "\"notificationReceived\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2105,
+      "offset": 2098,
       "length": 14,
       "value": "\"goalAchieved\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2254,
+      "offset": 2247,
       "length": 25,
       "value": "\"inappMessageButtonClick\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2393,
+      "offset": 2386,
       "length": 18,
       "value": "\"inappMessageRead\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2527,
+      "offset": 2520,
       "length": 19,
       "value": "\"inappMessageClose\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2638,
+      "offset": 2631,
       "length": 22,
       "value": "\"inappMessagesFetched\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2770,
+      "offset": 2763,
       "length": 11,
       "value": "\"firstOpen\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 2915,
+      "offset": 2908,
       "length": 24,
       "value": "\"device.update.settings\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 3051,
+      "offset": 3044,
       "length": 14,
       "value": "\"networkError\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 3170,
+      "offset": 3163,
       "length": 10,
       "value": "\"httpCall\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 3300,
+      "offset": 3293,
       "length": 11,
       "value": "\"addToCart\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 3457,
+      "offset": 3450,
       "length": 10,
       "value": "\"purchase\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 3654,
+      "offset": 3647,
       "length": 8,
       "value": "\"search\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 3837,
+      "offset": 3830,
       "length": 13,
       "value": "\"viewProduct\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 4019,
+      "offset": 4012,
       "length": 14,
       "value": "\"viewCategory\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 4187,
+      "offset": 4180,
       "length": 16,
       "value": "\"removeFromCart\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 4358,
+      "offset": 4351,
       "length": 11,
       "value": "\"clearCart\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 4532,
+      "offset": 4525,
       "length": 15,
       "value": "\"startCheckout\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 4742,
+      "offset": 4735,
       "length": 15,
       "value": "\"errorCheckout\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 4919,
+      "offset": 4912,
       "length": 15,
       "value": "\"addToWishList\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5095,
+      "offset": 5088,
       "length": 20,
       "value": "\"removeFromWishList\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5298,
+      "offset": 5291,
       "length": 18,
       "value": "\"deeplinkLaunched\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5393,
+      "offset": 5386,
       "length": 13,
       "value": "\"buttonClick\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5562,
+      "offset": 5555,
       "length": 19,
       "value": "\"radioButtonSelect\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5658,
+      "offset": 5651,
       "length": 14,
       "value": "\"toggleChange\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5770,
+      "offset": 5763,
       "length": 12,
       "value": "\"textChange\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5843,
+      "offset": 5836,
       "length": 7,
       "value": "\"touch\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5913,
+      "offset": 5906,
       "length": 7,
       "value": "\"swipe\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5992,
+      "offset": 5985,
       "length": 11,
       "value": "\"longPress\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6075,
+      "offset": 6068,
       "length": 11,
       "value": "\"doubleTap\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6153,
+      "offset": 6146,
       "length": 7,
       "value": "\"crash\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6224,
+      "offset": 6217,
       "length": 8,
       "value": "\"capped\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/PredefinedEvent.swift",
       "kind": "StringLiteral",
-      "offset": 6316,
+      "offset": 6309,
       "length": 18,
       "value": "\"contextTriggered\""
     },
@@ -67394,7 +68209,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Models\/DeviceSettings\/NotificationSettings.swift",
       "kind": "StringLiteral",
-      "offset": 685,
+      "offset": 564,
       "length": 9,
       "value": "\"enabled\""
     },
@@ -68598,154 +69413,154 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5597,
+      "offset": 5559,
       "length": 5,
       "value": "\"evt\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 5630,
+      "offset": 5592,
       "length": 6,
       "value": "\"acts\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 6794,
+      "offset": 6756,
       "length": 46,
       "value": "\"com.dataroid.remoteConfig.eventMatcher.regex\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "Dictionary",
-      "offset": 7029,
+      "offset": 6991,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9381,
+      "offset": 9343,
       "length": 5,
       "value": "\"CUT\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9412,
+      "offset": 9374,
       "length": 7,
       "value": "\"LOWER\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9445,
+      "offset": 9407,
       "length": 7,
       "value": "\"UPPER\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9480,
+      "offset": 9442,
       "length": 6,
       "value": "\"REPL\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9511,
+      "offset": 9473,
       "length": 6,
       "value": "\"HASH\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9611,
+      "offset": 9573,
       "length": 6,
       "value": "\"KEEP\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9641,
+      "offset": 9603,
       "length": 5,
       "value": "\"CUT\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9767,
+      "offset": 9729,
       "length": 5,
       "value": "\"tgt\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 9802,
+      "offset": 9764,
       "length": 6,
       "value": "\"args\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 10428,
+      "offset": 10390,
       "length": 6,
       "value": "\"ptrn\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 10470,
+      "offset": 10432,
       "length": 6,
       "value": "\"repl\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 10539,
+      "offset": 10501,
       "length": 6,
       "value": "\"algo\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11348,
+      "offset": 11310,
       "length": 12,
       "value": "\"attributes\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11384,
+      "offset": 11346,
       "length": 5,
       "value": "\"geo\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "StringLiteral",
-      "offset": 672,
+      "offset": 710,
       "length": 12,
       "value": "\"attributes\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "StringLiteral",
-      "offset": 714,
+      "offset": 752,
       "length": 5,
       "value": "\"geo\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "StringLiteral",
-      "offset": 1034,
+      "offset": 1072,
       "length": 51,
       "value": "\"com.dataroid.eventAttributeTransformer.regexCache\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "Dictionary",
-      "offset": 1255,
+      "offset": 1293,
       "length": 3,
       "value": "[]"
     },
@@ -69788,7 +70603,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/ScreenTracking\/UIViewController+ScreenTracking.swift",
       "kind": "StringLiteral",
-      "offset": 599,
+      "offset": 558,
       "length": 3,
       "value": "\"<\""
     },
@@ -70274,6 +71089,13 @@
       "offset": 796,
       "length": 37,
       "value": "\"com.dataroid.eventLimitManagerQueue\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/Model\/ReactNativeExceptionFrame.swift",
+      "kind": "BooleanLiteral",
+      "offset": 774,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/LoggerLevel.swift",
@@ -71167,21 +71989,21 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/PublicAPIs\/Config\/ModuleConfig\/ScreenTrackingConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 663,
+      "offset": 736,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/PublicAPIs\/Config\/ModuleConfig\/ScreenTrackingConfig.swift",
       "kind": "Array",
-      "offset": 717,
+      "offset": 790,
       "length": 2167,
       "value": "[\"UICompatibilityInputViewController\", \"UINavigationController\", \"UIAlertController\", \"UIPageViewController\", \"UITabBarController\", \"UIReferenceLibraryViewController\", \"UISplitViewController\", \"UIInputViewController\", \"UISearchController\", \"UISearchContainerViewController\", \"UIApplicationRotationFollowingController\", \"MFMailComposeInternalViewController\", \"MFMailComposePlaceholderViewController\", \"UIInputWindowController\", \"_UIFallbackPresentationViewController\", \"UIActivityViewController\", \"UIActivityGroupViewController\", \"_UIActivityGroupListViewController\", \"_UIActivityViewControllerContentController\", \"UIKeyboardCandidateRowViewController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UIPrintMoreOptionsTableViewController\", \"UIPrintPanelTableViewController\", \"UIPrintPanelViewController\", \"UIPrintPaperViewController\", \"UIPrintPreviewViewController\", \"UIPrintRangeViewController\", \"UIDocumentMenuViewController\", \"UIDocumentPickerViewController\", \"UIDocumentPickerExtensionViewController\", \"UIInterfaceActionGroupViewController\", \"UISystemInputViewController\", \"UIRecentsInputViewController\", \"UICompatibilityInputViewController\", \"UIInputViewAnimationControllerViewController\", \"UISnapshotModalViewController\", \"UIMultiColumnViewController\", \"UIKeyCommandDiscoverabilityHUDViewController\", \"SFSafariViewController\", \"SFBrowserRemoteViewController\", \"UISystemKeyboardDockController\", \"UIApplicationRotationFollowingControllerNoTouches\", \"UIWebRotatingAlertController\", \"UIPrinterBrowserViewController\", \"UIPrinterUtilityTableViewController\", \"UIHostingController\", \"DestinationHostingController\", \"MFMailComposeRemoteViewController\", \"SLRemoteComposeViewController\", \"UIPredictionViewController\", \"_UICursorAccessoryViewController\"]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/CustomEventBuilder.swift",
       "kind": "Array",
-      "offset": 682,
+      "offset": 650,
       "length": 2,
       "value": "[]"
     },
@@ -71272,63 +72094,63 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 595,
+      "offset": 536,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 619,
+      "offset": 560,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 643,
+      "offset": 584,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 667,
+      "offset": 608,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 691,
+      "offset": 632,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 715,
+      "offset": 656,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 739,
+      "offset": 680,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 763,
+      "offset": 704,
       "length": 1,
       "value": "7"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/HTTPMethod.swift",
       "kind": "IntegerLiteral",
-      "offset": 787,
+      "offset": 728,
       "length": 1,
       "value": "8"
     },
@@ -71377,21 +72199,21 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Extensions\/String+Helpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 2701,
+      "offset": 2663,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Extensions\/String+Helpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 2742,
+      "offset": 2704,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Extensions\/String+Helpers.swift",
       "kind": "IntegerLiteral",
-      "offset": 2778,
+      "offset": 2740,
       "length": 2,
       "value": "24"
     },
@@ -72504,14 +73326,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Commons\/Collections\/OrderedSet.swift",
       "kind": "Array",
-      "offset": 922,
+      "offset": 799,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Commons\/Collections\/OrderedSet.swift",
       "kind": "IntegerLiteral",
-      "offset": 954,
+      "offset": 831,
       "length": 1,
       "value": "0"
     },
@@ -72700,14 +73522,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/EventManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2965,
+      "offset": 2925,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/EventManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3523,
+      "offset": 3483,
       "length": 4,
       "value": "true"
     },
@@ -73127,77 +73949,77 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1027,
+      "offset": 992,
       "length": 9,
       "value": "\"eventId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1061,
+      "offset": 1026,
       "length": 10,
       "value": "\"deviceId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1092,
+      "offset": 1057,
       "length": 11,
       "value": "\"eventName\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1134,
+      "offset": 1099,
       "length": 16,
       "value": "\"deviceProperty\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1180,
+      "offset": 1145,
       "length": 15,
       "value": "\"clientSession\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1230,
+      "offset": 1195,
       "length": 20,
       "value": "\"clientCreationDate\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1277,
+      "offset": 1242,
       "length": 12,
       "value": "\"attributes\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1312,
+      "offset": 1277,
       "length": 12,
       "value": "\"customerId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1352,
+      "offset": 1317,
       "length": 5,
       "value": "\"geo\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 1384,
+      "offset": 1349,
       "length": 5,
       "value": "\"aid\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Model\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 3982,
+      "offset": 3947,
       "length": 2,
       "value": "\"\""
     },
