@@ -479,14 +479,12 @@ SWIFT_CLASS_NAMED("ApplicationListener")
 - (nonnull instancetype)addIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)name;
 @end
 
-@class NSURLRequest;
 @class DTRMutableHttpCallAttributes;
 @class DTRMutableNetworkErrorAttributes;
 
 SWIFT_PROTOCOL_NAMED("AutoCollectingApmListener")
 @protocol DTRAutoCollectionApmListener
 @optional
-- (BOOL)shouldTrackWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableHttpCallAttributes * _Nonnull)willCollectHttpCallWithAttributes:(DTRHTTPCallAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableNetworkErrorAttributes * _Nonnull)willCollectNetworkErrorWithAttributes:(DTRNetworkErrorAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -633,14 +631,11 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK30ContextTriggerListenerDelegate_")
 
 @class NSError;
 @class NSException;
-@class ReactNativeExceptionFrame;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK28CrashReportingClientProtocol_")
 @protocol CrashReportingClientProtocol
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
 @end
 
 
@@ -831,6 +826,17 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 - (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
+@protocol LanguageClientProtocol
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
 @class DTRDeeplinkAttributes;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
@@ -844,31 +850,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
-SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
-@protocol LanguageClientProtocol
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
-
-
-@class DataroidUser;
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
-@protocol UserClientProtocol
-- (void)setUser:(DataroidUser * _Nonnull)user;
-- (void)clearUser;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
-- (void)setUser:(DataroidUser * _Nonnull)user;
-- (void)clearUser;
-@end
 
 
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
@@ -890,13 +871,25 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
 @end
 
 
-
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
 @end
+
+@class DataroidUser;
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
+@protocol UserClientProtocol
+- (void)setUser:(DataroidUser * _Nonnull)user;
+- (void)clearUser;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
+- (void)setUser:(DataroidUser * _Nonnull)user;
+- (void)clearUser;
+@end
+
 
 
 
@@ -995,6 +988,7 @@ SWIFT_CLASS("_TtC11DataroidSDK14DataroidConfig")
 
 SWIFT_CLASS("_TtC11DataroidSDK23DataroidPredefinedEvent")
 @interface DataroidPredefinedEvent : NSObject
+/// Avoid initialization
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Event name for screen tracking start event
@@ -1824,19 +1818,6 @@ SWIFT_CLASS_NAMED("PushEventManager")
 @end
 
 
-SWIFT_CLASS("_TtC11DataroidSDK25ReactNativeExceptionFrame")
-@interface ReactNativeExceptionFrame : NSObject
-@property (nonatomic, readonly) NSInteger line;
-@property (nonatomic, readonly, copy) NSString * _Nullable file;
-@property (nonatomic, readonly, copy) NSString * _Nullable methodName;
-@property (nonatomic, readonly) NSInteger column;
-@property (nonatomic) BOOL inProject;
-- (nonnull instancetype)initWithLine:(NSInteger)line file:(NSString * _Nullable)file methodName:(NSString * _Nullable)methodName column:(NSInteger)column inProject:(BOOL)inProject OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 /// Attributes for that removing item from cart.
 /// Trigger this event when user removes item(s) from cart.
 /// Implementing a Remove from Cart event allows you to understand how many users remove item(s)
@@ -1950,7 +1931,7 @@ SWIFT_CLASS("_TtC11DataroidSDK20ScreenTrackingConfig")
 @interface ScreenTrackingConfig : NSObject
 @property (nonatomic) BOOL enabled;
 @property (nonatomic) BOOL autoCollectingEnabled;
-@property (nonatomic) BOOL shouldTrackInnerViewController SWIFT_DEPRECATED_MSG("Deprecated with no replacement");
+@property (nonatomic) BOOL shouldTrackInnerViewController;
 @property (nonatomic, copy) NSSet<NSString *> * _Nonnull viewControllerExclusions;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2118,12 +2099,12 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
@@ -2202,12 +2183,16 @@ SWIFT_CLASS_NAMED("UserAttributes")
 
 SWIFT_CLASS("_TtC11DataroidSDK26UserNotificationIntegrator")
 @interface UserNotificationIntegrator : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull languageCode;
 @property (nonatomic, readonly, strong) DTRAppInbox * _Nullable inbox;
 + (UserNotificationIntegrator * _Nullable)initializeWithConfig:(DataroidConfig * _Nonnull)config SWIFT_WARN_UNUSED_RESULT;
 - (void)processWithContent:(UNMutableNotificationContent * _Nonnull)content completion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nonnull))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+
 
 
 
@@ -2743,14 +2728,12 @@ SWIFT_CLASS_NAMED("ApplicationListener")
 - (nonnull instancetype)addIntArray:(NSArray<NSNumber *> * _Nonnull)value forKey:(NSString * _Nonnull)name;
 @end
 
-@class NSURLRequest;
 @class DTRMutableHttpCallAttributes;
 @class DTRMutableNetworkErrorAttributes;
 
 SWIFT_PROTOCOL_NAMED("AutoCollectingApmListener")
 @protocol DTRAutoCollectionApmListener
 @optional
-- (BOOL)shouldTrackWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableHttpCallAttributes * _Nonnull)willCollectHttpCallWithAttributes:(DTRHTTPCallAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 - (DTRMutableNetworkErrorAttributes * _Nonnull)willCollectNetworkErrorWithAttributes:(DTRNetworkErrorAttributes * _Nonnull)attributes SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -2897,14 +2880,11 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK30ContextTriggerListenerDelegate_")
 
 @class NSError;
 @class NSException;
-@class ReactNativeExceptionFrame;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK28CrashReportingClientProtocol_")
 @protocol CrashReportingClientProtocol
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
 @end
 
 
@@ -3095,6 +3075,17 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 - (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
+@protocol LanguageClientProtocol
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
 @class DTRDeeplinkAttributes;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
@@ -3108,31 +3099,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
-SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
-@protocol LanguageClientProtocol
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
-@end
-
-
-
-@class DataroidUser;
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
-@protocol UserClientProtocol
-- (void)setUser:(DataroidUser * _Nonnull)user;
-- (void)clearUser;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
-- (void)setUser:(DataroidUser * _Nonnull)user;
-- (void)clearUser;
-@end
 
 
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
@@ -3154,13 +3120,25 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
 @end
 
 
-
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
 @end
+
+@class DataroidUser;
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
+@protocol UserClientProtocol
+- (void)setUser:(DataroidUser * _Nonnull)user;
+- (void)clearUser;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
+- (void)setUser:(DataroidUser * _Nonnull)user;
+- (void)clearUser;
+@end
+
 
 
 
@@ -3259,6 +3237,7 @@ SWIFT_CLASS("_TtC11DataroidSDK14DataroidConfig")
 
 SWIFT_CLASS("_TtC11DataroidSDK23DataroidPredefinedEvent")
 @interface DataroidPredefinedEvent : NSObject
+/// Avoid initialization
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Event name for screen tracking start event
@@ -4088,19 +4067,6 @@ SWIFT_CLASS_NAMED("PushEventManager")
 @end
 
 
-SWIFT_CLASS("_TtC11DataroidSDK25ReactNativeExceptionFrame")
-@interface ReactNativeExceptionFrame : NSObject
-@property (nonatomic, readonly) NSInteger line;
-@property (nonatomic, readonly, copy) NSString * _Nullable file;
-@property (nonatomic, readonly, copy) NSString * _Nullable methodName;
-@property (nonatomic, readonly) NSInteger column;
-@property (nonatomic) BOOL inProject;
-- (nonnull instancetype)initWithLine:(NSInteger)line file:(NSString * _Nullable)file methodName:(NSString * _Nullable)methodName column:(NSInteger)column inProject:(BOOL)inProject OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 /// Attributes for that removing item from cart.
 /// Trigger this event when user removes item(s) from cart.
 /// Implementing a Remove from Cart event allows you to understand how many users remove item(s)
@@ -4214,7 +4180,7 @@ SWIFT_CLASS("_TtC11DataroidSDK20ScreenTrackingConfig")
 @interface ScreenTrackingConfig : NSObject
 @property (nonatomic) BOOL enabled;
 @property (nonatomic) BOOL autoCollectingEnabled;
-@property (nonatomic) BOOL shouldTrackInnerViewController SWIFT_DEPRECATED_MSG("Deprecated with no replacement");
+@property (nonatomic) BOOL shouldTrackInnerViewController;
 @property (nonatomic, copy) NSSet<NSString *> * _Nonnull viewControllerExclusions;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -4382,12 +4348,12 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
@@ -4466,12 +4432,16 @@ SWIFT_CLASS_NAMED("UserAttributes")
 
 SWIFT_CLASS("_TtC11DataroidSDK26UserNotificationIntegrator")
 @interface UserNotificationIntegrator : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull languageCode;
 @property (nonatomic, readonly, strong) DTRAppInbox * _Nullable inbox;
 + (UserNotificationIntegrator * _Nullable)initializeWithConfig:(DataroidConfig * _Nonnull)config SWIFT_WARN_UNUSED_RESULT;
 - (void)processWithContent:(UNMutableNotificationContent * _Nonnull)content completion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nonnull))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+
 
 
 
