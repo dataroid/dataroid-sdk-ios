@@ -624,10 +624,14 @@ public enum NotificationInfoKey {
 @objc public protocol CrashReportingClientProtocol {
   @objc func collectError(_ error: Foundation.NSError, stacktrace: [Swift.String])
   @objc func collectException(_ exception: Foundation.NSException, stacktrace: [Swift.String])
+  @objc func collectReactNativeError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ReactNativeExceptionFrame]?)
+  @objc func collectReactNativeException(exceptionName: Swift.String, reason: Swift.String?)
 }
 extension DataroidSDK.Dataroid : DataroidSDK.CrashReportingClientProtocol {
   @objc final public func collectError(_ error: Foundation.NSError, stacktrace: [Swift.String] = Thread.callStackSymbols)
   @objc final public func collectException(_ exception: Foundation.NSException, stacktrace: [Swift.String] = Thread.callStackSymbols)
+  @objc final public func collectReactNativeError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ReactNativeExceptionFrame]?)
+  @objc final public func collectReactNativeException(exceptionName: Swift.String, reason: Swift.String?)
 }
 @objc extension UIKit.UITextField {
   @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_containsSensitiveObject: Swift.Bool {
@@ -956,9 +960,6 @@ extension DataroidSDK.InAppMessageCappingRuleTimeUnit : Swift.CustomStringConver
   @objc func contextTriggered(context: DataroidSDK.TriggeredContext)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class UserNotificationIntegrator : ObjectiveC.NSObject {
-  @objc final public var languageCode: Swift.String {
-    @objc get
-  }
   @objc final public var inbox: DataroidSDK.AppInbox? {
     @objc get
   }
@@ -1095,6 +1096,7 @@ precedencegroup ColumnAssignment {
 }
 infix operator <- : ColumnAssignment
 @objc(DTRAutoCollectionApmListener) public protocol AutoCollectingApmListener {
+  @objc optional func shouldTrack(request: Foundation.URLRequest) -> Swift.Bool
   @objc optional func willCollectHttpCall(attributes: DataroidSDK.HTTPCallAttributes) -> DataroidSDK.MutableHttpCallAttributes
   @objc optional func willCollectNetworkError(attributes: DataroidSDK.NetworkErrorAttributes) -> DataroidSDK.MutableNetworkErrorAttributes
 }
@@ -1111,6 +1113,17 @@ infix operator <- : ColumnAssignment
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc final public class ReactNativeExceptionFrame : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let line: Swift.Int
+  @objc final public let file: Swift.String?
+  @objc final public let methodName: Swift.String?
+  @objc final public let column: Swift.Int
+  @objc final public var inProject: Swift.Bool
+  @objc public init(line: Swift.Int, file: Swift.String?, methodName: Swift.String?, column: Swift.Int, inProject: Swift.Bool = false)
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 @objc(DTRLoggerLevel) public enum LoggerLevel : Swift.UInt {
   case none = 0
@@ -1285,7 +1298,8 @@ extension Foundation.UUID {
 @objc @_inheritsConvenienceInitializers @objcMembers final public class ScreenTrackingConfig : ObjectiveC.NSObject {
   @objc final public var enabled: Swift.Bool
   @objc final public var autoCollectingEnabled: Swift.Bool
-  @objc final public var shouldTrackInnerViewController: Swift.Bool
+  @objc @available(*, deprecated, message: "Deprecated with no replacement")
+  final public var shouldTrackInnerViewController: Swift.Bool
   @objc final public var viewControllerExclusions: Swift.Set<Swift.String>
   @objc override dynamic public init()
   @objc deinit
