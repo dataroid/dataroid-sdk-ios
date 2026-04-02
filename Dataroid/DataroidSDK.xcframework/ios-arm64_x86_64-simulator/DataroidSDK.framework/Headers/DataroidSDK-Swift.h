@@ -831,6 +831,18 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 - (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
+
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
+@protocol LanguageClientProtocol
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
 @class DTRDeeplinkAttributes;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
@@ -844,17 +856,25 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
-SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
-@protocol LanguageClientProtocol
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
+@protocol GeofenceClientProtocol
+- (void)enableGeofencing;
+- (void)disableGeofencing;
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
+- (void)enableGeofencing;
+- (void)disableGeofencing;
 @end
 
 
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
+- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
+- (void)collectEventWithName:(NSString * _Nonnull)name;
+@end
 
 @class DataroidUser;
 
@@ -868,25 +888,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
 - (void)setUser:(DataroidUser * _Nonnull)user;
 - (void)clearUser;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
-- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
-- (void)collectEventWithName:(NSString * _Nonnull)name;
-@end
-
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
-@protocol GeofenceClientProtocol
-- (void)enableGeofencing;
-- (void)disableGeofencing;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
-- (void)enableGeofencing;
-- (void)disableGeofencing;
 @end
 
 
@@ -3095,6 +3096,18 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 - (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
+
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
+@protocol LanguageClientProtocol
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
+- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@end
+
 @class DTRDeeplinkAttributes;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
@@ -3108,17 +3121,25 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @end
 
 
-SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
-@protocol LanguageClientProtocol
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
+@protocol GeofenceClientProtocol
+- (void)enableGeofencing;
+- (void)disableGeofencing;
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <LanguageClientProtocol>
-- (void)updateLanguage:(NSString * _Nonnull)languageCode;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
+- (void)enableGeofencing;
+- (void)disableGeofencing;
 @end
 
 
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
+- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
+- (void)collectEventWithName:(NSString * _Nonnull)name;
+@end
 
 @class DataroidUser;
 
@@ -3132,25 +3153,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <UserClientProtocol>
 - (void)setUser:(DataroidUser * _Nonnull)user;
 - (void)clearUser;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
-- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
-- (void)collectEventWithName:(NSString * _Nonnull)name;
-@end
-
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
-@protocol GeofenceClientProtocol
-- (void)enableGeofencing;
-- (void)disableGeofencing;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
-- (void)enableGeofencing;
-- (void)disableGeofencing;
 @end
 
 
