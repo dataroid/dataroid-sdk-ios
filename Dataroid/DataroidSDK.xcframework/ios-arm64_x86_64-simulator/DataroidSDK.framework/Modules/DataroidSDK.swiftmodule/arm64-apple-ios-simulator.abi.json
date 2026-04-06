@@ -72084,6 +72084,20 @@
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Factory\/Factory.swift",
+      "kind": "StringLiteral",
+      "offset": 5601,
+      "length": 26,
+      "value": "\".idAllocationManagerLock\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Factory\/Factory.swift",
+      "kind": "StringLiteral",
+      "offset": 5778,
+      "length": 28,
+      "value": "\".contextTriggerManagerLock\""
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Attributes\/UIEvent\/UIEventTrackingAttributes.swift",
       "kind": "IntegerLiteral",
       "offset": 645,
