@@ -69578,6 +69578,13 @@
       "value": "\"geo\""
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Managers\/SessionManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2291,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventAttributeTransformer.swift",
       "kind": "StringLiteral",
       "offset": 710,
