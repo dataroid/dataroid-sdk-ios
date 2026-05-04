@@ -679,6 +679,9 @@ extension DataroidSDK.Dataroid : DataroidSDK.CrashReportingClientProtocol {
   @objc final public var textToCopy: Swift.String? {
     get
   }
+  @objc final public var customData: [Swift.String : Any]? {
+    get
+  }
   public init(from decoder: any Swift.Decoder) throws
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
@@ -976,8 +979,8 @@ extension DataroidSDK.InAppMessageCappingRuleTimeUnit : Swift.CustomStringConver
   @objc optional func didReceiveCustomInAppMessage(content: DataroidSDK.InAppMessageCustomContent)
 }
 @objc(DTRInAppMessageAlertTapListener) public protocol InAppMessageAlertTapListener {
-  @objc optional func didTapAlert(button: DataroidSDK.InAppMessageButton, content: DataroidSDK.InAppMessageContent)
-  @objc optional func didTapCustomButton(button: DataroidSDK.InAppMessageButton, content: DataroidSDK.InAppMessageCustomContent)
+  @objc optional func didTapNativeInapp(button: DataroidSDK.InAppMessageButton, content: DataroidSDK.InAppMessageContent)
+  @objc optional func didTapCustomInapp(button: DataroidSDK.InAppMessageButton, content: DataroidSDK.InAppMessageCustomContent)
 }
 @objc(DTRInAppMessageAlertDeeplinkHandler) public protocol InAppMessageAlertDeeplinkHandler {
   @objc func shouldHandleDeeplink(deeplink: Swift.String?)
@@ -1722,12 +1725,12 @@ extension DataroidSDK.DBGeofence {
     @objc set
   }
 }
-@_inheritsConvenienceInitializers @objc(DBSession) public class DBSession : CoreData.NSManagedObject {
+@_inheritsConvenienceInitializers @objc(DTRDBSession) public class DTRDBSession : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
-extension DataroidSDK.DBSession {
-  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBSession>
+extension DataroidSDK.DTRDBSession {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DTRDBSession>
   @objc @NSManaged dynamic public var id: Swift.String? {
     @objc get
     @objc set

@@ -752,13 +752,14 @@ SWIFT_CLASS_NAMED("DBInboxMessage")
 @end
 
 
-SWIFT_CLASS_NAMED("DBSession")
-@interface DBSession : NSManagedObject
+SWIFT_CLASS_NAMED("DTRDBSession")
+@interface DTRDBSession : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-@interface DBSession (SWIFT_EXTENSION(DataroidSDK))
+
+@interface DTRDBSession (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable payload;
 @end
@@ -832,7 +833,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 @end
 
 
-
 SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
 @protocol LanguageClientProtocol
 - (void)updateLanguage:(NSString * _Nonnull)languageCode;
@@ -854,6 +854,7 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <DeeplinkClientProtocol>
 - (void)collectDeeplink:(DTRDeeplinkAttributes * _Nonnull)attributes;
 @end
+
 
 
 
@@ -892,13 +893,13 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 
 
 
+
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
 - (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
 @end
-
 
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK20LoggerClientProtocol_")
@@ -1355,13 +1356,13 @@ SWIFT_PROTOCOL_NAMED("InAppMessageAlertTapListener")
 ///
 /// \param content Related in-app message content
 ///
-- (void)didTapAlertWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageContent * _Nonnull)content;
+- (void)didTapNativeInappWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageContent * _Nonnull)content;
 /// Delegate method that will be invoked when a custom handled button tapped on custom in-app
 /// \param button Button that is tapped
 ///
 /// \param content Related in-app message content
 ///
-- (void)didTapCustomButtonWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageCustomContent * _Nonnull)content;
+- (void)didTapCustomInappWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageCustomContent * _Nonnull)content;
 @end
 
 
@@ -1386,6 +1387,7 @@ SWIFT_CLASS_NAMED("InAppMessageButton")
 @property (nonatomic, readonly, copy) NSString * _Nullable buttonId;
 @property (nonatomic, readonly, copy) NSString * _Nullable text;
 @property (nonatomic, readonly, copy) NSString * _Nullable textToCopy;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable customData;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2109,22 +2111,22 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
-@end
-
-
-@interface UIButton (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) BOOL dtr_containsSensitiveObject;
+@end
+
+
+@interface UIButton (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
@@ -3017,13 +3019,14 @@ SWIFT_CLASS_NAMED("DBInboxMessage")
 @end
 
 
-SWIFT_CLASS_NAMED("DBSession")
-@interface DBSession : NSManagedObject
+SWIFT_CLASS_NAMED("DTRDBSession")
+@interface DTRDBSession : NSManagedObject
 - (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-@interface DBSession (SWIFT_EXTENSION(DataroidSDK))
+
+@interface DTRDBSession (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable payload;
 @end
@@ -3097,7 +3100,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
 @end
 
 
-
 SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
 @protocol LanguageClientProtocol
 - (void)updateLanguage:(NSString * _Nonnull)languageCode;
@@ -3119,6 +3121,7 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <DeeplinkClientProtocol>
 - (void)collectDeeplink:(DTRDeeplinkAttributes * _Nonnull)attributes;
 @end
+
 
 
 
@@ -3157,13 +3160,13 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 
 
 
+
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
 - (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
 @end
-
 
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK20LoggerClientProtocol_")
@@ -3620,13 +3623,13 @@ SWIFT_PROTOCOL_NAMED("InAppMessageAlertTapListener")
 ///
 /// \param content Related in-app message content
 ///
-- (void)didTapAlertWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageContent * _Nonnull)content;
+- (void)didTapNativeInappWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageContent * _Nonnull)content;
 /// Delegate method that will be invoked when a custom handled button tapped on custom in-app
 /// \param button Button that is tapped
 ///
 /// \param content Related in-app message content
 ///
-- (void)didTapCustomButtonWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageCustomContent * _Nonnull)content;
+- (void)didTapCustomInappWithButton:(DTRInAppMessageButton * _Nonnull)button content:(DTRInAppMessageCustomContent * _Nonnull)content;
 @end
 
 
@@ -3651,6 +3654,7 @@ SWIFT_CLASS_NAMED("InAppMessageButton")
 @property (nonatomic, readonly, copy) NSString * _Nullable buttonId;
 @property (nonatomic, readonly, copy) NSString * _Nullable text;
 @property (nonatomic, readonly, copy) NSString * _Nullable textToCopy;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable customData;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4374,22 +4378,22 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
-@end
-
-
-@interface UIButton (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) BOOL dtr_containsSensitiveObject;
+@end
+
+
+@interface UIButton (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
