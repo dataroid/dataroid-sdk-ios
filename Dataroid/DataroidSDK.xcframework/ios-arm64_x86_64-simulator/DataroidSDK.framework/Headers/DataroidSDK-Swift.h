@@ -633,14 +633,14 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK30ContextTriggerListenerDelegate_")
 
 @class NSError;
 @class NSException;
-@class ReactNativeExceptionFrame;
+@class ExternalExceptionFrame;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK28CrashReportingClientProtocol_")
 @protocol CrashReportingClientProtocol
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
+- (void)collectExternalErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ExternalExceptionFrame *> * _Nullable)frames crashSource:(NSString * _Nonnull)crashSource;
+- (void)collectExternalExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason crashSource:(NSString * _Nonnull)crashSource;
 @end
 
 
@@ -820,18 +820,6 @@ SWIFT_CLASS("_TtC11DataroidSDK8Dataroid")
 
 
 
-@class WKWebView;
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
-@protocol WebBridgeClientProtocol
-- (void)trackWebView:(WKWebView * _Nonnull)webView;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <WebBridgeClientProtocol>
-- (void)trackWebView:(WKWebView * _Nonnull)webView;
-@end
-
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
 @protocol LanguageClientProtocol
@@ -855,27 +843,20 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 - (void)collectDeeplink:(DTRDeeplinkAttributes * _Nonnull)attributes;
 @end
 
+@class WKWebView;
 
-
-
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
-@protocol GeofenceClientProtocol
-- (void)enableGeofencing;
-- (void)disableGeofencing;
+SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
+@protocol WebBridgeClientProtocol
+- (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
-- (void)enableGeofencing;
-- (void)disableGeofencing;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <WebBridgeClientProtocol>
+- (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
-- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
-- (void)collectEventWithName:(NSString * _Nonnull)name;
-@end
+
 
 @class DataroidUser;
 
@@ -892,14 +873,33 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 @end
 
 
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
+- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
+- (void)collectEventWithName:(NSString * _Nonnull)name;
+@end
+
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
+@protocol GeofenceClientProtocol
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
 
 
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
+- (void)collectExternalErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ExternalExceptionFrame *> * _Nullable)frames crashSource:(NSString * _Nonnull)crashSource;
+- (void)collectExternalExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason crashSource:(NSString * _Nonnull)crashSource;
 @end
+
 
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK20LoggerClientProtocol_")
@@ -1227,6 +1227,19 @@ SWIFT_CLASS_NAMED("TapTrackingAttributes")
 SWIFT_CLASS_NAMED("DoubleTapTrackingAttributes")
 @interface DTRDoubleTapTrackingAttributes : DTRTapTrackingAttributes
 - (nonnull instancetype)initWithTouchPoint:(DTRTouchPoint * _Nonnull)touchPoint viewLabel:(NSString * _Nullable)viewLabel viewClass:(NSString * _Nullable)viewClass OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11DataroidSDK22ExternalExceptionFrame")
+@interface ExternalExceptionFrame : NSObject
+@property (nonatomic, readonly) NSInteger line;
+@property (nonatomic, readonly, copy) NSString * _Nullable file;
+@property (nonatomic, readonly, copy) NSString * _Nullable methodName;
+@property (nonatomic, readonly) NSInteger column;
+@property (nonatomic) BOOL inProject;
+- (nonnull instancetype)initWithLine:(NSInteger)line file:(NSString * _Nullable)file methodName:(NSString * _Nullable)methodName column:(NSInteger)column inProject:(BOOL)inProject OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, DTRGender, "Gender", open) {
@@ -1827,19 +1840,6 @@ SWIFT_CLASS_NAMED("PushEventManager")
 @end
 
 
-SWIFT_CLASS("_TtC11DataroidSDK25ReactNativeExceptionFrame")
-@interface ReactNativeExceptionFrame : NSObject
-@property (nonatomic, readonly) NSInteger line;
-@property (nonatomic, readonly, copy) NSString * _Nullable file;
-@property (nonatomic, readonly, copy) NSString * _Nullable methodName;
-@property (nonatomic, readonly) NSInteger column;
-@property (nonatomic) BOOL inProject;
-- (nonnull instancetype)initWithLine:(NSInteger)line file:(NSString * _Nullable)file methodName:(NSString * _Nullable)methodName column:(NSInteger)column inProject:(BOOL)inProject OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 /// Attributes for that removing item from cart.
 /// Trigger this event when user removes item(s) from cart.
 /// Implementing a Remove from Cart event allows you to understand how many users remove item(s)
@@ -2111,12 +2111,12 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 
@@ -2900,14 +2900,14 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK30ContextTriggerListenerDelegate_")
 
 @class NSError;
 @class NSException;
-@class ReactNativeExceptionFrame;
+@class ExternalExceptionFrame;
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK28CrashReportingClientProtocol_")
 @protocol CrashReportingClientProtocol
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
+- (void)collectExternalErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ExternalExceptionFrame *> * _Nullable)frames crashSource:(NSString * _Nonnull)crashSource;
+- (void)collectExternalExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason crashSource:(NSString * _Nonnull)crashSource;
 @end
 
 
@@ -3087,18 +3087,6 @@ SWIFT_CLASS("_TtC11DataroidSDK8Dataroid")
 
 
 
-@class WKWebView;
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
-@protocol WebBridgeClientProtocol
-- (void)trackWebView:(WKWebView * _Nonnull)webView;
-@end
-
-
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <WebBridgeClientProtocol>
-- (void)trackWebView:(WKWebView * _Nonnull)webView;
-@end
-
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK22LanguageClientProtocol_")
 @protocol LanguageClientProtocol
@@ -3122,27 +3110,20 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK22DeeplinkClientProtocol_")
 - (void)collectDeeplink:(DTRDeeplinkAttributes * _Nonnull)attributes;
 @end
 
+@class WKWebView;
 
-
-
-
-SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
-@protocol GeofenceClientProtocol
-- (void)enableGeofencing;
-- (void)disableGeofencing;
+SWIFT_PROTOCOL("_TtP11DataroidSDK23WebBridgeClientProtocol_")
+@protocol WebBridgeClientProtocol
+- (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
-- (void)enableGeofencing;
-- (void)disableGeofencing;
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <WebBridgeClientProtocol>
+- (void)trackWebView:(WKWebView * _Nonnull)webView;
 @end
 
 
-@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
-- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
-- (void)collectEventWithName:(NSString * _Nonnull)name;
-@end
+
 
 @class DataroidUser;
 
@@ -3159,14 +3140,33 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK18UserClientProtocol_")
 @end
 
 
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CustomEventClientProtocol>
+- (void)collectEventWithName:(NSString * _Nonnull)name attributes:(DTRAttributes * _Nonnull)attributes;
+- (void)collectEventWithName:(NSString * _Nonnull)name;
+@end
+
+
+SWIFT_PROTOCOL("_TtP11DataroidSDK22GeofenceClientProtocol_")
+@protocol GeofenceClientProtocol
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
+
+@interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <GeofenceClientProtocol>
+- (void)enableGeofencing;
+- (void)disableGeofencing;
+@end
+
 
 
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <CrashReportingClientProtocol>
 - (void)collectError:(NSError * _Nonnull)error stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
 - (void)collectException:(NSException * _Nonnull)exception stacktrace:(NSArray<NSString *> * _Nonnull)stacktrace;
-- (void)collectReactNativeErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ReactNativeExceptionFrame *> * _Nullable)frames;
-- (void)collectReactNativeExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason;
+- (void)collectExternalErrorWithUuid:(NSString * _Nonnull)uuid exceptionType:(NSString * _Nonnull)exceptionType reason:(NSString * _Nullable)reason frames:(NSArray<ExternalExceptionFrame *> * _Nullable)frames crashSource:(NSString * _Nonnull)crashSource;
+- (void)collectExternalExceptionWithExceptionName:(NSString * _Nonnull)exceptionName reason:(NSString * _Nullable)reason crashSource:(NSString * _Nonnull)crashSource;
 @end
+
 
 
 SWIFT_PROTOCOL("_TtP11DataroidSDK20LoggerClientProtocol_")
@@ -3494,6 +3494,19 @@ SWIFT_CLASS_NAMED("TapTrackingAttributes")
 SWIFT_CLASS_NAMED("DoubleTapTrackingAttributes")
 @interface DTRDoubleTapTrackingAttributes : DTRTapTrackingAttributes
 - (nonnull instancetype)initWithTouchPoint:(DTRTouchPoint * _Nonnull)touchPoint viewLabel:(NSString * _Nullable)viewLabel viewClass:(NSString * _Nullable)viewClass OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11DataroidSDK22ExternalExceptionFrame")
+@interface ExternalExceptionFrame : NSObject
+@property (nonatomic, readonly) NSInteger line;
+@property (nonatomic, readonly, copy) NSString * _Nullable file;
+@property (nonatomic, readonly, copy) NSString * _Nullable methodName;
+@property (nonatomic, readonly) NSInteger column;
+@property (nonatomic) BOOL inProject;
+- (nonnull instancetype)initWithLine:(NSInteger)line file:(NSString * _Nullable)file methodName:(NSString * _Nullable)methodName column:(NSInteger)column inProject:(BOOL)inProject OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, DTRGender, "Gender", open) {
@@ -4094,19 +4107,6 @@ SWIFT_CLASS_NAMED("PushEventManager")
 @end
 
 
-SWIFT_CLASS("_TtC11DataroidSDK25ReactNativeExceptionFrame")
-@interface ReactNativeExceptionFrame : NSObject
-@property (nonatomic, readonly) NSInteger line;
-@property (nonatomic, readonly, copy) NSString * _Nullable file;
-@property (nonatomic, readonly, copy) NSString * _Nullable methodName;
-@property (nonatomic, readonly) NSInteger column;
-@property (nonatomic) BOOL inProject;
-- (nonnull instancetype)initWithLine:(NSInteger)line file:(NSString * _Nullable)file methodName:(NSString * _Nullable)methodName column:(NSInteger)column inProject:(BOOL)inProject OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 /// Attributes for that removing item from cart.
 /// Trigger this event when user removes item(s) from cart.
 /// Implementing a Remove from Cart event allows you to understand how many users remove item(s)
@@ -4378,12 +4378,12 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
+@property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
-@property (nonatomic) BOOL dtr_containsSensitiveObject;
+@property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 

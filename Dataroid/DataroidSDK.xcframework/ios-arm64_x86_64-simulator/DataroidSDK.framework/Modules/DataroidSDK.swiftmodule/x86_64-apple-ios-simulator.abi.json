@@ -21728,8 +21728,8 @@
           },
           {
             "kind": "Function",
-            "name": "collectReactNativeError",
-            "printedName": "collectReactNativeError(uuid:exceptionType:reason:frames:)",
+            "name": "collectExternalError",
+            "printedName": "collectExternalError(uuid:exceptionType:reason:frames:crashSource:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21765,29 +21765,35 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[DataroidSDK.ReactNativeExceptionFrame]?",
+                "printedName": "[DataroidSDK.ExternalExceptionFrame]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[DataroidSDK.ReactNativeExceptionFrame]",
+                    "printedName": "[DataroidSDK.ExternalExceptionFrame]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "ReactNativeExceptionFrame",
-                        "printedName": "DataroidSDK.ReactNativeExceptionFrame",
-                        "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                        "name": "ExternalExceptionFrame",
+                        "printedName": "DataroidSDK.ExternalExceptionFrame",
+                        "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame"
                       }
                     ],
                     "usr": "s:Sa"
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@DataroidSDK@objc(pl)CrashReportingClientProtocol(im)collectReactNativeErrorWithUuid:exceptionType:reason:frames:",
-            "mangledName": "$s11DataroidSDK28CrashReportingClientProtocolP23collectReactNativeError4uuid13exceptionType6reason6framesySS_S2SSgSayAA0hI14ExceptionFrameCGSgtF",
+            "usr": "c:@M@DataroidSDK@objc(pl)CrashReportingClientProtocol(im)collectExternalErrorWithUuid:exceptionType:reason:frames:crashSource:",
+            "mangledName": "$s11DataroidSDK28CrashReportingClientProtocolP20collectExternalError4uuid13exceptionType6reason6frames11crashSourceySS_S2SSgSayAA0H14ExceptionFrameCGSgSStF",
             "moduleName": "DataroidSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.CrashReportingClientProtocol>",
             "sugared_genericSig": "<Self where Self : DataroidSDK.CrashReportingClientProtocol>",
@@ -21800,8 +21806,8 @@
           },
           {
             "kind": "Function",
-            "name": "collectReactNativeException",
-            "printedName": "collectReactNativeException(exceptionName:reason:)",
+            "name": "collectExternalException",
+            "printedName": "collectExternalException(exceptionName:reason:crashSource:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21827,11 +21833,17 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@DataroidSDK@objc(pl)CrashReportingClientProtocol(im)collectReactNativeExceptionWithExceptionName:reason:",
-            "mangledName": "$s11DataroidSDK28CrashReportingClientProtocolP27collectReactNativeException13exceptionName6reasonySS_SSSgtF",
+            "usr": "c:@M@DataroidSDK@objc(pl)CrashReportingClientProtocol(im)collectExternalExceptionWithExceptionName:reason:crashSource:",
+            "mangledName": "$s11DataroidSDK28CrashReportingClientProtocolP24collectExternalException13exceptionName6reason11crashSourceySS_SSSgSStF",
             "moduleName": "DataroidSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.CrashReportingClientProtocol>",
             "sugared_genericSig": "<Self where Self : DataroidSDK.CrashReportingClientProtocol>",
@@ -36859,8 +36871,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "ReactNativeExceptionFrame",
-        "printedName": "ReactNativeExceptionFrame",
+        "name": "ExternalExceptionFrame",
+        "printedName": "ExternalExceptionFrame",
         "children": [
           {
             "kind": "Var",
@@ -36875,8 +36887,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)line",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4lineSivp",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(py)line",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC4lineSivp",
             "moduleName": "DataroidSDK",
             "declAttributes": [
               "Final",
@@ -36900,8 +36912,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)line",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4lineSivg",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)line",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC4lineSivg",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -36933,8 +36945,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)file",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4fileSSSgvp",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(py)file",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC4fileSSSgvp",
             "moduleName": "DataroidSDK",
             "declAttributes": [
               "Final",
@@ -36966,8 +36978,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)file",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4fileSSSgvg",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)file",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC4fileSSSgvg",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -36999,8 +37011,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)methodName",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC10methodNameSSSgvp",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(py)methodName",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC10methodNameSSSgvp",
             "moduleName": "DataroidSDK",
             "declAttributes": [
               "Final",
@@ -37032,8 +37044,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)methodName",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC10methodNameSSSgvg",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)methodName",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC10methodNameSSSgvg",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -37057,8 +37069,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)column",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC6columnSivp",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(py)column",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC6columnSivp",
             "moduleName": "DataroidSDK",
             "declAttributes": [
               "Final",
@@ -37082,8 +37094,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)column",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC6columnSivg",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)column",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC6columnSivg",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -37107,8 +37119,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(py)inProject",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvp",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(py)inProject",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC9inProjectSbvp",
             "moduleName": "DataroidSDK",
             "declAttributes": [
               "Final",
@@ -37131,8 +37143,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)inProject",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvg",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)inProject",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC9inProjectSbvg",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -37159,8 +37171,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)setInProject:",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvs",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)setInProject:",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC9inProjectSbvs",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -37181,8 +37193,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvM",
-                "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC9inProjectSbvM",
+                "usr": "s:11DataroidSDK22ExternalExceptionFrameC9inProjectSbvM",
+                "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC9inProjectSbvM",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -37199,9 +37211,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "ReactNativeExceptionFrame",
-                "printedName": "DataroidSDK.ReactNativeExceptionFrame",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                "name": "ExternalExceptionFrame",
+                "printedName": "DataroidSDK.ExternalExceptionFrame",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame"
               },
               {
                 "kind": "TypeNominal",
@@ -37252,8 +37264,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)initWithLine:file:methodName:column:inProject:",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4line4file10methodName6column9inProjectACSi_SSSgAISiSbtcfc",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)initWithLine:file:methodName:column:inProject:",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC4line4file10methodName6column9inProjectACSi_SSSgAISiSbtcfc",
             "moduleName": "DataroidSDK",
             "objc_name": "initWithLine:file:methodName:column:inProject:",
             "declAttributes": [
@@ -37269,14 +37281,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "ReactNativeExceptionFrame",
-                "printedName": "DataroidSDK.ReactNativeExceptionFrame",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                "name": "ExternalExceptionFrame",
+                "printedName": "DataroidSDK.ExternalExceptionFrame",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame(im)init",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameCACycfc",
+            "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame(im)init",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameCACycfc",
             "moduleName": "DataroidSDK",
             "overriding": true,
             "implicit": true,
@@ -37295,9 +37307,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "ReactNativeExceptionFrame",
-                "printedName": "DataroidSDK.ReactNativeExceptionFrame",
-                "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                "name": "ExternalExceptionFrame",
+                "printedName": "DataroidSDK.ExternalExceptionFrame",
+                "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame"
               },
               {
                 "kind": "TypeNominal",
@@ -37307,8 +37319,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11DataroidSDK25ReactNativeExceptionFrameC4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC4fromACs7Decoder_p_tKcfc",
+            "usr": "s:11DataroidSDK22ExternalExceptionFrameC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC4fromACs7Decoder_p_tKcfc",
             "moduleName": "DataroidSDK",
             "implicit": true,
             "throwing": true,
@@ -37332,8 +37344,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11DataroidSDK25ReactNativeExceptionFrameC6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC6encode2toys7Encoder_p_tKF",
+            "usr": "s:11DataroidSDK22ExternalExceptionFrameC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC6encode2toys7Encoder_p_tKF",
             "moduleName": "DataroidSDK",
             "implicit": true,
             "declAttributes": [
@@ -37344,8 +37356,8 @@
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame",
-        "mangledName": "$s11DataroidSDK25ReactNativeExceptionFrameC",
+        "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame",
+        "mangledName": "$s11DataroidSDK22ExternalExceptionFrameC",
         "moduleName": "DataroidSDK",
         "declAttributes": [
           "Final",
@@ -53075,8 +53087,8 @@
           },
           {
             "kind": "Function",
-            "name": "collectReactNativeError",
-            "printedName": "collectReactNativeError(uuid:exceptionType:reason:frames:)",
+            "name": "collectExternalError",
+            "printedName": "collectExternalError(uuid:exceptionType:reason:frames:crashSource:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -53112,31 +53124,37 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[DataroidSDK.ReactNativeExceptionFrame]?",
+                "printedName": "[DataroidSDK.ExternalExceptionFrame]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "Array",
-                    "printedName": "[DataroidSDK.ReactNativeExceptionFrame]",
+                    "printedName": "[DataroidSDK.ExternalExceptionFrame]",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "ReactNativeExceptionFrame",
-                        "printedName": "DataroidSDK.ReactNativeExceptionFrame",
-                        "usr": "c:@M@DataroidSDK@objc(cs)ReactNativeExceptionFrame"
+                        "name": "ExternalExceptionFrame",
+                        "printedName": "DataroidSDK.ExternalExceptionFrame",
+                        "usr": "c:@M@DataroidSDK@objc(cs)ExternalExceptionFrame"
                       }
                     ],
                     "usr": "s:Sa"
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)collectReactNativeErrorWithUuid:exceptionType:reason:frames:",
-            "mangledName": "$s11DataroidSDK0A0C23collectReactNativeError4uuid13exceptionType6reason6framesySS_S2SSgSayAA0dE14ExceptionFrameCGSgtF",
+            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)collectExternalErrorWithUuid:exceptionType:reason:frames:crashSource:",
+            "mangledName": "$s11DataroidSDK0A0C20collectExternalError4uuid13exceptionType6reason6frames11crashSourceySS_S2SSgSayAA0D14ExceptionFrameCGSgSStF",
             "moduleName": "DataroidSDK",
-            "objc_name": "collectReactNativeErrorWithUuid:exceptionType:reason:frames:",
+            "objc_name": "collectExternalErrorWithUuid:exceptionType:reason:frames:crashSource:",
             "declAttributes": [
               "Final",
               "ObjC",
@@ -53147,8 +53165,8 @@
           },
           {
             "kind": "Function",
-            "name": "collectReactNativeException",
-            "printedName": "collectReactNativeException(exceptionName:reason:)",
+            "name": "collectExternalException",
+            "printedName": "collectExternalException(exceptionName:reason:crashSource:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -53174,13 +53192,19 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)collectReactNativeExceptionWithExceptionName:reason:",
-            "mangledName": "$s11DataroidSDK0A0C27collectReactNativeException13exceptionName6reasonySS_SSSgtF",
+            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)collectExternalExceptionWithExceptionName:reason:crashSource:",
+            "mangledName": "$s11DataroidSDK0A0C24collectExternalException13exceptionName6reason11crashSourceySS_SSSgSStF",
             "moduleName": "DataroidSDK",
-            "objc_name": "collectReactNativeExceptionWithExceptionName:reason:",
+            "objc_name": "collectExternalExceptionWithExceptionName:reason:crashSource:",
             "declAttributes": [
               "Final",
               "ObjC",
@@ -71287,9 +71311,9 @@
       "value": "\"com.dataroid.eventLimitManagerQueue\""
     },
     {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/Model\/ReactNativeExceptionFrame.swift",
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/Model\/ExternalExceptionFrame.swift",
       "kind": "BooleanLiteral",
-      "offset": 774,
+      "offset": 768,
       "length": 5,
       "value": "false"
     },

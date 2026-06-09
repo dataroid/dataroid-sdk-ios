@@ -624,14 +624,14 @@ public enum NotificationInfoKey {
 @objc public protocol CrashReportingClientProtocol {
   @objc func collectError(_ error: Foundation.NSError, stacktrace: [Swift.String])
   @objc func collectException(_ exception: Foundation.NSException, stacktrace: [Swift.String])
-  @objc func collectReactNativeError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ReactNativeExceptionFrame]?)
-  @objc func collectReactNativeException(exceptionName: Swift.String, reason: Swift.String?)
+  @objc func collectExternalError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ExternalExceptionFrame]?, crashSource: Swift.String)
+  @objc func collectExternalException(exceptionName: Swift.String, reason: Swift.String?, crashSource: Swift.String)
 }
 extension DataroidSDK.Dataroid : DataroidSDK.CrashReportingClientProtocol {
   @objc final public func collectError(_ error: Foundation.NSError, stacktrace: [Swift.String] = Thread.callStackSymbols)
   @objc final public func collectException(_ exception: Foundation.NSException, stacktrace: [Swift.String] = Thread.callStackSymbols)
-  @objc final public func collectReactNativeError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ReactNativeExceptionFrame]?)
-  @objc final public func collectReactNativeException(exceptionName: Swift.String, reason: Swift.String?)
+  @objc final public func collectExternalError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ExternalExceptionFrame]?, crashSource: Swift.String)
+  @objc final public func collectExternalException(exceptionName: Swift.String, reason: Swift.String?, crashSource: Swift.String)
 }
 @objc extension UIKit.UITextField {
   @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_containsSensitiveObject: Swift.Bool {
@@ -1117,7 +1117,7 @@ infix operator <- : ColumnAssignment
     get
   }
 }
-@objc final public class ReactNativeExceptionFrame : ObjectiveC.NSObject, Swift.Codable {
+@objc final public class ExternalExceptionFrame : ObjectiveC.NSObject, Swift.Codable {
   @objc final public let line: Swift.Int
   @objc final public let file: Swift.String?
   @objc final public let methodName: Swift.String?
