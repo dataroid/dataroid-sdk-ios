@@ -1295,6 +1295,10 @@ SWIFT_UNAVAILABLE
 - (void)setDuration:(NSTimeInterval)duration;
 - (BOOL)getSuccess SWIFT_WARN_UNUSED_RESULT;
 - (void)setSuccess:(BOOL)success;
+- (double)getRequestSize SWIFT_WARN_UNUSED_RESULT;
+- (void)setRequestSize:(double)size;
+- (double)getResponseSize SWIFT_WARN_UNUSED_RESULT;
+- (void)setResponseSize:(double)size;
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, DTRHTTPMethod, "HTTPMethod", open) {

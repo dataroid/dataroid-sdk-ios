@@ -783,6 +783,10 @@ extension DataroidSDK.HTTPCallAttributes {
   @objc final public func setDuration(_ duration: Foundation.TimeInterval)
   @objc final public func getSuccess() -> Swift.Bool
   @objc final public func setSuccess(_ success: Swift.Bool)
+  @objc final public func getRequestSize() -> Swift.Double
+  @objc final public func setRequestSize(_ size: Swift.Double)
+  @objc final public func getResponseSize() -> Swift.Double
+  @objc final public func setResponseSize(_ size: Swift.Double)
 }
 final public class InAppMessageTrigger : Swift.Codable {
   final public var displayFrequency: DataroidSDK.InAppMessageDisplayFrequency? {
