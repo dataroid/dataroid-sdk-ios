@@ -18,6 +18,9 @@
         "aid_cache_duration": {
             "value": 3024000000
         },
+        "user_update_dedup_ttl_seconds": {
+            "value": 604800
+        },
         "whitelist": [
             {
                 "event": "device.update.settings"
@@ -179,6 +182,12 @@
         "ctx_reset_in_days": {
             "value": 14
         },
+        "max_session_duration": {
+            "value": 21600000
+        },
+        "optimized_dispatch": {
+            "value": false
+        },
         "immediateEventList": [
             {
                 "event": "device.update.pushToken"
@@ -229,6 +238,769 @@
             {
                 "event": "textChange"
             }
+        ],
+        "muts": [
+            {
+                "evt": [
+                    {
+                        "name": "^surveyEnded$"
+                    }
+                ],
+                "acts": [
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\bTR\\d{2}(?:\\s?\\d{4}){5}\\s?\\d{2}\\b",
+                            "repl": "TR** **** **** **** **** **** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b(TR\\d{2})(\\d{22})\\b",
+                            "repl": "$1**********************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b([A-Z]{2}\\d{2})([A-Z0-9]{11,30})\\b",
+                            "repl": "$1******************************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b(\\d{4})(?:[\\s-]?\\d{4}){3}\\b",
+                            "repl": "$1************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b[1-9]\\d{2}(?:\\s?\\d{3}){2}\\s?\\d{2}\\b",
+                            "repl": "***********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b[1-9]\\d{9}\\b",
+                            "repl": "**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+90[\\s.-]+5\\d{2}[\\s.-]?\\d{3}[\\s.-]?\\d{2}[\\s.-]?\\d{2}",
+                            "repl": "+90 5** *** ** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+905\\d{9}\\b",
+                            "repl": "+90**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b905\\d{9}\\b",
+                            "repl": "90**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b0?5\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}\\b",
+                            "repl": "05*********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b0(?:2|3|4)\\d{2}[\\s.]?\\d{3}[\\s.]?\\d{2}[\\s.]?\\d{2}\\b",
+                            "repl": "0** *** ** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+[1-9]\\d{0,2}(?:[\\s.-]?\\d){7,14}\\b",
+                            "repl": "+************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b([A-Za-z0-9ÇĞİÖŞÜçğıöşü._%+-]+)@([A-Za-z0-9-]+)\\.([A-Za-z]{2,})\\b",
+                            "repl": "****@********.$3",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}\\s?[A-ZÇĞİÖŞÜ]{1,3}\\s?\\d{2,4}\\b",
+                            "repl": "[** *** ***]",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}[A-ZÇĞİÖŞÜ]{1,3}\\d{2,4}\\b",
+                            "repl": "[** *** ***]",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}[-/.]\\d{2}[-/.]\\d{4}\\b",
+                            "repl": "**-**-****",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "steps[].otherValue"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{4}[-/.]\\d{2}[-/.]\\d{2}\\b",
+                            "repl": "****-**-**",
+                            "noMatch": "KEEP"
+                        }
+                    }
+                ]
+            },
+            {
+                "evt": [
+                    {
+                        "name": "^(buttonClick|toggleChange|radioButtonSelect)$",
+                        "conds": [
+                            {
+                                "key": "ac",
+                                "operator": "BOOLEAN",
+                                "values": [
+                                    "true"
+                                ],
+                                "type": "ep"
+                            }
+                        ]
+                    }
+                ],
+                "acts": [
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\bTR\\d{2}(?:\\s?\\d{4}){5}\\s?\\d{2}\\b",
+                            "repl": "TR** **** **** **** **** **** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b(TR\\d{2})(\\d{22})\\b",
+                            "repl": "$1**********************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b([A-Z]{2}\\d{2})([A-Z0-9]{11,30})\\b",
+                            "repl": "$1******************************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b(\\d{4})(?:[\\s-]?\\d{4}){3}\\b",
+                            "repl": "$1************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b[1-9]\\d{2}(?:\\s?\\d{3}){2}\\s?\\d{2}\\b",
+                            "repl": "***********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b[1-9]\\d{9}\\b",
+                            "repl": "**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+90[\\s.-]+5\\d{2}[\\s.-]?\\d{3}[\\s.-]?\\d{2}[\\s.-]?\\d{2}",
+                            "repl": "+90 5** *** ** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+905\\d{9}\\b",
+                            "repl": "+90**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b905\\d{9}\\b",
+                            "repl": "90**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b0?5\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}\\b",
+                            "repl": "05*********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b0(?:2|3|4)\\d{2}[\\s.]?\\d{3}[\\s.]?\\d{2}[\\s.]?\\d{2}\\b",
+                            "repl": "0** *** ** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+[1-9]\\d{0,2}(?:[\\s.-]?\\d){7,14}\\b",
+                            "repl": "+************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b([A-Za-z0-9ÇĞİÖŞÜçğıöşü._%+-]+)@([A-Za-z0-9-]+)\\.([A-Za-z]{2,})\\b",
+                            "repl": "****@********.$3",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}\\s?[A-ZÇĞİÖŞÜ]{1,3}\\s?\\d{2,4}\\b",
+                            "repl": "[** *** ***]",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}[A-ZÇĞİÖŞÜ]{1,3}\\d{2,4}\\b",
+                            "repl": "[** *** ***]",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}[-/.]\\d{2}[-/.]\\d{4}\\b",
+                            "repl": "**-**-****",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "label",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{4}[-/.]\\d{2}[-/.]\\d{2}\\b",
+                            "repl": "****-**-**",
+                            "noMatch": "KEEP"
+                        }
+                    }
+                ]
+            },
+            {
+                "evt": [
+                    {
+                        "name": "^textChange$",
+                        "conds": [
+                            {
+                                "key": "ac",
+                                "operator": "BOOLEAN",
+                                "values": [
+                                    "true"
+                                ],
+                                "type": "ep"
+                            }
+                        ]
+                    }
+                ],
+                "acts": [
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\bTR\\d{2}(?:\\s?\\d{4}){5}\\s?\\d{2}\\b",
+                            "repl": "TR** **** **** **** **** **** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b(TR\\d{2})(\\d{22})\\b",
+                            "repl": "$1**********************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b([A-Z]{2}\\d{2})([A-Z0-9]{11,30})\\b",
+                            "repl": "$1******************************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b(\\d{4})(?:[\\s-]?\\d{4}){3}\\b",
+                            "repl": "$1************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b[1-9]\\d{2}(?:\\s?\\d{3}){2}\\s?\\d{2}\\b",
+                            "repl": "***********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b[1-9]\\d{9}\\b",
+                            "repl": "**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+90[\\s.-]+5\\d{2}[\\s.-]?\\d{3}[\\s.-]?\\d{2}[\\s.-]?\\d{2}",
+                            "repl": "+90 5** *** ** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+905\\d{9}\\b",
+                            "repl": "+90**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b905\\d{9}\\b",
+                            "repl": "90**********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b0?5\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}\\b",
+                            "repl": "05*********",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b0(?:2|3|4)\\d{2}[\\s.]?\\d{3}[\\s.]?\\d{2}[\\s.]?\\d{2}\\b",
+                            "repl": "0** *** ** **",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\+[1-9]\\d{0,2}(?:[\\s.-]?\\d){7,14}\\b",
+                            "repl": "+************",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b([A-Za-z0-9ÇĞİÖŞÜçğıöşü._%+-]+)@([A-Za-z0-9-]+)\\.([A-Za-z]{2,})\\b",
+                            "repl": "****@********.$3",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}\\s?[A-ZÇĞİÖŞÜ]{1,3}\\s?\\d{2,4}\\b",
+                            "repl": "[** *** ***]",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}[A-ZÇĞİÖŞÜ]{1,3}\\d{2,4}\\b",
+                            "repl": "[** *** ***]",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{2}[-/.]\\d{2}[-/.]\\d{4}\\b",
+                            "repl": "**-**-****",
+                            "noMatch": "KEEP"
+                        }
+                    },
+                    {
+                        "type": "REPL",
+                        "tgt": {
+                            "attributes": [
+                                "value",
+                                "placeholder",
+                                "accessibilityLabel"
+                            ]
+                        },
+                        "args": {
+                            "ptrn": "\\b\\d{4}[-/.]\\d{2}[-/.]\\d{2}\\b",
+                            "repl": "****-**-**",
+                            "noMatch": "KEEP"
+                        }
+                    }
+                ]
+            }
         ]
     },
     "features": {
@@ -263,7 +1035,10 @@
             "value": false
         },
         "context_trigger": {
-            "value": false
+            "value": true
+        },
+        "survey": {
+            "value": true
         }
     },
     "feature_configs": {

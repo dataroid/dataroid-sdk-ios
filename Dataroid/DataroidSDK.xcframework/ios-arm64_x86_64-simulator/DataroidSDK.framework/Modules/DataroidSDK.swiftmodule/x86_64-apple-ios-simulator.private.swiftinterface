@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DataroidSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name DataroidSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AdSupport
 import CommonCrypto
 import Compression
@@ -37,7 +37,9 @@ import zlib
 }
 public enum Platform : Swift.String, Swift.Codable {
   case iOS
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -48,7 +50,9 @@ public enum Platform : Swift.String, Swift.Codable {
   case inApp
   case geofence
   case actionBased
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -58,7 +62,9 @@ public enum Platform : Swift.String, Swift.Codable {
   case unread
   case read
   case dismissed
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -77,9 +83,11 @@ public enum Platform : Swift.String, Swift.Codable {
   @objc final public let pushEvent: DataroidSDK.PushEvent?
   final public let inAppMessage: DataroidSDK.InAppMessage?
   final public let actionBasedMessage: DataroidSDK.ActionBasedMessage?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var payload: Swift.String? {
     @objc get
   }
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class FTS5Config : DataroidSDK.FTSConfig {
@@ -98,7 +106,9 @@ public enum Platform : Swift.String, Swift.Codable {
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -112,7 +122,9 @@ public enum Platform : Swift.String, Swift.Codable {
   case thursday
   case friday
   case saturday
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -150,19 +162,29 @@ extension DataroidSDK.UserAttributes {
 }
 @objc(DTRSwitchButtonTrackingAttributes) @objcMembers final public class SwitchButtonTrackingAttributes : DataroidSDK.UIEventTrackingAttributes {
   @objc public init(switchButton: UIKit.UISwitch)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(className: Swift.String, isChecked: Swift.Bool, accessibilityLabel: Swift.String? = nil, componentId: Swift.String? = nil, coordinates: DataroidSDK.UIViewPixelCoordinate? = nil, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
 @objc public protocol InAppClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc var inAppMessageListenerDelegate: (any DataroidSDK.InAppMessageListener)? { get set }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc var alertTapListenerDelegate: (any DataroidSDK.InAppMessageAlertTapListener)? { get set }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc var alertDeeplinkHandlerDelegate: (any DataroidSDK.InAppMessageAlertDeeplinkHandler)? { get set }
+  #endif
 }
 @objc(DTRInAppMessageAvailabilityOption) public enum InAppMessageAvailabilityOption : Swift.Int, Swift.Codable {
   case availableHours
   case anytime
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -245,6 +267,22 @@ public struct InAppMessageDeliverySchedule : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
+@objc(DTRInAppMessageDeliveryType) public enum InAppMessageDeliveryType : Swift.Int, Swift.Codable {
+  case standard
+  case holdout
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension DataroidSDK.InAppMessageDeliveryType : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class DataroidPredefinedEvent : ObjectiveC.NSObject {
   @objc public static let viewTrackingStart: Swift.String
   @objc public static let viewTrackingStop: Swift.String
@@ -260,6 +298,8 @@ public struct InAppMessageDeliverySchedule : Swift.Codable {
   @objc public static let inAppMessageRead: Swift.String
   @objc public static let inAppMessageClose: Swift.String
   @objc public static let inAppMessageFetched: Swift.String
+  @objc public static let inAppExposureHoldout: Swift.String
+  @objc public static let goalAchievedHoldout: Swift.String
   @objc public static let sdkFirstOpen: Swift.String
   @objc public static let deviceUpdateSettings: Swift.String
   @objc public static let apmNetworkError: Swift.String
@@ -287,6 +327,9 @@ public struct InAppMessageDeliverySchedule : Swift.Codable {
   @objc public static let crash: Swift.String
   @objc public static let capped: Swift.String
   @objc public static let contextTriggered: Swift.String
+  @objc public static let surveysFetched: Swift.String
+  @objc public static let surveyDisplayed: Swift.String
+  @objc public static let surveyEnded: Swift.String
   @objc deinit
 }
 @objc public protocol CommerceClientProtocol {
@@ -294,7 +337,7 @@ public struct InAppMessageDeliverySchedule : Swift.Codable {
   @objc func collectSearch(_ attributes: DataroidSDK.SearchEventAttributes)
   @objc func collectViewProduct(_ attributes: DataroidSDK.ViewProductEventAttributes)
   @objc func collectViewCategory(_ attributes: DataroidSDK.ViewCategoryEventAttributes)
-  @objc func collectAddToCard(_ attributes: DataroidSDK.AddToCardEventAttributes)
+  @objc func collectAddToCart(_ attributes: DataroidSDK.AddToCartEventAttributes)
   @objc func collectRemoveFromCart(_ attributes: DataroidSDK.RemoveFromCartEventAttributes)
   @objc func collectClearCart(_ attributes: DataroidSDK.ClearCartEventAttributes)
   @objc func collectStartCheckout(_ attributes: DataroidSDK.StartCheckoutEventAttributes)
@@ -343,14 +386,14 @@ extension Swift.String : DataroidSDK.URLStringConvertible {
     case noLocations
     case locationManagerFailed(any Swift.Error)
   }
-  public typealias LocationCompletion = (DataroidSDK.Result<CoreLocation.CLLocation>) -> Swift.Void
+  public typealias LocationCompletion = (DataroidSDK.Result<_LocationEssentials.CLLocation>) -> Swift.Void
   @objc override dynamic public init()
   final public func fetch(_ completion: @escaping DataroidSDK.LocationFetcher.LocationCompletion)
   final public func cancel()
   @objc deinit
 }
 extension DataroidSDK.LocationFetcher : CoreLocation.CLLocationManagerDelegate {
-  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])
   @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
 }
 @objc(DTRRemoveFromCartEventAttributes) @objcMembers final public class RemoveFromCartEventAttributes : DataroidSDK.Attributes {
@@ -378,14 +421,6 @@ extension DataroidSDK.LocationFetcher : CoreLocation.CLLocationManagerDelegate {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc(DTRAddToCardEventAttributes) @objcMembers final public class AddToCardEventAttributes : DataroidSDK.Attributes {
-  @objc public init(product: DataroidSDK.Product)
-  @objc @discardableResult
-  final public func addValue(_ value: Foundation.Decimal) -> DataroidSDK.AddToCardEventAttributes
-  @objc @discardableResult
-  final public func addTotalCartValue(_ value: Foundation.Decimal) -> DataroidSDK.AddToCardEventAttributes
-  @objc deinit
-}
 @objc(DTRModuleTag) public enum ModuleTag : Swift.UInt {
   case actionBased = 0
   case analytics = 1
@@ -409,7 +444,10 @@ extension DataroidSDK.LocationFetcher : CoreLocation.CLLocationManagerDelegate {
   case webBridge = 19
   case contextTrigger = 20
   case idAllocation = 21
+  case survey = 22
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt)
+  #endif
   public typealias RawValue = Swift.UInt
   public var rawValue: Swift.UInt {
     get
@@ -436,7 +474,9 @@ extension DataroidSDK.ModuleTag : Swift.CustomStringConvertible {
   @objc override dynamic public var hash: Swift.Int {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  #endif
   @objc public func formUnion(_ other: DataroidSDK.ConnectionType)
   @objc public func formIntersection(_ other: DataroidSDK.ConnectionType)
   @objc public func formSymmetricDifference(_ other: DataroidSDK.ConnectionType)
@@ -451,11 +491,15 @@ extension DataroidSDK.ModuleTag : Swift.CustomStringConvertible {
 extension SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public func dataroidTracker(viewLabel: Swift.String) -> some SwiftUICore.View
   
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func startTracking(viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras? = nil)
+  #endif
   @_Concurrency.MainActor @preconcurrency public func stopTracking(viewLabel: Swift.String)
 }
 @_inheritsConvenienceInitializers @objc(DTRAppListener) final public class ApplicationListener : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func didFinishLaunching(with launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil)
+  #endif
   @objc final public func didRegisterForRemoteNotifications(with deviceToken: Foundation.Data)
   @objc final public func userNotificationCenterDidReceive(_ response: UserNotifications.UNNotificationResponse)
   @objc override dynamic public init()
@@ -488,6 +532,7 @@ public struct ActionBasedMessage : Swift.Codable {
   @objc final public var screenInteraction: DataroidSDK.ScreenInteractionConfig
   @objc final public var screenTracking: DataroidSDK.ScreenTrackingConfig
   @objc final public var snapshot: DataroidSDK.SnapshotConfig
+  @objc final public var survey: DataroidSDK.SurveyConfig
   @objc final public var notification: DataroidSDK.NotificationConfig
   @objc final public var previousDomainParameter: Swift.String?
   @objc final public var blacklistedEvents: Swift.Set<Swift.String>
@@ -498,7 +543,9 @@ public struct ActionBasedMessage : Swift.Codable {
     @objc get
     @objc set
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(sdkKey: Swift.String, serverURL: Swift.String, appGroup: Swift.String, languageCode: Swift.String, databaseConfig: DataroidSDK.DatabaseConfig?)
+  #endif
   @objc convenience public init(sdkKey: Swift.String, serverURL: Swift.String, appGroup: Swift.String, languageCode: Swift.String = appDefaultLanguage)
   @objc deinit
 }
@@ -577,6 +624,7 @@ public enum NotificationInfoKey {
       case storeInbox
       case inboxExpiration
       case userId
+      case deviceId
       case conversionRules
       case sdkKey
       case eventAttributes
@@ -584,13 +632,21 @@ public enum NotificationInfoKey {
       case intAttributes
       case boolAttributes
       case notificationType
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
+      #endif
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(stringValue: Swift.String)
+      #endif
+      #if compiler(>=5.3) && $NonescapableTypes
       public init?(intValue: Swift.Int)
+      #endif
       public typealias RawValue = Swift.String
+      #if compiler(>=5.3) && $NonescapableTypes
       public var intValue: Swift.Int? {
         get
       }
+      #endif
       public var rawValue: Swift.String {
         get
       }
@@ -624,14 +680,22 @@ public enum NotificationInfoKey {
 @objc public protocol CrashReportingClientProtocol {
   @objc func collectError(_ error: Foundation.NSError, stacktrace: [Swift.String])
   @objc func collectException(_ exception: Foundation.NSException, stacktrace: [Swift.String])
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func collectExternalError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ExternalExceptionFrame]?, crashSource: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func collectExternalException(exceptionName: Swift.String, reason: Swift.String?, crashSource: Swift.String)
+  #endif
 }
 extension DataroidSDK.Dataroid : DataroidSDK.CrashReportingClientProtocol {
   @objc final public func collectError(_ error: Foundation.NSError, stacktrace: [Swift.String] = Thread.callStackSymbols)
   @objc final public func collectException(_ exception: Foundation.NSException, stacktrace: [Swift.String] = Thread.callStackSymbols)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func collectExternalError(uuid: Swift.String, exceptionType: Swift.String, reason: Swift.String?, frames: [DataroidSDK.ExternalExceptionFrame]?, crashSource: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func collectExternalException(exceptionName: Swift.String, reason: Swift.String?, crashSource: Swift.String)
+  #endif
 }
 @objc extension UIKit.UITextField {
   @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_containsSensitiveObject: Swift.Bool {
@@ -687,10 +751,12 @@ extension DataroidSDK.Dataroid : DataroidSDK.CrashReportingClientProtocol {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers final public class NetworkConfig : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public var trustPolicies: [DataroidSDK.DataroidTrustPolicy]? {
     @objc get
     @objc set
   }
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -701,9 +767,15 @@ extension DataroidSDK.Dataroid : DataroidSDK.DeeplinkClientProtocol {
   @objc final public func collectDeeplink(_ attributes: DataroidSDK.DeeplinkAttributes)
 }
 @objc public protocol AppInboxClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc var delegate: (any DataroidSDK.AppInboxDelegate)? { get set }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func fetchMessages() -> [DataroidSDK.InboxMessage]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func fetchMessages(query: DataroidSDK.AppInboxQuery?) -> [DataroidSDK.InboxMessage]?
+  #endif
   @objc func deleteMessages(ids: [Swift.Int64]) -> Swift.Bool
   @objc func readMessages(ids: [Swift.Int64]) -> Swift.Bool
 }
@@ -745,7 +817,9 @@ extension DataroidSDK.Dataroid : DataroidSDK.DeeplinkClientProtocol {
 }
 @objc(DTRTextFieldTrackingAttributes) @objcMembers final public class TextFieldTrackingAttributes : DataroidSDK.UIEventTrackingAttributes {
   @objc public init(textField: UIKit.UITextField)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(className: Swift.String, value: Swift.String, placeholder: Swift.String? = nil, accessibilityLabel: Swift.String? = nil, componentId: Swift.String? = nil, coordinates: DataroidSDK.UIViewPixelCoordinate? = nil, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -767,7 +841,17 @@ extension DataroidSDK.Dataroid : DataroidSDK.DeeplinkClientProtocol {
     @objc get
     @objc set
   }
+  @objc final public var viewLabel: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc final public var viewClass: Swift.String? {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(url: Swift.String, method: DataroidSDK.HTTPMethod? = nil, statusCode: Swift.Int? = nil, duration: Foundation.TimeInterval? = nil, success: Swift.Bool? = nil)
+  #endif
   @objc convenience public init(url: Swift.String)
   @objc convenience public init(url: Swift.String, method: DataroidSDK.HTTPMethod, statusCode: Swift.Int, duration: Foundation.TimeInterval, success: Swift.Bool)
   final public func encode(to encoder: any Swift.Encoder) throws
@@ -812,9 +896,11 @@ final public class InAppMessageTrigger : Swift.Codable {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc(DTRPushEventManager) @objcMembers final public class PushEventManager : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public var latestPushEvent: DataroidSDK.PushEvent? {
     @objc get
   }
+  #endif
   final public var latest: (pushEvent: DataroidSDK.PushEvent, info: DataroidSDK.PushEventInfo)? {
     get
     set
@@ -844,12 +930,22 @@ public struct ActionBasedContent : Swift.Codable {
 @objc @objcMembers public class TriggeredContext : ObjectiveC.NSObject {
   @objc public var contextTriggerId: Swift.String
   @objc public var attributes: [Swift.String : Any]?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(contextTriggerId: Swift.String, attributes: [Swift.String : Any]?)
+  #endif
   @objc public init(contextTriggerId: Swift.String)
   @objc deinit
 }
 public var appDefaultLanguage: Swift.String {
   get
+}
+@objc(DTRAddToCartEventAttributes) @objcMembers final public class AddToCartEventAttributes : DataroidSDK.Attributes {
+  @objc public init(product: DataroidSDK.Product)
+  @objc @discardableResult
+  final public func addValue(_ value: Foundation.Decimal) -> DataroidSDK.AddToCartEventAttributes
+  @objc @discardableResult
+  final public func addTotalCartValue(_ value: Foundation.Decimal) -> DataroidSDK.AddToCartEventAttributes
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers final public class LoggerConfig : ObjectiveC.NSObject {
   @objc final public var logLevel: DataroidSDK.LoggerLevel {
@@ -870,7 +966,9 @@ extension DataroidSDK.Dataroid : DataroidSDK.LanguageClientProtocol {
   @objc final public func updateLanguage(_ languageCode: Swift.String)
 }
 @objc(DTRPurchaseEventAttributes) @objcMembers final public class PurchaseEventAttributes : DataroidSDK.Attributes {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(currency: Swift.String, value: Foundation.Decimal, products: [DataroidSDK.Product]?, success: Swift.Bool)
+  #endif
   @objc @discardableResult
   final public func addTax(_ tax: Foundation.Decimal) -> DataroidSDK.PurchaseEventAttributes
   @objc @discardableResult
@@ -918,7 +1016,9 @@ extension DataroidSDK.Dataroid : DataroidSDK.LanguageClientProtocol {
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -927,7 +1027,9 @@ extension DataroidSDK.Dataroid : DataroidSDK.LanguageClientProtocol {
 public enum GeofencePushEventSource : Swift.String {
   case onEnter
   case onExit
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -937,7 +1039,9 @@ public enum GeofencePushEventSource : Swift.String {
   case oncePerEvent
   case oncePerSession
   case everyTime
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -952,7 +1056,9 @@ extension DataroidSDK.InAppMessageDisplayFrequency : Swift.CustomStringConvertib
   case days
   case hours
   case minutes
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -967,33 +1073,46 @@ extension DataroidSDK.InAppMessageCappingRuleTimeUnit : Swift.CustomStringConver
   @objc func contextTriggered(context: DataroidSDK.TriggeredContext)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class UserNotificationIntegrator : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public var inbox: DataroidSDK.AppInbox? {
     @objc get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func initialize(config: DataroidSDK.DataroidConfig) -> DataroidSDK.UserNotificationIntegrator?
+  #endif
   @objc(processWithContent:completion:) final public func process(content: UserNotifications.UNMutableNotificationContent, _ completion: @escaping (UserNotifications.UNMutableNotificationContent) -> Swift.Void)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(DTRLongPressTrackingAttributes) @objcMembers final public class LongPressTrackingAttributes : DataroidSDK.TapTrackingAttributes {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override public init(touchPoint: DataroidSDK.TouchPoint, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   @objc deinit
 }
 @objc(DTRInAppMessageListener) public protocol InAppMessageListener {
   @objc optional func didReceiveInAppMessage(content: DataroidSDK.InAppMessageContent)
   @objc optional func didReceiveCustomInAppMessage(content: DataroidSDK.InAppMessageCustomContent)
+  @objc optional func willShowInApp(_ inappDisplayInfo: DataroidSDK.InAppDisplayInfo)
 }
 @objc(DTRInAppMessageAlertTapListener) public protocol InAppMessageAlertTapListener {
   @objc optional func didTapNativeInapp(button: DataroidSDK.InAppMessageButton, content: DataroidSDK.InAppMessageContent)
   @objc optional func didTapCustomInapp(button: DataroidSDK.InAppMessageButton, content: DataroidSDK.InAppMessageCustomContent)
 }
 @objc(DTRInAppMessageAlertDeeplinkHandler) public protocol InAppMessageAlertDeeplinkHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func shouldHandleDeeplink(deeplink: Swift.String?)
+  #endif
 }
 @objc(DTRScreenTracker) public protocol ScreenTracker {
   @objc func startTracking(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func startTracking(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras?)
+  #endif
   @objc func startTracking(viewClass: Swift.String, viewLabel: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func startTracking(viewClass: Swift.String, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras?)
+  #endif
   @objc func stopTracking(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
   @objc func stopTracking(viewClass: Swift.String, viewLabel: Swift.String)
 }
@@ -1026,11 +1145,15 @@ extension DataroidSDK.Dataroid : DataroidSDK.CustomEventClientProtocol {
   @objc final public func collectEvent(name: Swift.String)
 }
 @_inheritsConvenienceInitializers @objc(DTRDoubleTapTrackingAttributes) @objcMembers final public class DoubleTapTrackingAttributes : DataroidSDK.TapTrackingAttributes {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override public init(touchPoint: DataroidSDK.TouchPoint, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   @objc deinit
 }
 @objc public protocol APMClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc var delegate: (any DataroidSDK.AutoCollectingApmListener)? { get set }
+  #endif
   @objc func collectHTTPCall(_ attributes: DataroidSDK.HTTPCallAttributes)
   @objc func collectNetworkError(_ attributes: DataroidSDK.NetworkErrorAttributes)
 }
@@ -1069,8 +1192,12 @@ extension DataroidSDK.Attributes {
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func instanceFromString(_ string: Swift.String) -> DataroidSDK.Gender?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1115,7 +1242,9 @@ infix operator <- : ColumnAssignment
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1127,7 +1256,9 @@ infix operator <- : ColumnAssignment
   @objc final public let methodName: Swift.String?
   @objc final public let column: Swift.Int
   @objc final public var inProject: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(line: Swift.Int, file: Swift.String?, methodName: Swift.String?, column: Swift.Int, inProject: Swift.Bool = false)
+  #endif
   @objc deinit
   final public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -1139,7 +1270,9 @@ infix operator <- : ColumnAssignment
   case info = 3
   case debug = 4
   case verbose = 5
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt)
+  #endif
   public typealias RawValue = Swift.UInt
   public var rawValue: Swift.UInt {
     get
@@ -1183,7 +1316,9 @@ extension DataroidSDK.DeeplinkAttributes {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class DatabaseConfig : ObjectiveC.NSObject {
   @objc final public var resetDatabase: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(databaseEncryptionKey: [Swift.UInt8]?, databaseEncryptionEnabled: Swift.Bool)
+  #endif
   @objc final public func migrateToRawKey(from previousDatabaseEncryptionKey: Swift.String)
   @objc deinit
 }
@@ -1201,11 +1336,15 @@ extension DataroidSDK.DeeplinkAttributes {
     @objc override dynamic public var hash: Swift.Int {
       @objc get
     }
+    #if compiler(>=5.3) && $NonescapableTypes
     @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+    #endif
     @objc public func formUnion(_ other: DataroidSDK.NetworkErrorAttributes.ErrorType)
     @objc public func formIntersection(_ other: DataroidSDK.NetworkErrorAttributes.ErrorType)
     @objc public func formSymmetricDifference(_ other: DataroidSDK.NetworkErrorAttributes.ErrorType)
+    #if compiler(>=5.3) && $NonescapableTypes
     @objc public init?(error: Foundation.NSError)
+    #endif
     @objc override dynamic public var description: Swift.String {
       @objc get
     }
@@ -1227,7 +1366,17 @@ extension DataroidSDK.DeeplinkAttributes {
     @objc get
     @objc set
   }
+  @objc final public var viewLabel: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc final public var viewClass: Swift.String? {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(url: Swift.String, method: DataroidSDK.HTTPMethod? = nil, duration: Foundation.TimeInterval? = nil, errorType: DataroidSDK.NetworkErrorAttributes.ErrorType? = nil, exception: Swift.String? = nil)
+  #endif
   @objc convenience public init(url: Swift.String)
   @objc convenience public init(url: Swift.String, method: DataroidSDK.HTTPMethod, duration: Foundation.TimeInterval, errorType: DataroidSDK.NetworkErrorAttributes.ErrorType, exception: Swift.String)
   final public func encode(to encoder: any Swift.Encoder) throws
@@ -1276,8 +1425,12 @@ final public class InAppMessage : Swift.Codable {
 @objc @_inheritsConvenienceInitializers @objcMembers final public class DTRURLSessionCollector : ObjectiveC.NSObject {
   @objc public static let shared: DataroidSDK.DTRURLSessionCollector
   @objc final public func startTracking(task: Foundation.URLSessionTask)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func endTracking(task: Foundation.URLSessionTask?, data: Foundation.Data?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func endTracking(url: Foundation.URL, data: Foundation.Data?)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1291,7 +1444,9 @@ final public class InAppMessage : Swift.Codable {
   @objc final public var variant: Swift.String?
   @objc final public var category: Swift.String?
   @objc final public var currency: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(id: Swift.String, name: Swift.String, quantity: Swift.Int, price: Foundation.Decimal, currency: Swift.String)
+  #endif
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -1312,21 +1467,43 @@ extension Foundation.UUID {
   @objc deinit
 }
 @objc public protocol LoggerClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func verbose(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func debug(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func info(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func warning(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc func error(_ message: Swift.String?)
+  #endif
 }
 extension DataroidSDK.Dataroid : DataroidSDK.LoggerClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func verbose(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func debug(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func info(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func warning(_ message: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func error(_ message: Swift.String?)
+  #endif
 }
 @objc(DTRUIEventTrackingAttributes) @objcMembers public class UIEventTrackingAttributes : ObjectiveC.NSObject, Swift.Encodable {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -1364,7 +1541,9 @@ extension DataroidSDK.Dataroid : DataroidSDK.WebBridgeClientProtocol {
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1376,8 +1555,12 @@ extension DataroidSDK.Dataroid : DataroidSDK.WebBridgeClientProtocol {
   @objc deinit
 }
 public protocol SnapshotCollector : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   var pathURL: Foundation.URL? { get set }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func takeSnapshot(viewId: Swift.String, completion: @escaping ((any Swift.Error)?, Foundation.URL?) -> Swift.Void)
+  #endif
   func setLoggerDelegate(_ delegate: any DataroidSDK.SnapshotLogger)
 }
 extension DataroidSDK.SnapshotCollector {
@@ -1404,8 +1587,12 @@ extension UserNotifications.UNNotificationContent {
 }
 @_hasMissingDesignatedInitializers @objcMembers @objc(DTRAppInbox) final public class AppInbox : ObjectiveC.NSObject {
   @objc weak final public var delegate: (any DataroidSDK.AppInboxDelegate)?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func fetchMessages() -> [DataroidSDK.InboxMessage]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func fetchMessages(query: DataroidSDK.AppInboxQuery?) -> [DataroidSDK.InboxMessage]?
+  #endif
   @objc final public func deleteMessages(ids: [Swift.Int64]) -> Swift.Bool
   @objc final public func readMessages(ids: [Swift.Int64]) -> Swift.Bool
   @objc deinit
@@ -1431,7 +1618,9 @@ public enum InAppMessageAttributeConditionOperation : Swift.String, Swift.Codabl
   case between
   case exist
   case none
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1441,7 +1630,9 @@ public protocol SnapshotLogger : AnyObject {
   func dataroidLog(_ level: DataroidSDK.LoggerLevel, file: Swift.String, line: Swift.Int, _ message: Swift.String)
 }
 @objc(DTRTapTrackingAttributes) @objcMembers public class TapTrackingAttributes : DataroidSDK.UIEventTrackingAttributes {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(touchPoint: DataroidSDK.TouchPoint, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -1465,12 +1656,16 @@ extension DataroidSDK.Result {
   public var isSuccess: Swift.Bool {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var value: Value? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var error: (any Swift.Error)? {
     get
   }
+  #endif
   public func map<T>(_ transform: (Value) -> T) -> DataroidSDK.Result<T>
   public func flatMap<T>(_ transform: (Value) -> DataroidSDK.Result<T>) -> DataroidSDK.Result<T>
 }
@@ -1522,7 +1717,9 @@ extension DataroidSDK.APMAttributes {
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1534,10 +1731,14 @@ extension DataroidSDK.APMAttributes {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 extension DataroidSDK.UIViewPixelCoordinate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  #endif
 }
 @objc(DTRSwipeTrackingAttributes) @objcMembers public class SwipeTrackingAttributes : DataroidSDK.UIEventTrackingAttributes {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(startPoint: CoreFoundation.CGPoint, endPoint: CoreFoundation.CGPoint, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   override public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -1549,7 +1750,9 @@ extension DataroidSDK.UIViewPixelCoordinate {
 }
 @objc(DTRButtonTrackingAttributes) @objcMembers final public class ButtonTrackingAttributes : DataroidSDK.UIEventTrackingAttributes {
   @objc public init(button: UIKit.UIButton)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(className: Swift.String, label: Swift.String? = nil, accessibilityLabel: Swift.String? = nil, componentId: Swift.String? = nil, coordinates: DataroidSDK.UIViewPixelCoordinate? = nil, viewLabel: Swift.String? = nil, viewClass: Swift.String? = nil)
+  #endif
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
@@ -1577,16 +1780,20 @@ public struct InAppMessageAvailabilityOptionDetail : Swift.Codable {
   public typealias ComponentInteraction = DataroidSDK.ComponentInteractionClientProtocol
   public typealias ScreenInteraction = DataroidSDK.ScreenInteractionClientProtocol
   public typealias InApp = DataroidSDK.InAppClientProtocol
+  public typealias Survey = DataroidSDK.SurveyClientProtocol
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc weak final public var contextTriggerListenerDelegate: (any DataroidSDK.ContextTriggerListenerDelegate)? {
     @objc get
     @objc set
   }
+  #endif
   @objc final public let config: DataroidSDK.DataroidConfig
   @objc final public let pushEventManager: DataroidSDK.PushEventManager
   @objc final public let geolocation: any DataroidSDK.GeolocationClientProtocol
   @objc final public let commerce: any DataroidSDK.CommerceClientProtocol
   @objc final public let apm: any DataroidSDK.APMClientProtocol
   @objc final public let inApp: any DataroidSDK.InAppClientProtocol
+  @objc final public let survey: any DataroidSDK.SurveyClientProtocol
   @objc final public let screenTracking: any DataroidSDK.ScreenTrackingClientProtocol
   @objc final public let appInbox: (any DataroidSDK.AppInboxClientProtocol)?
   @objc final public let componentInteraction: any DataroidSDK.ComponentInteractionClientProtocol
@@ -1594,7 +1801,9 @@ public struct InAppMessageAvailabilityOptionDetail : Swift.Codable {
   @objc final public var appListener: DataroidSDK.ApplicationListener {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func initialize(config: DataroidSDK.DataroidConfig) -> DataroidSDK.Dataroid?
+  #endif
   @objc deinit
   @objc final public func pauseEventCollection()
   @objc final public func resumeEventCollection()
@@ -1641,159 +1850,278 @@ extension DataroidSDK.Dataroid : DataroidSDK.UserClientProtocol {
   @objc public init(category: Swift.String)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(DBInboxMessage) public class DBInboxMessage : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+@objc(DTRInAppDisplayType) public enum InAppDisplayType : Swift.Int {
+  case native
+  case custom
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(DTRInAppDisplayInfo) @objcMembers final public class InAppDisplayInfo : ObjectiveC.NSObject {
+  @objc final public let type: DataroidSDK.InAppDisplayType
+  @objc final public let inappId: Swift.String?
+  @objc final public let triggerEvent: Swift.String?
+  @objc final public let dynamicAttributes: [Swift.String : Any]?
+  @objc final public let location: Swift.String?
+  @objc final public let horizontalLocation: Swift.String?
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc(DTRSurveyDisplayInfo) @objcMembers final public class SurveyDisplayInfo : ObjectiveC.NSObject {
+  @objc final public let surveyId: Swift.String?
+  @objc final public let triggerEvent: Swift.String?
+  @objc final public let dynamicAttributes: [Swift.String : Any]?
+  @objc final public let location: Swift.String?
+  @objc final public let horizontalLocation: Swift.String?
+  @objc deinit
+}
+@objc(DTRSurveyListener) public protocol SurveyListener {
+  @objc optional func willShowSurvey(_ surveyDisplayInfo: DataroidSDK.SurveyDisplayInfo)
+}
+@objc public protocol SurveyClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc var surveyListenerDelegate: (any DataroidSDK.SurveyListener)? { get set }
+  #endif
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class SurveyConfig : ObjectiveC.NSObject {
+  @objc final public var enabled: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias DBInboxMessageCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DBInboxMessage) nonisolated public class DBInboxMessage : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
+  @objc deinit
+}
+public typealias DBInboxMessageCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DBInboxMessage {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBInboxMessage>
-  @objc @NSManaged dynamic public var customerId: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var customerId: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var expirationDate: Foundation.Date? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var expirationDate: Foundation.Date? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var id: Swift.Int64 {
+  #endif
+  @objc @NSManaged nonisolated dynamic public var id: Swift.Int64 {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var pushId: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var pushId: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var receivedDate: Foundation.Date? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var receivedDate: Foundation.Date? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var scheduleId: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var scheduleId: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var status: Swift.Int16 {
+  #endif
+  @objc @NSManaged nonisolated dynamic public var status: Swift.Int16 {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var type: Swift.Int16 {
+  @objc @NSManaged nonisolated dynamic public var type: Swift.Int16 {
     @objc get
     @objc set
   }
 }
-@_inheritsConvenienceInitializers @objc(DBAPMRecord) public class DBAPMRecord : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+public typealias AppInboxFoundationFrameworkSet = Foundation.NSSet
+public typealias AppInboxCoreDataFrameworkManagedObject = CoreData.NSManagedObject
+public typealias DBAPMRecordCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DBAPMRecord) nonisolated public class DBAPMRecord : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
   @objc deinit
 }
+public typealias DBAPMRecordCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DBAPMRecord {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBAPMRecord>
-  @objc @NSManaged dynamic public var id: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var id: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
 }
-@_inheritsConvenienceInitializers @objc(DBEvent) public class DBEvent : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+public typealias DBEventCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DBEvent) nonisolated public class DBEvent : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
   @objc deinit
 }
+public typealias DBEventCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DBEvent {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBEvent>
-  @objc @NSManaged dynamic public var id: Swift.Int64 {
+  @objc @NSManaged nonisolated dynamic public var id: Swift.Int64 {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
 }
-@_inheritsConvenienceInitializers @objc(DBGeofence) public class DBGeofence : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+public typealias DBGeofenceCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DBGeofence) nonisolated public class DBGeofence : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
   @objc deinit
 }
+public typealias DBGeofenceCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DBGeofence {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBGeofence>
-  @objc @NSManaged dynamic public var id: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var id: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
 }
-@_inheritsConvenienceInitializers @objc(DTRDBSession) public class DTRDBSession : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+public typealias DTRDBSessionCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DTRDBSession) nonisolated public class DTRDBSession : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
   @objc deinit
 }
+public typealias DTRDBSessionCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DTRDBSession {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DTRDBSession>
-  @objc @NSManaged dynamic public var id: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var id: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
 }
-@_inheritsConvenienceInitializers @objc(DBGoal) public class DBGoal : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+public typealias AppConnectFoundationFrameworkSet = Foundation.NSSet
+public typealias AppConnectCoreDataFrameworkManagedObject = CoreData.NSManagedObject
+public typealias DBGoalCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DBGoal) nonisolated public class DBGoal : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
   @objc deinit
 }
+public typealias DBGoalCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DBGoal {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBGoal>
-  @objc @NSManaged dynamic public var eventName: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var eventName: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var expDate: Foundation.Date? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var expDate: Foundation.Date? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var id: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var id: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
 }
-@_inheritsConvenienceInitializers @objc(DBActionBased) public class DBActionBased : CoreData.NSManagedObject {
-  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+public typealias GoalFoundationFrameworkSet = Foundation.NSSet
+public typealias GoalCoreDataFrameworkManagedObject = CoreData.NSManagedObject
+public typealias DBActionBasedCoreDataClassSet = Foundation.NSSet
+@_inheritsConvenienceInitializers @objc(DBActionBased) nonisolated public class DBActionBased : CoreData.NSManagedObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override nonisolated dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  #endif
   @objc deinit
 }
+public typealias DBActionBasedCoreDataPropertiesSet = Foundation.NSSet
 extension DataroidSDK.DBActionBased {
   @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<DataroidSDK.DBActionBased>
-  @objc @NSManaged dynamic public var date: Foundation.Date? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var date: Foundation.Date? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var delivered: Swift.Bool {
+  #endif
+  @objc @NSManaged nonisolated dynamic public var delivered: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var id: Swift.String? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var id: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var parentId: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var parentId: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @NSManaged dynamic public var payload: Swift.String? {
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc @NSManaged nonisolated dynamic public var payload: Swift.String? {
     @objc get
     @objc set
   }
+  #endif
 }
+public typealias ScheduledNotificationsFoundationFrameworkSet = Foundation.NSSet
+public typealias ScheduledNotificationsCoreDataFrameworkManagedObject = CoreData.NSManagedObject
 extension DataroidSDK.Platform : Swift.Equatable {}
 extension DataroidSDK.Platform : Swift.Hashable {}
 extension DataroidSDK.Platform : Swift.RawRepresentable {}
@@ -1812,6 +2140,9 @@ extension DataroidSDK.InAppMessageScheduleDay : Swift.RawRepresentable {}
 extension DataroidSDK.InAppMessageAvailabilityOption : Swift.Equatable {}
 extension DataroidSDK.InAppMessageAvailabilityOption : Swift.Hashable {}
 extension DataroidSDK.InAppMessageAvailabilityOption : Swift.RawRepresentable {}
+extension DataroidSDK.InAppMessageDeliveryType : Swift.Equatable {}
+extension DataroidSDK.InAppMessageDeliveryType : Swift.Hashable {}
+extension DataroidSDK.InAppMessageDeliveryType : Swift.RawRepresentable {}
 extension UIKit.UIWindow : UIKit.UIGestureRecognizerDelegate {}
 extension DataroidSDK.ModuleTag : Swift.Equatable {}
 extension DataroidSDK.ModuleTag : Swift.Hashable {}
@@ -1851,3 +2182,6 @@ extension DataroidSDK.InAppMessageAttributeConditionOperation : Swift.RawReprese
 extension DataroidSDK.InAppMessageActionType : Swift.Equatable {}
 extension DataroidSDK.InAppMessageActionType : Swift.Hashable {}
 extension DataroidSDK.InAppMessageActionType : Swift.RawRepresentable {}
+extension DataroidSDK.InAppDisplayType : Swift.Equatable {}
+extension DataroidSDK.InAppDisplayType : Swift.Hashable {}
+extension DataroidSDK.InAppDisplayType : Swift.RawRepresentable {}
