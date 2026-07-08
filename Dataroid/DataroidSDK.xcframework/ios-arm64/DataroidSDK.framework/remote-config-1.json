@@ -185,7 +185,7 @@
         "max_session_duration": {
             "value": 21600000
         },
-        "optimized_dispatch": {
+        "revalidate_immediate_dispatch": {
             "value": false
         },
         "immediateEventList": [

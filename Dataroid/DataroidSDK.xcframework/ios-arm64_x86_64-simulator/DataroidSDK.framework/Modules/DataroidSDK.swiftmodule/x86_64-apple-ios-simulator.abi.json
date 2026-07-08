@@ -78203,14 +78203,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig+SystemConfig.swift",
       "kind": "StringLiteral",
-      "offset": 3325,
-      "length": 20,
-      "value": "\"optimized_dispatch\""
+      "offset": 3323,
+      "length": 31,
+      "value": "\"revalidate_immediate_dispatch\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfig+SystemConfig.swift",
       "kind": "StringLiteral",
-      "offset": 3391,
+      "offset": 3400,
       "length": 31,
       "value": "\"user_update_dedup_ttl_seconds\""
     },
@@ -79015,14 +79015,21 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Web\/WebContentPresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 6180,
+      "offset": 2652,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Web\/WebContentPresenter.swift",
       "kind": "BooleanLiteral",
-      "offset": 6209,
+      "offset": 6620,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Web\/WebContentPresenter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6649,
       "length": 5,
       "value": "false"
     },

@@ -5,19 +5,19 @@
 #
 # Usage:
 # 1. Add this script to Build Phases -> Run Script
-# 2. Add DataroidSDK.xcframework path to "Input Files"
-# 3. Optionally add DataroidSnapshotSDK.xcframework as a second Input File
-# 4. Set script content to: ./path/to/build_helper.sh
+# 2. Set script content to: ./path/to/build_helper.sh
+# 3. If User Script Sandboxing is enabled, add DataroidSDK.xcframework path to "Input Files"
+# 4. Optionally add DataroidSnapshotSDK.xcframework as a second Input File
 #
 # Optional arguments:
 # --ignore-fatal-versions          Continue the build on a fatal SDK version response
 # --ignore-snapshot-version-check  Continue the build on a DataroidSnapshot version mismatch
 #
 # The script will:
-# - Read DataroidSDK.xcframework path from Input Files ($SCRIPT_INPUT_FILE_0)
-# - Optionally read DataroidSnapshotSDK.xcframework from $SCRIPT_INPUT_FILE_1
+# - Auto-detect DataroidSDK.xcframework when sandboxing is disabled, or read it from Input Files ($SCRIPT_INPUT_FILE_0)
+# - Optionally auto-detect DataroidSnapshotSDK.xcframework, or read it from $SCRIPT_INPUT_FILE_1
 # - Extract SDK version from framework's Info.plist
-# - Fail the build when core and snapshot versions do not match unless --ignore-snapshot-version-check is passed
+# - If DataroidSnapshot is provided, fail the build when core and snapshot versions do not match unless --ignore-snapshot-version-check is passed
 # - Send version check request to the Dataroid version status service
 # - Handle allow/warn/fatal responses appropriately
 
@@ -66,6 +66,47 @@ is_ignore_fatal_versions_enabled() {
 
 is_ignore_snapshot_version_check_enabled() {
     [ "${IGNORE_SNAPSHOT_VERSION_CHECK}" = "true" ]
+}
+
+is_valid_sdk_version() {
+    local VERSION="${1}"
+    [[ "${VERSION}" =~ ^[0-9]+(\.[0-9]+){1,2}([-+][A-Za-z0-9.]+)?$ ]]
+}
+
+find_framework_by_name() {
+    local FRAMEWORK_NAME="${1}"
+    local SEARCH_ROOT
+    local RESULT
+    local SCRIPT_DIR
+    local SCRIPT_PARENT_DIR
+
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    SCRIPT_PARENT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+    for SEARCH_ROOT in "${SCRIPT_DIR}" "${SCRIPT_PARENT_DIR}" "${PROJECT_DIR:-}" "${SRCROOT:-}"; do
+        if [ -z "${SEARCH_ROOT}" ] || [ ! -d "${SEARCH_ROOT}" ]; then
+            continue
+        fi
+
+        RESULT=$(find "${SEARCH_ROOT}" -maxdepth 8 \
+            \( -name ".git" -o -name "DerivedData" -o -name "build" -o -name ".build" \) -prune -o \
+            -type d -name "${FRAMEWORK_NAME}.xcframework" -print -quit)
+
+        if [ -n "${RESULT}" ]; then
+            echo "${RESULT}"
+            return 0
+        fi
+    done
+
+    return 1
+}
+
+detect_dataroid_sdk_framework_path() {
+    find_framework_by_name "DataroidSDK"
+}
+
+detect_dataroid_snapshot_sdk_framework_path() {
+    find_framework_by_name "DataroidSnapshotSDK"
 }
 
 dataroid_log() {
@@ -238,7 +279,7 @@ extract_version_from_framework() {
     local VERSION
     VERSION=$(extract_version_from_plist "${FRAMEWORK_INFO_PLIST}")
 
-    if [ -z "${VERSION}" ] || [ "${VERSION}" = "TBD_VERSION" ]; then
+    if ! is_valid_sdk_version "${VERSION}"; then
         dataroid_log "Could not extract valid ${VERSION_DESCRIPTOR} from ${FRAMEWORK_INFO_PLIST}"
         return 1
     fi
@@ -265,6 +306,7 @@ check_snapshot_version_match() {
     fi
     
     if [[ -z "${SNAPSHOT_FRAMEWORK_PATH}" ]]; then
+        dataroid_log "Skipping DataroidSnapshot version check because DataroidSnapshot was not provided."
         return 0
     fi
     
@@ -297,16 +339,53 @@ check_snapshot_version_match() {
 
 # Main script execution
 main() {
-    local FRAMEWORK_PATH="${SCRIPT_INPUT_FILE_0}"
-    local SNAPSHOT_FRAMEWORK_PATH="${SCRIPT_INPUT_FILE_1}"
+    local INPUT_FRAMEWORK_PATH="${SCRIPT_INPUT_FILE_0}"
+    local INPUT_SNAPSHOT_FRAMEWORK_PATH="${SCRIPT_INPUT_FILE_1}"
+    local FRAMEWORK_PATH
+    local SNAPSHOT_FRAMEWORK_PATH
     
     trim_log_file
     dataroid_log "Dataroid Build Helper Script Started..."
 
     parse_arguments "$@"
 
+    if [[ "${ENABLE_USER_SCRIPT_SANDBOXING:-}" = "YES" ]]; then
+        if [[ -n "${INPUT_FRAMEWORK_PATH}" ]]; then
+            FRAMEWORK_PATH="${INPUT_FRAMEWORK_PATH}"
+            dataroid_log "Using DataroidSDK framework from Input Files: ${FRAMEWORK_PATH}"
+        else
+            dataroid_log "User Script Sandboxing is enabled and DataroidSDK framework input was not provided."
+        fi
+    else
+        dataroid_log "Trying to find DataroidSDK framework automatically."
+        FRAMEWORK_PATH=$(detect_dataroid_sdk_framework_path)
+        if [[ -n "${FRAMEWORK_PATH}" ]]; then
+            dataroid_log "Auto-detected DataroidSDK framework at: ${FRAMEWORK_PATH}"
+        elif [[ -n "${INPUT_FRAMEWORK_PATH}" ]]; then
+            FRAMEWORK_PATH="${INPUT_FRAMEWORK_PATH}"
+            dataroid_log "Using DataroidSDK framework from Input Files: ${FRAMEWORK_PATH}"
+        fi
+    fi
+
+    if [[ "${ENABLE_USER_SCRIPT_SANDBOXING:-}" = "YES" ]]; then
+        if [[ -n "${INPUT_SNAPSHOT_FRAMEWORK_PATH}" ]]; then
+            SNAPSHOT_FRAMEWORK_PATH="${INPUT_SNAPSHOT_FRAMEWORK_PATH}"
+            dataroid_log "Using DataroidSnapshot framework from Input Files: ${SNAPSHOT_FRAMEWORK_PATH}"
+        else
+            dataroid_log "DataroidSnapshot framework input not provided. Skipping auto-detection because User Script Sandboxing is enabled."
+        fi
+    else
+        SNAPSHOT_FRAMEWORK_PATH=$(detect_dataroid_snapshot_sdk_framework_path)
+        if [[ -n "${SNAPSHOT_FRAMEWORK_PATH}" ]]; then
+            dataroid_log "Auto-detected DataroidSnapshot framework at: ${SNAPSHOT_FRAMEWORK_PATH}"
+        elif [[ -n "${INPUT_SNAPSHOT_FRAMEWORK_PATH}" ]]; then
+            SNAPSHOT_FRAMEWORK_PATH="${INPUT_SNAPSHOT_FRAMEWORK_PATH}"
+            dataroid_log "Using DataroidSnapshot framework from Input Files: ${SNAPSHOT_FRAMEWORK_PATH}"
+        fi
+    fi
+
     if [[ -z $FRAMEWORK_PATH ]]; then
-        dataroid_log "Framework path not found in Input Files! Please add DataroidSDK.xcframework to Input Files in Build Phases."
+        dataroid_log "DataroidSDK.xcframework was not found. Add it to Input Files, or disable User Script Sandboxing to allow auto-detection."
         exit 0
     fi
     
