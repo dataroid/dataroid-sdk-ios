@@ -2855,6 +2855,101 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "InternalClientProtocol",
+        "printedName": "InternalClientProtocol",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "postMessage",
+            "printedName": "postMessage(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@DataroidSDK@objc(pl)InternalClientProtocol(im)postMessage:",
+            "mangledName": "$s11DataroidSDK22InternalClientProtocolP11postMessageyySSF",
+            "moduleName": "DataroidSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.InternalClientProtocol>",
+            "sugared_genericSig": "<Self where Self : DataroidSDK.InternalClientProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@DataroidSDK@objc(pl)InternalClientProtocol",
+        "mangledName": "$s11DataroidSDK22InternalClientProtocolP",
+        "moduleName": "DataroidSDK",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -13664,6 +13759,47 @@
               "ObjC"
             ],
             "fixedbinaryorder": 22
+          },
+          {
+            "kind": "Var",
+            "name": "hybridBridge",
+            "printedName": "hybridBridge",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DataroidSDK.ModuleTag.Type) -> DataroidSDK.ModuleTag",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ModuleTag",
+                    "printedName": "DataroidSDK.ModuleTag",
+                    "usr": "c:@M@DataroidSDK@E@DTRModuleTag"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "DataroidSDK.ModuleTag.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ModuleTag",
+                        "printedName": "DataroidSDK.ModuleTag",
+                        "usr": "c:@M@DataroidSDK@E@DTRModuleTag"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@DataroidSDK@E@DTRModuleTag@DTRModuleTagHybridBridge",
+            "mangledName": "$s11DataroidSDK9ModuleTagO12hybridBridgeyA2CmF",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 23
           },
           {
             "kind": "Constructor",
@@ -54218,6 +54354,56 @@
           },
           {
             "kind": "Var",
+            "name": "internal",
+            "printedName": "internal",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "InternalClientProtocol",
+                "printedName": "any DataroidSDK.InternalClientProtocol",
+                "usr": "c:@M@DataroidSDK@objc(pl)InternalClientProtocol"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)Dataroid(py)internal",
+            "mangledName": "$s11DataroidSDK0A0C8internalAA22InternalClientProtocol_pvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "InternalClientProtocol",
+                    "printedName": "any DataroidSDK.InternalClientProtocol",
+                    "usr": "c:@M@DataroidSDK@objc(pl)InternalClientProtocol"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)Dataroid(im)internal",
+                "mangledName": "$s11DataroidSDK0A0C8internalAA22InternalClientProtocol_pvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "appListener",
             "printedName": "appListener",
             "children": [
@@ -70711,6 +70897,97 @@
       "value": "\"args\""
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 490,
+      "length": 27,
+      "value": "\"screenTracker.viewStarted\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 538,
+      "length": 27,
+      "value": "\"screenTracker.viewStopped\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 586,
+      "length": 22,
+      "value": "\"collectHttpCallEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 633,
+      "length": 26,
+      "value": "\"collectNetworkErrorEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 683,
+      "length": 25,
+      "value": "\"collectButtonClickEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 740,
+      "length": 33,
+      "value": "\"collectRadioButtonSelectedEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 796,
+      "length": 24,
+      "value": "\"collectTextChangeEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 845,
+      "length": 26,
+      "value": "\"collectToggleChangeEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 889,
+      "length": 19,
+      "value": "\"collectTouchEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 926,
+      "length": 19,
+      "value": "\"collectSwipeEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 967,
+      "length": 23,
+      "value": "\"collectLongPressEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeActionMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 1012,
+      "length": 23,
+      "value": "\"collectDoubleTapEvent\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/HybridBridge\/HybridBridgeAction.swift",
+      "kind": "StringLiteral",
+      "offset": 567,
+      "length": 6,
+      "value": "\"args\""
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/Dataroid\/ChainEventStateStoreItem.swift",
       "kind": "StringLiteral",
       "offset": 777,
@@ -72200,6 +72477,13 @@
       "offset": 1126,
       "length": 2,
       "value": "22"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Logging\/ModuleTag.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1155,
+      "length": 2,
+      "value": "23"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/External\/MD5.swift",
@@ -76278,21 +76562,21 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Factory\/Factory.swift",
       "kind": "StringLiteral",
-      "offset": 5881,
+      "offset": 5940,
       "length": 26,
       "value": "\".idAllocationManagerLock\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Factory\/Factory.swift",
       "kind": "StringLiteral",
-      "offset": 6058,
+      "offset": 6117,
       "length": 28,
       "value": "\".contextTriggerManagerLock\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Factory\/Factory.swift",
       "kind": "StringLiteral",
-      "offset": 6229,
+      "offset": 6288,
       "length": 20,
       "value": "\".surveyManagerLock\""
     },

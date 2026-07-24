@@ -93,6 +93,9 @@ public enum Platform : Swift.String, Swift.Codable {
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class FTS5Config : DataroidSDK.FTSConfig {
   @objc deinit
 }
+@objc public protocol InternalClientProtocol {
+  @objc func postMessage(_ data: Swift.String)
+}
 @objc public protocol DataroidScreenTrackingConfigurator : ObjectiveC.NSObjectProtocol {
   @objc var dtr_screenTrackingName: Swift.String { get }
 }
@@ -445,6 +448,7 @@ extension DataroidSDK.LocationFetcher : CoreLocation.CLLocationManagerDelegate {
   case contextTrigger = 20
   case idAllocation = 21
   case survey = 22
+  case hybridBridge = 23
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt)
   #endif
@@ -1781,6 +1785,7 @@ public struct InAppMessageAvailabilityOptionDetail : Swift.Codable {
   public typealias ScreenInteraction = DataroidSDK.ScreenInteractionClientProtocol
   public typealias InApp = DataroidSDK.InAppClientProtocol
   public typealias Survey = DataroidSDK.SurveyClientProtocol
+  public typealias Internal = DataroidSDK.InternalClientProtocol
   #if compiler(>=5.3) && $NonescapableTypes
   @objc weak final public var contextTriggerListenerDelegate: (any DataroidSDK.ContextTriggerListenerDelegate)? {
     @objc get
@@ -1798,6 +1803,7 @@ public struct InAppMessageAvailabilityOptionDetail : Swift.Codable {
   @objc final public let appInbox: (any DataroidSDK.AppInboxClientProtocol)?
   @objc final public let componentInteraction: any DataroidSDK.ComponentInteractionClientProtocol
   @objc final public let screenInteraction: any DataroidSDK.ScreenInteractionClientProtocol
+  @objc final public let `internal`: any DataroidSDK.InternalClientProtocol
   @objc final public var appListener: DataroidSDK.ApplicationListener {
     @objc get
   }

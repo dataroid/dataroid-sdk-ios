@@ -740,6 +740,7 @@ SWIFT_CLASS("_TtC11DataroidSDK14DatabaseConfig")
 @protocol SurveyClientProtocol;
 @protocol ScreenTrackingClientProtocol;
 @protocol ScreenInteractionClientProtocol;
+@protocol InternalClientProtocol;
 SWIFT_CLASS("_TtC11DataroidSDK8Dataroid")
 @interface Dataroid : NSObject
 @property (nonatomic, weak) id <ContextTriggerListenerDelegate> _Nullable contextTriggerListenerDelegate;
@@ -754,6 +755,7 @@ SWIFT_CLASS("_TtC11DataroidSDK8Dataroid")
 @property (nonatomic, readonly, strong) id <AppInboxClientProtocol> _Nullable appInbox;
 @property (nonatomic, readonly, strong) id <ComponentInteractionClientProtocol> _Nonnull componentInteraction;
 @property (nonatomic, readonly, strong) id <ScreenInteractionClientProtocol> _Nonnull screenInteraction;
+@property (nonatomic, readonly, strong) id <InternalClientProtocol> _Nonnull internal;
 @property (nonatomic, readonly, strong) DTRAppListener * _Nonnull appListener;
 + (Dataroid * _Nullable)initializeWithConfig:(DataroidConfig * _Nonnull)config SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1482,6 +1484,14 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTRInboxMessageType, "InboxMessageType", ope
   DTRInboxMessageTypeActionBased = 3,
 };
 
+SWIFT_PROTOCOL("_TtP11DataroidSDK22InternalClientProtocol_")
+@protocol InternalClientProtocol
+/// Processes a JSON message from hybrid SDK layers and routes it to the native SDK.
+/// \param data JSON string containing method, args and optional extraAttributes fields.
+///
+- (void)postMessage:(NSString * _Nonnull)data;
+@end
+
 SWIFT_CLASS("_TtC11DataroidSDK15LocationFetcher")
 @interface LocationFetcher : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1540,6 +1550,7 @@ typedef SWIFT_ENUM_NAMED(NSUInteger, DTRModuleTag, "ModuleTag", open) {
   DTRModuleTagContextTrigger = 20,
   DTRModuleTagIdAllocation = 21,
   DTRModuleTagSurvey = 22,
+  DTRModuleTagHybridBridge = 23,
 };
 
 SWIFT_CLASS_NAMED("MutableHttpCallAttributes")
@@ -2939,6 +2950,7 @@ SWIFT_CLASS("_TtC11DataroidSDK14DatabaseConfig")
 @protocol SurveyClientProtocol;
 @protocol ScreenTrackingClientProtocol;
 @protocol ScreenInteractionClientProtocol;
+@protocol InternalClientProtocol;
 SWIFT_CLASS("_TtC11DataroidSDK8Dataroid")
 @interface Dataroid : NSObject
 @property (nonatomic, weak) id <ContextTriggerListenerDelegate> _Nullable contextTriggerListenerDelegate;
@@ -2953,6 +2965,7 @@ SWIFT_CLASS("_TtC11DataroidSDK8Dataroid")
 @property (nonatomic, readonly, strong) id <AppInboxClientProtocol> _Nullable appInbox;
 @property (nonatomic, readonly, strong) id <ComponentInteractionClientProtocol> _Nonnull componentInteraction;
 @property (nonatomic, readonly, strong) id <ScreenInteractionClientProtocol> _Nonnull screenInteraction;
+@property (nonatomic, readonly, strong) id <InternalClientProtocol> _Nonnull internal;
 @property (nonatomic, readonly, strong) DTRAppListener * _Nonnull appListener;
 + (Dataroid * _Nullable)initializeWithConfig:(DataroidConfig * _Nonnull)config SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -3681,6 +3694,14 @@ typedef SWIFT_ENUM_NAMED(NSInteger, DTRInboxMessageType, "InboxMessageType", ope
   DTRInboxMessageTypeActionBased = 3,
 };
 
+SWIFT_PROTOCOL("_TtP11DataroidSDK22InternalClientProtocol_")
+@protocol InternalClientProtocol
+/// Processes a JSON message from hybrid SDK layers and routes it to the native SDK.
+/// \param data JSON string containing method, args and optional extraAttributes fields.
+///
+- (void)postMessage:(NSString * _Nonnull)data;
+@end
+
 SWIFT_CLASS("_TtC11DataroidSDK15LocationFetcher")
 @interface LocationFetcher : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -3739,6 +3760,7 @@ typedef SWIFT_ENUM_NAMED(NSUInteger, DTRModuleTag, "ModuleTag", open) {
   DTRModuleTagContextTrigger = 20,
   DTRModuleTagIdAllocation = 21,
   DTRModuleTagSurvey = 22,
+  DTRModuleTagHybridBridge = 23,
 };
 
 SWIFT_CLASS_NAMED("MutableHttpCallAttributes")
