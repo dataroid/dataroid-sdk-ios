@@ -38,11 +38,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XWzMLJDnlkIgtlH0IaGGqqW46LU=
+		6uwEM/XZ3yYRpj/4wKI7TpAH50A=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		urYRDkWhKz8PR0+/ckD+r8JgrgU=
+		FnlGf/XGHp5w14Ss+Dv/T5DPQ44=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+HA5Sq587wgFcQChcAQGr/sAqzw=
+		0gSqUQg25mXGFp4UiFKv10jmWIM=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		urYRDkWhKz8PR0+/ckD+r8JgrgU=
+		FnlGf/XGHp5w14Ss+Dv/T5DPQ44=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fwMj96D7vE4CYz8pDfTnZQi/nQU=
+		1ikABQu/50RHspKHr8cSzmaFsyk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -163,7 +163,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			llaetuu14jr9RFvC1/J4nvGyRWloN9UHzo1hJLtnTa0=
+			jJDrFSmOkolXnIxqvtWwPxKvccbe76IHTlppOUEMqeo=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -191,14 +191,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r4r5+xVK46iJWaNswxJ0LF8B9KqDi98hKU04agRUdrQ=
+			lH1yzO/Mr1EUI1JTk2aMa5xRCFx4cheg9iZp9xi43Ik=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			llaetuu14jr9RFvC1/J4nvGyRWloN9UHzo1hJLtnTa0=
+			jJDrFSmOkolXnIxqvtWwPxKvccbe76IHTlppOUEMqeo=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -226,7 +226,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TFol2A2i8Nw/7HtdisIc1RA0bENnAHXETnoPx8PjJ9E=
+			tC1GRT5LKJLbJ1hEmzB7ioMGSmwCGY07RNmd9C0sKQg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -72145,175 +72145,182 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 5796,
+      "offset": 5986,
       "length": 8,
       "value": "\"_super\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 5833,
+      "offset": 6023,
       "length": 8,
       "value": "\"extras\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 5881,
+      "offset": 6071,
       "length": 16,
       "value": "\"inappMessageId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 5936,
+      "offset": 6126,
       "length": 10,
       "value": "\"buttonId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 5981,
+      "offset": 6171,
       "length": 14,
       "value": "\"triggerEvent\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6041,
+      "offset": 6231,
       "length": 25,
       "value": "\"inappMessageCloseOption\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6110,
+      "offset": 6300,
       "length": 6,
       "value": "\"APNS\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6145,
+      "offset": 6335,
       "length": 8,
       "value": "\"viewId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6192,
+      "offset": 6382,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6226,
+      "offset": 6416,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6267,
+      "offset": 6457,
       "length": 10,
       "value": "\"surveyId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6309,
+      "offset": 6499,
       "length": 11,
       "value": "\"surveyIds\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6352,
+      "offset": 6541,
+      "length": 10,
+      "value": "\"inappIds\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
+      "kind": "StringLiteral",
+      "offset": 6583,
       "length": 11,
       "value": "\"viewLabel\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6406,
+      "offset": 6637,
       "length": 6,
       "value": "\"snId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6444,
+      "offset": 6675,
       "length": 11,
       "value": "\"firstOpen\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6533,
+      "offset": 6764,
       "length": 7,
       "value": "\"INAPP\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6589,
+      "offset": 6820,
       "length": 19,
       "value": "\"ACTION_BASED_PUSH\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6652,
+      "offset": 6883,
       "length": 8,
       "value": "\"SURVEY\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6730,
+      "offset": 6961,
       "length": 3,
       "value": "\"t\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6772,
+      "offset": 7003,
       "length": 4,
       "value": "\"mc\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6817,
+      "offset": 7048,
       "length": 4,
       "value": "\"pt\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6862,
+      "offset": 7093,
       "length": 4,
       "value": "\"pu\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6911,
+      "offset": 7142,
       "length": 4,
       "value": "\"dc\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6958,
+      "offset": 7189,
       "length": 5,
       "value": "\"eid\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "BooleanLiteral",
-      "offset": 11144,
+      "offset": 11375,
       "length": 4,
       "value": "true"
     },
@@ -74580,43 +74587,15 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 981,
-      "length": 8,
-      "value": "\"viewId\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1021,
-      "length": 11,
-      "value": "\"viewLabel\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1064,
-      "length": 11,
-      "value": "\"firstOpen\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1118,
-      "length": 6,
-      "value": "\"snId\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3256,
+      "offset": 3048,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13515,
+      "offset": 12428,
       "length": 5,
       "value": "false"
     },
