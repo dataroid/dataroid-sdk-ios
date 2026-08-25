@@ -18694,9 +18694,454 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "ViewInfo",
+        "printedName": "ViewInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "viewId",
+            "printedName": "viewId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(py)viewId",
+            "mangledName": "$s11DataroidSDK8ViewInfoC6viewIdSSSgvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(im)viewId",
+                "mangledName": "$s11DataroidSDK8ViewInfoC6viewIdSSSgvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "viewLabel",
+            "printedName": "viewLabel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(py)viewLabel",
+            "mangledName": "$s11DataroidSDK8ViewInfoC9viewLabelSSSgvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(im)viewLabel",
+                "mangledName": "$s11DataroidSDK8ViewInfoC9viewLabelSSSgvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "viewClass",
+            "printedName": "viewClass",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(py)viewClass",
+            "mangledName": "$s11DataroidSDK8ViewInfoC9viewClassSSSgvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(im)viewClass",
+                "mangledName": "$s11DataroidSDK8ViewInfoC9viewClassSSSgvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(viewId:viewLabel:viewClass:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ViewInfo",
+                "printedName": "DataroidSDK.ViewInfo",
+                "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(im)initWithViewId:viewLabel:viewClass:",
+            "mangledName": "$s11DataroidSDK8ViewInfoC6viewId0E5Label0E5ClassACSSSg_A2Gtcfc",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ViewInfo",
+                "printedName": "DataroidSDK.ViewInfo",
+                "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo(im)init",
+            "mangledName": "$s11DataroidSDK8ViewInfoCACycfc",
+            "moduleName": "DataroidSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo",
+        "mangledName": "$s11DataroidSDK8ViewInfoC",
+        "moduleName": "DataroidSDK",
+        "objc_name": "DTRViewInfo",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "ScreenTrackingClientProtocol",
         "printedName": "ScreenTrackingClientProtocol",
         "children": [
+          {
+            "kind": "Var",
+            "name": "lastTrackedView",
+            "printedName": "lastTrackedView",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DataroidSDK.ViewInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ViewInfo",
+                    "printedName": "DataroidSDK.ViewInfo",
+                    "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(pl)ScreenTrackingClientProtocol(py)lastTrackedView",
+            "mangledName": "$s11DataroidSDK28ScreenTrackingClientProtocolP15lastTrackedViewAA0I4InfoCSgvp",
+            "moduleName": "DataroidSDK",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DataroidSDK.ViewInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ViewInfo",
+                        "printedName": "DataroidSDK.ViewInfo",
+                        "usr": "c:@M@DataroidSDK@objc(cs)DTRViewInfo"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(pl)ScreenTrackingClientProtocol(im)lastTrackedView",
+                "mangledName": "$s11DataroidSDK28ScreenTrackingClientProtocolP15lastTrackedViewAA0I4InfoCSgvg",
+                "moduleName": "DataroidSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.ScreenTrackingClientProtocol>",
+                "sugared_genericSig": "<Self where Self : DataroidSDK.ScreenTrackingClientProtocol>",
+                "protocolReq": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Function",
             "name": "viewStart",
@@ -18934,8 +19379,7 @@
         "sugared_genericSig": "<Self : AnyObject>",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "ObjC"
         ],
         "conformances": [
           {
@@ -22589,6 +23033,99 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "DataroidComponentInteractionExclusion",
+        "printedName": "DataroidComponentInteractionExclusion",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "dtr_isAutoComponentInteractionExclusion",
+            "printedName": "dtr_isAutoComponentInteractionExclusion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(pl)DataroidComponentInteractionExclusion(py)dtr_isAutoComponentInteractionExclusion",
+            "mangledName": "$s11DataroidSDK0A29ComponentInteractionExclusionP010dtr_isAutocdE0Sbvp",
+            "moduleName": "DataroidSDK",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(pl)DataroidComponentInteractionExclusion(im)dtr_isAutoComponentInteractionExclusion",
+                "mangledName": "$s11DataroidSDK0A29ComponentInteractionExclusionP010dtr_isAutocdE0Sbvg",
+                "moduleName": "DataroidSDK",
+                "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.DataroidComponentInteractionExclusion>",
+                "sugared_genericSig": "<Self where Self : DataroidSDK.DataroidComponentInteractionExclusion>",
+                "protocolReq": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@DataroidSDK@objc(pl)DataroidComponentInteractionExclusion",
+        "mangledName": "$s11DataroidSDK0A29ComponentInteractionExclusionP",
+        "moduleName": "DataroidSDK",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "InAppMessageButton",
         "printedName": "InAppMessageButton",
         "children": [
@@ -25798,6 +26335,130 @@
                 "declKind": "Accessor",
                 "usr": "s:11DataroidSDK26ComponentInteractionConfigC17debounceThresholdSivM",
                 "mangledName": "$s11DataroidSDK26ComponentInteractionConfigC17debounceThresholdSivM",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "componentExclusions",
+            "printedName": "componentExclusions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@DataroidSDK@objc(cs)ComponentInteractionConfig(py)componentExclusions",
+            "mangledName": "$s11DataroidSDK26ComponentInteractionConfigC19componentExclusionsShySSGvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ComponentInteractionConfig(im)componentExclusions",
+                "mangledName": "$s11DataroidSDK26ComponentInteractionConfigC19componentExclusionsShySSGvg",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@DataroidSDK@objc(cs)ComponentInteractionConfig(im)setComponentExclusions:",
+                "mangledName": "$s11DataroidSDK26ComponentInteractionConfigC19componentExclusionsShySSGvs",
+                "moduleName": "DataroidSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11DataroidSDK26ComponentInteractionConfigC19componentExclusionsShySSGvM",
+                "mangledName": "$s11DataroidSDK26ComponentInteractionConfigC19componentExclusionsShySSGvM",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -41445,171 +42106,6 @@
                 "declKind": "Accessor",
                 "usr": "s:11DataroidSDK22NetworkErrorAttributesC8durationSdSgvM",
                 "mangledName": "$s11DataroidSDK22NetworkErrorAttributesC8durationSdSgvM",
-                "moduleName": "DataroidSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "headers",
-            "printedName": "headers",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String : Swift.String]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@DataroidSDK@objc(cs)DTRNetworkErrorAttributes(py)headers",
-            "mangledName": "$s11DataroidSDK22NetworkErrorAttributesC7headersSDyS2SGSgvp",
-            "moduleName": "DataroidSDK",
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[Swift.String : Swift.String]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.String : Swift.String]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)DTRNetworkErrorAttributes(im)headers",
-                "mangledName": "$s11DataroidSDK22NetworkErrorAttributesC7headersSDyS2SGSgvg",
-                "moduleName": "DataroidSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[Swift.String : Swift.String]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.String : Swift.String]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@DataroidSDK@objc(cs)DTRNetworkErrorAttributes(im)setHeaders:",
-                "mangledName": "$s11DataroidSDK22NetworkErrorAttributesC7headersSDyS2SGSgvs",
-                "moduleName": "DataroidSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11DataroidSDK22NetworkErrorAttributesC7headersSDyS2SGSgvM",
-                "mangledName": "$s11DataroidSDK22NetworkErrorAttributesC7headersSDyS2SGSgvM",
                 "moduleName": "DataroidSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -63749,6 +64245,84 @@
                 "accessorKind": "set"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "dtr_isAutoComponentInteractionExclusion",
+            "printedName": "dtr_isAutoComponentInteractionExclusion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@DataroidSDK@@objc(cs)UITextField(py)dtr_isAutoComponentInteractionExclusion",
+            "mangledName": "$sSo11UITextFieldC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UITextField(im)dtr_isAutoComponentInteractionExclusion",
+                "mangledName": "$sSo11UITextFieldC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvg",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UITextField(im)setDtr_isAutoComponentInteractionExclusion:",
+                "mangledName": "$sSo11UITextFieldC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvs",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "set"
+              }
+            ]
           }
         ],
         "declKind": "Class",
@@ -63927,6 +64501,84 @@
                 "declKind": "Accessor",
                 "usr": "c:@CM@DataroidSDK@@objc(cs)UITextView(im)setDtr_containsSensitiveObject:",
                 "mangledName": "$sSo10UITextViewC11DataroidSDKE27dtr_containsSensitiveObjectSbvs",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dtr_isAutoComponentInteractionExclusion",
+            "printedName": "dtr_isAutoComponentInteractionExclusion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@DataroidSDK@@objc(cs)UITextView(py)dtr_isAutoComponentInteractionExclusion",
+            "mangledName": "$sSo10UITextViewC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UITextView(im)dtr_isAutoComponentInteractionExclusion",
+                "mangledName": "$sSo10UITextViewC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvg",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UITextView(im)setDtr_isAutoComponentInteractionExclusion:",
+                "mangledName": "$sSo10UITextViewC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvs",
                 "moduleName": "DataroidSDK",
                 "declAttributes": [
                   "Dynamic",
@@ -66889,6 +67541,84 @@
           },
           {
             "kind": "Var",
+            "name": "dtr_isAutoComponentInteractionExclusion",
+            "printedName": "dtr_isAutoComponentInteractionExclusion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@DataroidSDK@@objc(cs)UIButton(py)dtr_isAutoComponentInteractionExclusion",
+            "mangledName": "$sSo8UIButtonC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UIButton(im)dtr_isAutoComponentInteractionExclusion",
+                "mangledName": "$sSo8UIButtonC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvg",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UIButton(im)setDtr_isAutoComponentInteractionExclusion:",
+                "mangledName": "$sSo8UIButtonC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvs",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "dtr_isDebounceThresholdExclusion",
             "printedName": "dtr_isDebounceThresholdExclusion",
             "children": [
@@ -67151,6 +67881,84 @@
                 "accessorKind": "set"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "dtr_isAutoComponentInteractionExclusion",
+            "printedName": "dtr_isAutoComponentInteractionExclusion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@DataroidSDK@@objc(cs)UISwitch(py)dtr_isAutoComponentInteractionExclusion",
+            "mangledName": "$sSo8UISwitchC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UISwitch(im)dtr_isAutoComponentInteractionExclusion",
+                "mangledName": "$sSo8UISwitchC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvg",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UISwitch(im)setDtr_isAutoComponentInteractionExclusion:",
+                "mangledName": "$sSo8UISwitchC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvs",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "set"
+              }
+            ]
           }
         ],
         "declKind": "Class",
@@ -67329,6 +68137,84 @@
                 "declKind": "Accessor",
                 "usr": "c:@CM@DataroidSDK@@objc(cs)UIBarButtonItem(im)setDtr_containsSensitiveObject:",
                 "mangledName": "$sSo15UIBarButtonItemC11DataroidSDKE27dtr_containsSensitiveObjectSbvs",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dtr_isAutoComponentInteractionExclusion",
+            "printedName": "dtr_isAutoComponentInteractionExclusion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@DataroidSDK@@objc(cs)UIBarButtonItem(py)dtr_isAutoComponentInteractionExclusion",
+            "mangledName": "$sSo15UIBarButtonItemC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvp",
+            "moduleName": "DataroidSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UIBarButtonItem(im)dtr_isAutoComponentInteractionExclusion",
+                "mangledName": "$sSo15UIBarButtonItemC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvg",
+                "moduleName": "DataroidSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@DataroidSDK@@objc(cs)UIBarButtonItem(im)setDtr_isAutoComponentInteractionExclusion:",
+                "mangledName": "$sSo15UIBarButtonItemC11DataroidSDKE39dtr_isAutoComponentInteractionExclusionSbvs",
                 "moduleName": "DataroidSDK",
                 "declAttributes": [
                   "Dynamic",
@@ -70178,14 +71064,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Survey\/SurveyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2673,
+      "offset": 2848,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Survey\/SurveyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6081,
+      "offset": 6256,
       "length": 5,
       "value": "false"
     },
@@ -70454,6 +71340,20 @@
       "offset": 2455,
       "length": 4,
       "value": "\"or\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Core\/EventPayloadCreator.swift",
+      "kind": "StringLiteral",
+      "offset": 2530,
+      "length": 8,
+      "value": "\"osName\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Core\/EventPayloadCreator.swift",
+      "kind": "StringLiteral",
+      "offset": 2540,
+      "length": 4,
+      "value": "\"on\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/Goal\/GoalCoreDataStack.swift",
@@ -71123,7 +72023,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/WebBridge\/WebBridgeActionProcessor.swift",
       "kind": "Array",
-      "offset": 24773,
+      "offset": 24700,
       "length": 2,
       "value": "[]"
     },
@@ -71822,57 +72722,99 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "IntegerLiteral",
+      "offset": 606,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "IntegerLiteral",
+      "offset": 699,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "IntegerLiteral",
+      "offset": 754,
+      "length": 6,
+      "value": "32768"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "BooleanLiteral",
-      "offset": 1263,
+      "offset": 1517,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1693,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 1433,
+      "offset": 2495,
       "length": 40,
       "value": "\"com.dataroid.crashCollector.stateQueue\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 3235,
+      "offset": 4784,
       "length": 24,
       "value": "\"Exception did caughted\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 3537,
+      "offset": 5086,
       "length": 65,
       "value": "\"Crash reporting auto collecting is disabled, event will dropped\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 6046,
-      "length": 31,
-      "value": "\"Signal exception did caughted\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "StringLiteral",
-      "offset": 6355,
-      "length": 65,
-      "value": "\"Crash reporting auto collecting is disabled, event will dropped\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "StringLiteral",
-      "offset": 7048,
+      "offset": 8910,
       "length": 85,
       "value": "\"Previous signal handler not found for signal: \""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 7132,
+      "offset": 8994,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "StringLiteral",
+      "offset": 9581,
+      "length": 31,
+      "value": "\"Signal exception did caughted\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "StringLiteral",
+      "offset": 9890,
+      "length": 65,
+      "value": "\"Crash reporting auto collecting is disabled, event will dropped\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "StringLiteral",
+      "offset": 10583,
+      "length": 85,
+      "value": "\"Previous signal handler not found for signal: \""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
+      "kind": "StringLiteral",
+      "offset": 10667,
       "length": 1,
       "value": "\"\""
     },
@@ -73536,6 +74478,13 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Auto Collecting\/UIComponent+ComponentInteractionExclusion.swift",
+      "kind": "IntegerLiteral",
+      "offset": 664,
+      "length": 1,
+      "value": "0"
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Networking\/Requests\/ActionBasedNotificationRequest.swift",
       "kind": "StringLiteral",
       "offset": 542,
@@ -73874,7 +74823,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/PublicAPIs\/Config\/ModuleConfig\/ComponentInteractionConfig.swift",
       "kind": "Array",
-      "offset": 661,
+      "offset": 737,
       "length": 22,
       "value": "[\"UICalloutBarButton\"]"
     },
@@ -74595,7 +75544,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12428,
+      "offset": 12612,
       "length": 5,
       "value": "false"
     },
@@ -74742,14 +75691,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/ContextTrigger\/ContextTriggerManager.swift",
       "kind": "Dictionary",
-      "offset": 2388,
+      "offset": 2551,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/ContextTrigger\/ContextTriggerManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6243,
+      "offset": 6406,
       "length": 5,
       "value": "false"
     },
@@ -76268,77 +77217,70 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9001,
+      "offset": 8959,
       "length": 5,
       "value": "\"sch\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9027,
+      "offset": 8985,
       "length": 4,
       "value": "\"ht\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9052,
+      "offset": 9010,
       "length": 4,
       "value": "\"pt\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9077,
+      "offset": 9035,
       "length": 4,
       "value": "\"ph\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9104,
+      "offset": 9062,
       "length": 3,
       "value": "\"m\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9138,
+      "offset": 9096,
       "length": 4,
       "value": "\"ct\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9167,
+      "offset": 9125,
       "length": 3,
       "value": "\"d\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9196,
+      "offset": 9154,
       "length": 4,
       "value": "\"et\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9226,
+      "offset": 9184,
       "length": 4,
       "value": "\"ex\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
       "kind": "StringLiteral",
-      "offset": 9254,
-      "length": 3,
-      "value": "\"h\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/APM\/Models\/NetworkErrorAttributes.swift",
-      "kind": "StringLiteral",
-      "offset": 9286,
+      "offset": 9217,
       "length": 4,
       "value": "\"em\""
     },
@@ -78522,14 +79464,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/Model\/DeviceProperty.swift",
       "kind": "StringLiteral",
-      "offset": 1200,
+      "offset": 1237,
       "length": 10,
       "value": "\"timezone\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/Model\/DeviceProperty.swift",
       "kind": "StringLiteral",
-      "offset": 1239,
+      "offset": 1276,
       "length": 10,
       "value": "\"language\""
     },

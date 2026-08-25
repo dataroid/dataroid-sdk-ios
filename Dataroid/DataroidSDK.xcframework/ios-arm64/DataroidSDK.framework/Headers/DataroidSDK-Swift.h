@@ -564,6 +564,8 @@ SWIFT_CLASS("_TtC11DataroidSDK26ComponentInteractionConfig")
 @interface ComponentInteractionConfig : NSObject
 @property (nonatomic) BOOL autoCollectingEnabled;
 @property (nonatomic) NSInteger debounceThreshold;
+/// Class names excluded from auto component interaction capture.
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull componentExclusions;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -872,6 +874,13 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK28SuperAttributeClientProtocol_")
 - (void)clearAllSuperAttributes;
 - (NSDictionary<NSString *, id> * _Nonnull)getAllSuperAttributes SWIFT_WARN_UNUSED_RESULT;
 - (void)updateSuperAttributeWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
+@end
+
+/// Interface for defining component interaction auto-capture exclusions.
+SWIFT_PROTOCOL("_TtP11DataroidSDK37DataroidComponentInteractionExclusion_")
+@protocol DataroidComponentInteractionExclusion <NSObject>
+/// Flag that indicates whether the component should be excluded from auto component interaction tracking.
+@property (nonatomic, readonly) BOOL dtr_isAutoComponentInteractionExclusion;
 @end
 
 @class InAppMessagingConfig;
@@ -1586,7 +1595,6 @@ SWIFT_CLASS("_TtC11DataroidSDK13NetworkConfig")
 SWIFT_CLASS_NAMED("NetworkErrorAttributes")
 @interface DTRNetworkErrorAttributes : NSObject
 @property (nonatomic, copy) NSString * _Nonnull url;
-@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable headers;
 @property (nonatomic, strong) DTRNetworkErrorType * _Nullable errorType;
 @property (nonatomic, copy) NSString * _Nullable exception;
 @property (nonatomic, copy) NSString * _Nullable errorMessage;
@@ -1887,8 +1895,11 @@ SWIFT_PROTOCOL_NAMED("ScreenTracker")
 - (void)stopTrackingWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
 @end
 
+@class DTRViewInfo;
 SWIFT_PROTOCOL("_TtP11DataroidSDK28ScreenTrackingClientProtocol_")
 @protocol ScreenTrackingClientProtocol
+/// Returns the screen context of the view that is currently being tracked, or <code>nil</code> when no screen is tracked.
+@property (nonatomic, readonly, strong) DTRViewInfo * _Nullable lastTrackedView;
 - (void)viewStartWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel;
 - (void)viewStartWithView:(id <NSObject> _Nonnull)view viewLabel:(NSString * _Nonnull)viewLabel extras:(DTRViewTrackingExtras * _Nonnull)extras;
 - (void)viewStartWithViewClass:(NSString * _Nonnull)viewClass viewLabel:(NSString * _Nonnull)viewLabel;
@@ -2093,11 +2104,19 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 @end
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isAutoComponentInteractionExclusion;
+@end
+
+@interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) BOOL dtr_isDebounceThresholdExclusion;
 @end
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) BOOL dtr_containsSensitiveObject;
+@end
+
+@interface UIButton (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isAutoComponentInteractionExclusion;
 @end
 
 @interface UIButton (SWIFT_EXTENSION(DataroidSDK))
@@ -2109,11 +2128,23 @@ SWIFT_CLASS("_TtC11DataroidSDK16TriggeredContext")
 @end
 
 @interface UISwitch (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isAutoComponentInteractionExclusion;
+@end
+
+@interface UISwitch (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) BOOL dtr_containsSensitiveObject;
 @end
 
 @interface UITextField (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isAutoComponentInteractionExclusion;
+@end
+
+@interface UITextField (SWIFT_EXTENSION(DataroidSDK))
 @property (nonatomic) BOOL dtr_containsSensitiveObject;
+@end
+
+@interface UITextView (SWIFT_EXTENSION(DataroidSDK))
+@property (nonatomic) BOOL dtr_isAutoComponentInteractionExclusion;
 @end
 
 @interface UITextView (SWIFT_EXTENSION(DataroidSDK))
@@ -2168,6 +2199,27 @@ SWIFT_CLASS("_TtC11DataroidSDK26UserNotificationIntegrator")
 SWIFT_CLASS_NAMED("ViewCategoryEventAttributes")
 @interface DTRViewCategoryEventAttributes : DTRAttributes
 - (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// Screen context for a tracked view.
+SWIFT_CLASS_NAMED("ViewInfo")
+@interface DTRViewInfo : NSObject
+/// Identifier of the tracked view. Matches the <code>viewId</code> attribute in <code>viewStart</code> events.
+@property (nonatomic, readonly, copy) NSString * _Nullable viewId;
+/// Label of the tracked view. Matches the <code>viewLabel</code> attribute in <code>viewStart</code> events.
+@property (nonatomic, readonly, copy) NSString * _Nullable viewLabel;
+/// Class name of the tracked view. Matches the <code>viewClass</code> attribute in <code>viewStart</code> events.
+@property (nonatomic, readonly, copy) NSString * _Nullable viewClass;
+/// Creates a snapshot of the currently tracked screen context.
+/// \param viewId Identifier of the tracked view.
+///
+/// \param viewLabel Label of the tracked view.
+///
+/// \param viewClass Class name of the tracked view.
+///
+- (nonnull instancetype)initWithViewId:(NSString * _Nullable)viewId viewLabel:(NSString * _Nullable)viewLabel viewClass:(NSString * _Nullable)viewClass OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

@@ -570,7 +570,19 @@ public struct ActionBasedMessage : Swift.Codable {
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
+@objc(DTRViewInfo) @objcMembers final public class ViewInfo : ObjectiveC.NSObject {
+  @objc final public let viewId: Swift.String?
+  @objc final public let viewLabel: Swift.String?
+  @objc final public let viewClass: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public init(viewId: Swift.String?, viewLabel: Swift.String?, viewClass: Swift.String?)
+  #endif
+  @objc deinit
+}
 @objc public protocol ScreenTrackingClientProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc var lastTrackedView: DataroidSDK.ViewInfo? { get }
+  #endif
   @objc func viewStart(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String)
   @objc func viewStart(view: any ObjectiveC.NSObjectProtocol, viewLabel: Swift.String, extras: DataroidSDK.ViewTrackingExtras)
   @objc func viewStart(viewClass: Swift.String, viewLabel: Swift.String)
@@ -731,6 +743,39 @@ extension DataroidSDK.Dataroid : DataroidSDK.CrashReportingClientProtocol {
     @objc set
   }
 }
+@objc public protocol DataroidComponentInteractionExclusion : ObjectiveC.NSObjectProtocol {
+  @objc var dtr_isAutoComponentInteractionExclusion: Swift.Bool { get }
+}
+@objc extension UIKit.UITextField {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_isAutoComponentInteractionExclusion: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+@objc extension UIKit.UITextView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_isAutoComponentInteractionExclusion: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+@objc extension UIKit.UIButton {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_isAutoComponentInteractionExclusion: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+@objc extension UIKit.UISwitch {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_isAutoComponentInteractionExclusion: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+@objc extension UIKit.UIBarButtonItem {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var dtr_isAutoComponentInteractionExclusion: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
 @objc(DTRInAppMessageButton) @objcMembers final public class InAppMessageButton : ObjectiveC.NSObject, Swift.Codable {
   final public var action: DataroidSDK.InAppMessageActionType? {
     get
@@ -816,6 +861,7 @@ extension DataroidSDK.Dataroid : DataroidSDK.DeeplinkClientProtocol {
 @objc @_inheritsConvenienceInitializers @objcMembers final public class ComponentInteractionConfig : ObjectiveC.NSObject {
   @objc final public var autoCollectingEnabled: Swift.Bool
   @objc final public var debounceThreshold: Swift.Int
+  @objc final public var componentExclusions: Swift.Set<Swift.String>
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1362,7 +1408,6 @@ extension DataroidSDK.DeeplinkAttributes {
   }
   final public var method: DataroidSDK.HTTPMethod?
   final public var duration: Foundation.TimeInterval?
-  @objc final public var headers: [Swift.String : Swift.String]?
   @objc final public var errorType: DataroidSDK.NetworkErrorAttributes.ErrorType?
   @objc final public var exception: Swift.String?
   @objc final public var errorMessage: Swift.String?
