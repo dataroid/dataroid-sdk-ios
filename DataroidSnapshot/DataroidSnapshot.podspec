@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'DataroidSnapshot'
-    s.version = '4.6.2-alpha.2'
+    s.version = '4.6.2'
     s.summary = 'Snapshot utility for Dataroid framework'
     s.homepage = 'https://github.com/dataroid/dataroid-sdk-ios'
 
