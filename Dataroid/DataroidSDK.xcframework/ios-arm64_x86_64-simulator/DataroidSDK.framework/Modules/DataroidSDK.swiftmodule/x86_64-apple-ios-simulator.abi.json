@@ -72722,99 +72722,57 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "IntegerLiteral",
-      "offset": 606,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "IntegerLiteral",
-      "offset": 699,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "IntegerLiteral",
-      "offset": 754,
-      "length": 6,
-      "value": "32768"
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "BooleanLiteral",
-      "offset": 1517,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1693,
+      "offset": 1263,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 2495,
+      "offset": 1433,
       "length": 40,
       "value": "\"com.dataroid.crashCollector.stateQueue\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 4784,
+      "offset": 3235,
       "length": 24,
       "value": "\"Exception did caughted\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 5086,
+      "offset": 3537,
       "length": 65,
       "value": "\"Crash reporting auto collecting is disabled, event will dropped\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 8910,
-      "length": 85,
-      "value": "\"Previous signal handler not found for signal: \""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "StringLiteral",
-      "offset": 8994,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
-      "kind": "StringLiteral",
-      "offset": 9581,
+      "offset": 6046,
       "length": 31,
       "value": "\"Signal exception did caughted\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 9890,
+      "offset": 6355,
       "length": 65,
       "value": "\"Crash reporting auto collecting is disabled, event will dropped\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 10583,
+      "offset": 7048,
       "length": 85,
       "value": "\"Previous signal handler not found for signal: \""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/CrashReporting\/CrashCollector.swift",
       "kind": "StringLiteral",
-      "offset": 10667,
+      "offset": 7132,
       "length": 1,
       "value": "\"\""
     },
