@@ -35,6 +35,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DataroidSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "MutableHttpCallAttributes",
         "printedName": "MutableHttpCallAttributes",
@@ -70908,6 +70918,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/ActionBased\/MarkDeliveredNotificationsOperation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1172,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/Dataroid\/DataroidStore.swift",
       "kind": "StringLiteral",
       "offset": 511,
@@ -71064,14 +71081,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Survey\/SurveyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2848,
+      "offset": 2892,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Survey\/SurveyManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6256,
+      "offset": 6712,
       "length": 5,
       "value": "false"
     },
@@ -72091,6 +72108,13 @@
       "value": "\"remote-notification\""
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/AppStateManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1215,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/CoreData\/CoreDataStack.swift",
       "kind": "StringLiteral",
       "offset": 773,
@@ -72572,6 +72596,13 @@
       "offset": 902,
       "length": 1,
       "value": "1"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/ActionBased\/GlobalCapping\/ActionBasedCappingProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 1201,
+      "length": 56,
+      "value": "\"com.dataroid.actionBasedCappingProcessor.globalCapping\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/ContextTrigger\/ChainEvent\/ChainEventProcessor.swift",
@@ -73401,8 +73432,15 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Event Storage\/EventStorageWorker.swift",
+      "kind": "StringLiteral",
+      "offset": 1352,
+      "length": 49,
+      "value": "\"com.dataroid.eventStorageWorker.persistedValues\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/Event Storage\/EventStorageWorker.swift",
       "kind": "Dictionary",
-      "offset": 1342,
+      "offset": 1498,
       "length": 3,
       "value": "[]"
     },
@@ -75088,8 +75126,15 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Managers\/PushEventManager.swift",
+      "kind": "StringLiteral",
+      "offset": 1110,
+      "length": 48,
+      "value": "\"com.dataroid.pushEventManager.collectedPushIds\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Managers\/PushEventManager.swift",
       "kind": "Array",
-      "offset": 2087,
+      "offset": 2234,
       "length": 2,
       "value": "[]"
     },
@@ -75495,14 +75540,14 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3048,
+      "offset": 3092,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12612,
+      "offset": 13068,
       "length": 5,
       "value": "false"
     },
@@ -75736,6 +75781,13 @@
       "offset": 4972,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/RemoteConfig\/RemoteConfigurator.swift",
+      "kind": "StringLiteral",
+      "offset": 875,
+      "length": 9,
+      "value": "\".reload\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/Dataroid\/SessionStoreItem.swift",
@@ -76229,8 +76281,15 @@
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingEventProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 1241,
+      "length": 56,
+      "value": "\"com.dataroid.inAppMessagingEventProcessor.displayCache\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/InAppMessaging\/InAppMessagingEventProcessor.swift",
       "kind": "Dictionary",
-      "offset": 1622,
+      "offset": 2173,
       "length": 3,
       "value": "[]"
     },
@@ -76377,7 +76436,7 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Database\/DBConnection.swift",
       "kind": "BooleanLiteral",
-      "offset": 1025,
+      "offset": 1070,
       "length": 4,
       "value": "true"
     },
@@ -79420,6 +79479,13 @@
       "value": "\"__DATAROID_BRIDGE_MODE_CONFIG\""
     },
     {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/PublicAPIs\/Client\/Dataroid.swift",
+      "kind": "StringLiteral",
+      "offset": 2453,
+      "length": 37,
+      "value": "\"com.dataroid.sdkInitializationQueue\""
+    },
+    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Core\/Model\/DeviceProperty.swift",
       "kind": "StringLiteral",
       "offset": 1237,
@@ -79537,6 +79603,13 @@
       "offset": 2549,
       "length": 6,
       "value": "\"BLOB\""
+    },
+    {
+      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Extensions\/UIApplication+Helpers.swift",
+      "kind": "Array",
+      "offset": 2930,
+      "length": 2,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/External\/SQLite\/Typed\/CoreFunctions.swift",
