@@ -79605,13 +79605,6 @@
       "value": "\"BLOB\""
     },
     {
-      "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Extensions\/UIApplication+Helpers.swift",
-      "kind": "Array",
-      "offset": 2930,
-      "length": 2,
-      "value": "[]"
-    },
-    {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/External\/SQLite\/Typed\/CoreFunctions.swift",
       "kind": "StringLiteral",
       "offset": 1458,
