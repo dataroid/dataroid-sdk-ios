@@ -55995,41 +55995,6 @@
           },
           {
             "kind": "Function",
-            "name": "updateSuperAttribute",
-            "printedName": "updateSuperAttribute(key:value:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "ProtocolComposition",
-                "printedName": "Any"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@DataroidSDK@objc(cs)Dataroid(im)updateSuperAttributeWithKey:value:",
-            "mangledName": "$s11DataroidSDK0A0C20updateSuperAttribute3key5valueySS_yptF",
-            "moduleName": "DataroidSDK",
-            "objc_name": "updateSuperAttributeWithKey:value:",
-            "declAttributes": [
-              "Final",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "setUser",
             "printedName": "setUser(_:)",
             "children": [
@@ -56649,41 +56614,6 @@
             "declKind": "Func",
             "usr": "c:@M@DataroidSDK@objc(pl)SuperAttributeClientProtocol(im)getAllSuperAttributes",
             "mangledName": "$s11DataroidSDK28SuperAttributeClientProtocolP06getAllC10AttributesSDySSypGyF",
-            "moduleName": "DataroidSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.SuperAttributeClientProtocol>",
-            "sugared_genericSig": "<Self where Self : DataroidSDK.SuperAttributeClientProtocol>",
-            "protocolReq": true,
-            "declAttributes": [
-              "ObjC"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "updateSuperAttribute",
-            "printedName": "updateSuperAttribute(key:value:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "ProtocolComposition",
-                "printedName": "Any"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@DataroidSDK@objc(pl)SuperAttributeClientProtocol(im)updateSuperAttributeWithKey:value:",
-            "mangledName": "$s11DataroidSDK28SuperAttributeClientProtocolP06updatecD03key5valueySS_yptF",
             "moduleName": "DataroidSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : DataroidSDK.SuperAttributeClientProtocol>",
             "sugared_genericSig": "<Self where Self : DataroidSDK.SuperAttributeClientProtocol>",
@@ -73076,182 +73006,182 @@
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 5986,
+      "offset": 6068,
       "length": 8,
       "value": "\"_super\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6023,
+      "offset": 6105,
       "length": 8,
       "value": "\"extras\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6071,
+      "offset": 6153,
       "length": 16,
       "value": "\"inappMessageId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6126,
+      "offset": 6208,
       "length": 10,
       "value": "\"buttonId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6171,
+      "offset": 6253,
       "length": 14,
       "value": "\"triggerEvent\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6231,
+      "offset": 6313,
       "length": 25,
       "value": "\"inappMessageCloseOption\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6300,
+      "offset": 6382,
       "length": 6,
       "value": "\"APNS\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6335,
+      "offset": 6417,
       "length": 8,
       "value": "\"viewId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6382,
+      "offset": 6464,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6416,
+      "offset": 6498,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6457,
+      "offset": 6539,
       "length": 10,
       "value": "\"surveyId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6499,
+      "offset": 6581,
       "length": 11,
       "value": "\"surveyIds\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6541,
+      "offset": 6623,
       "length": 10,
       "value": "\"inappIds\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6583,
+      "offset": 6665,
       "length": 11,
       "value": "\"viewLabel\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6637,
+      "offset": 6719,
       "length": 6,
       "value": "\"snId\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6675,
+      "offset": 6757,
       "length": 11,
       "value": "\"firstOpen\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6764,
+      "offset": 6846,
       "length": 7,
       "value": "\"INAPP\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6820,
+      "offset": 6902,
       "length": 19,
       "value": "\"ACTION_BASED_PUSH\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6883,
+      "offset": 6965,
       "length": 8,
       "value": "\"SURVEY\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 6961,
+      "offset": 7043,
       "length": 3,
       "value": "\"t\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 7003,
+      "offset": 7085,
       "length": 4,
       "value": "\"mc\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 7048,
+      "offset": 7130,
       "length": 4,
       "value": "\"pt\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 7093,
+      "offset": 7175,
       "length": 4,
       "value": "\"pu\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 7142,
+      "offset": 7224,
       "length": 4,
       "value": "\"dc\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "StringLiteral",
-      "offset": 7189,
+      "offset": 7271,
       "length": 5,
       "value": "\"eid\""
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Reusables\/Makers\/EventMaker.swift",
       "kind": "BooleanLiteral",
-      "offset": 11375,
+      "offset": 11583,
       "length": 4,
       "value": "true"
     },
@@ -77473,8 +77403,8 @@
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/PublicAPIs\/Config\/ModuleConfig\/ScreenTrackingConfig.swift",
       "kind": "Array",
       "offset": 790,
-      "length": 2296,
-      "value": "[\"UICompatibilityInputViewController\", \"UINavigationController\", \"UIAlertController\", \"UIPageViewController\", \"UITabBarController\", \"UIReferenceLibraryViewController\", \"UISplitViewController\", \"UIInputViewController\", \"UISearchController\", \"UISearchContainerViewController\", \"UIApplicationRotationFollowingController\", \"MFMailComposeInternalViewController\", \"MFMailComposePlaceholderViewController\", \"UIInputWindowController\", \"_UIFallbackPresentationViewController\", \"UIActivityViewController\", \"UIActivityGroupViewController\", \"_UIActivityGroupListViewController\", \"_UIActivityViewControllerContentController\", \"UIKeyboardCandidateRowViewController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UIPrintMoreOptionsTableViewController\", \"UIPrintPanelTableViewController\", \"UIPrintPanelViewController\", \"UIPrintPaperViewController\", \"UIPrintPreviewViewController\", \"UIPrintRangeViewController\", \"UIDocumentMenuViewController\", \"UIDocumentPickerViewController\", \"UIDocumentPickerExtensionViewController\", \"UIInterfaceActionGroupViewController\", \"UISystemInputViewController\", \"UIRecentsInputViewController\", \"UICompatibilityInputViewController\", \"UIInputViewAnimationControllerViewController\", \"UISnapshotModalViewController\", \"UIMultiColumnViewController\", \"UIKeyCommandDiscoverabilityHUDViewController\", \"SFSafariViewController\", \"SFBrowserRemoteViewController\", \"UISystemKeyboardDockController\", \"UIApplicationRotationFollowingControllerNoTouches\", \"UIWebRotatingAlertController\", \"UIPrinterBrowserViewController\", \"UIPrinterUtilityTableViewController\", \"UIHostingController\", \"DestinationHostingController\", \"MFMailComposeRemoteViewController\", \"SLRemoteComposeViewController\", \"UIPredictionViewController\", \"_UICursorAccessoryViewController\", \"PrewarmingViewController\", \"UISystemInputAssistantViewController\", \"UITrackingElementWindowController\"]"
+      "length": 2324,
+      "value": "[\"UIViewController\", \"UICompatibilityInputViewController\", \"UINavigationController\", \"UIAlertController\", \"UIPageViewController\", \"UITabBarController\", \"UIReferenceLibraryViewController\", \"UISplitViewController\", \"UIInputViewController\", \"UISearchController\", \"UISearchContainerViewController\", \"UIApplicationRotationFollowingController\", \"MFMailComposeInternalViewController\", \"MFMailComposePlaceholderViewController\", \"UIInputWindowController\", \"_UIFallbackPresentationViewController\", \"UIActivityViewController\", \"UIActivityGroupViewController\", \"_UIActivityGroupListViewController\", \"_UIActivityViewControllerContentController\", \"UIKeyboardCandidateRowViewController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UIPrintMoreOptionsTableViewController\", \"UIPrintPanelTableViewController\", \"UIPrintPanelViewController\", \"UIPrintPaperViewController\", \"UIPrintPreviewViewController\", \"UIPrintRangeViewController\", \"UIDocumentMenuViewController\", \"UIDocumentPickerViewController\", \"UIDocumentPickerExtensionViewController\", \"UIInterfaceActionGroupViewController\", \"UISystemInputViewController\", \"UIRecentsInputViewController\", \"UICompatibilityInputViewController\", \"UIInputViewAnimationControllerViewController\", \"UISnapshotModalViewController\", \"UIMultiColumnViewController\", \"UIKeyCommandDiscoverabilityHUDViewController\", \"SFSafariViewController\", \"SFBrowserRemoteViewController\", \"UISystemKeyboardDockController\", \"UIApplicationRotationFollowingControllerNoTouches\", \"UIWebRotatingAlertController\", \"UIPrinterBrowserViewController\", \"UIPrinterUtilityTableViewController\", \"UIHostingController\", \"DestinationHostingController\", \"MFMailComposeRemoteViewController\", \"SLRemoteComposeViewController\", \"UIPredictionViewController\", \"_UICursorAccessoryViewController\", \"PrewarmingViewController\", \"UISystemInputAssistantViewController\", \"UITrackingElementWindowController\"]"
     },
     {
       "filePath": "\/Users\/dataroid\/actions-runner\/_work\/sdk-ios\/sdk-ios\/Dataroid\/Modules\/Event\/CustomEventBuilder.swift",

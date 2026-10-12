@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/DataroidSDK-Swift.h</key>
 		<data>
-		TJoyvs8GfuuQHRIWuSt9kpkMP74=
+		a++bvzSLJj/z48YPpDS9v91BTaM=
 		</data>
 		<key>Headers/DataroidSDK.h</key>
 		<data>
@@ -38,15 +38,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		s+0R4ZjIebXlO5xCnVe8rPAmoEs=
+		E8x778niphISa6cKnezviESb3rM=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		QW/hJJwFcxBSOYZTZkrz4SrxoQU=
+		s/iOiPAjy9b/wumxP/4Tkv1Yjgk=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		LoIdeV0vEBNbBY5V8a+iHSzc0zg=
+		6TWZM/msX9T6cJsA8Drnuom7UeY=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,19 +54,19 @@
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		LoIdeV0vEBNbBY5V8a+iHSzc0zg=
+		6TWZM/msX9T6cJsA8Drnuom7UeY=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9v8/HrcxJf28JQ0CwIJGuq1XcNY=
+		G7xh+mmVJ5G6Vf6mI9Y93sEhP4E=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		QW/hJJwFcxBSOYZTZkrz4SrxoQU=
+		s/iOiPAjy9b/wumxP/4Tkv1Yjgk=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		qxMs6oGA7H189ONkOOMrE/8APdM=
+		IuxPUwHk+HOxjeP6B2QTOH8RABs=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		qxMs6oGA7H189ONkOOMrE/8APdM=
+		IuxPUwHk+HOxjeP6B2QTOH8RABs=
 		</data>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sa5SAY+2sFtLdUx6OEFxgSmM0L8=
+		HSGo+S4J7jtkGwVOvf3ZkRMzMIU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -149,7 +149,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jwm3wIURcXwTRDhhNvzfn9MYFSPreIXzDs+bYU6Hq/M=
+			dLNGaXmWdzgObGvqLa1VPjD8flqQyH+78jSS32V/sD0=
 			</data>
 		</dict>
 		<key>Headers/DataroidSDK.h</key>
@@ -163,14 +163,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UfT7xnruiAZAVQAKoNiFem+88maEum6WUR3Vy8ObM3o=
+			Nm9rXt+deKnetO5IZO7OCVoobgWVcsiGVuC+QFlIoc0=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OUfcbKTKTE0ib8vhNRtZi9c3uxzzkVHqge2Tq0AhRPk=
+			wfrMiKF/WMeb5QA5OY83zcfueAgx3SDeN2Lby7pBbv8=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -184,28 +184,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OUfcbKTKTE0ib8vhNRtZi9c3uxzzkVHqge2Tq0AhRPk=
+			wfrMiKF/WMeb5QA5OY83zcfueAgx3SDeN2Lby7pBbv8=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fmgXgVGcN/pkiBGby6Am9urtA9mu5pRwd4F1r4xn/QQ=
+			iKTYHZtJEDee5hrSGMnuLEi34lsMLbjnlO8wMdYKf/s=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UfT7xnruiAZAVQAKoNiFem+88maEum6WUR3Vy8ObM3o=
+			Nm9rXt+deKnetO5IZO7OCVoobgWVcsiGVuC+QFlIoc0=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pD6bIBgN7qZ1uk5M3cEXIN4dO8CTSNEdLPMeqw5iNeE=
+			7NuK+lqZYqsMsmQblnu+hVoyXqFjQ1g8ruv89o4Nv0o=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -219,14 +219,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pD6bIBgN7qZ1uk5M3cEXIN4dO8CTSNEdLPMeqw5iNeE=
+			7NuK+lqZYqsMsmQblnu+hVoyXqFjQ1g8ruv89o4Nv0o=
 			</data>
 		</dict>
 		<key>Modules/DataroidSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QUQZVLpxXY8VCIhzN3t7wkMQ6yNZ6f1ckGnwV8HzU3M=
+			of31i4BnFm8kMaNbhee5Dbwru4qlF3cxx9wuCVnGVAs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

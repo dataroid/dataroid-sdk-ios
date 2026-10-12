@@ -1870,7 +1870,6 @@ public struct InAppMessageAvailabilityOptionDetail : Swift.Codable {
   @objc func clearSuperAttribute(key: Swift.String) -> Swift.Bool
   @objc func clearAllSuperAttributes()
   @objc func getAllSuperAttributes() -> [Swift.String : Any]
-  @objc func updateSuperAttribute(key: Swift.String, value: Any)
 }
 extension DataroidSDK.Dataroid : DataroidSDK.SuperAttributeClientProtocol {
   @objc final public func setSuperAttribute(key: Swift.String, value: Swift.String)
@@ -1883,7 +1882,6 @@ extension DataroidSDK.Dataroid : DataroidSDK.SuperAttributeClientProtocol {
   @objc final public func clearSuperAttribute(key: Swift.String) -> Swift.Bool
   @objc final public func clearAllSuperAttributes()
   @objc final public func getAllSuperAttributes() -> [Swift.String : Any]
-  @objc final public func updateSuperAttribute(key: Swift.String, value: Any)
 }
 @_inheritsConvenienceInitializers @objc(DTRClearCartEventAttributes) @objcMembers final public class ClearCartEventAttributes : DataroidSDK.Attributes {
   @objc override dynamic public init()

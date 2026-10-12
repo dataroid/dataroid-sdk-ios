@@ -859,7 +859,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK28SuperAttributeClientProtocol_")
 - (BOOL)clearSuperAttributeWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 - (void)clearAllSuperAttributes;
 - (NSDictionary<NSString *, id> * _Nonnull)getAllSuperAttributes SWIFT_WARN_UNUSED_RESULT;
-- (void)updateSuperAttributeWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
 @end
 
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <SuperAttributeClientProtocol>
@@ -873,7 +872,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK28SuperAttributeClientProtocol_")
 - (BOOL)clearSuperAttributeWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 - (void)clearAllSuperAttributes;
 - (NSDictionary<NSString *, id> * _Nonnull)getAllSuperAttributes SWIFT_WARN_UNUSED_RESULT;
-- (void)updateSuperAttributeWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
 @end
 
 /// Interface for defining component interaction auto-capture exclusions.
@@ -3121,7 +3119,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK28SuperAttributeClientProtocol_")
 - (BOOL)clearSuperAttributeWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 - (void)clearAllSuperAttributes;
 - (NSDictionary<NSString *, id> * _Nonnull)getAllSuperAttributes SWIFT_WARN_UNUSED_RESULT;
-- (void)updateSuperAttributeWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
 @end
 
 @interface Dataroid (SWIFT_EXTENSION(DataroidSDK)) <SuperAttributeClientProtocol>
@@ -3135,7 +3132,6 @@ SWIFT_PROTOCOL("_TtP11DataroidSDK28SuperAttributeClientProtocol_")
 - (BOOL)clearSuperAttributeWithKey:(NSString * _Nonnull)key SWIFT_WARN_UNUSED_RESULT;
 - (void)clearAllSuperAttributes;
 - (NSDictionary<NSString *, id> * _Nonnull)getAllSuperAttributes SWIFT_WARN_UNUSED_RESULT;
-- (void)updateSuperAttributeWithKey:(NSString * _Nonnull)key value:(id _Nonnull)value;
 @end
 
 /// Interface for defining component interaction auto-capture exclusions.

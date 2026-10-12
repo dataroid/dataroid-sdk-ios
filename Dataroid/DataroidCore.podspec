@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'DataroidCore'
-    s.version = '4.6.3'
+    s.version = '4.6.4-alpha.1'
     s.summary = 'Analytics and Customer Engagement Tool'
     s.homepage = 'https://github.com/dataroid/dataroid-sdk-ios'
 
@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/dataroid/dataroid-sdk-ios.git', :tag => s.version.to_s }
     s.preserve_paths = [
         'Dataroid/upload_dsym.sh',
+        'Dataroid/upload_dsym_old.sh',
         'Dataroid/build_helper.sh'
     ]
 
