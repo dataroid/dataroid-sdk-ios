@@ -260,7 +260,7 @@ for DSYM_DIR in "${DSYM_FOLDER_PATH}"/*.dSYM; do
     fi
 
     PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-    process_dsym "${SERVER_URL}" "${SDK_KEY}" "${DSYM_DIR}" 2>>"${LOG_FILE}" &
+    process_dsym "${SERVER_URL}" "${SDK_KEY}" "${DSYM_DIR}" >/dev/null 2>>"${LOG_FILE}" &
 done
 
 if [[ ${PROCESSED_COUNT} -eq 0 ]]; then
@@ -268,6 +268,6 @@ if [[ ${PROCESSED_COUNT} -eq 0 ]]; then
     exit 0
 fi
 
-dataroid_log "Processing ${PROCESSED_COUNT} dSYM file(s). Upload will continue in background."
+dataroid_log "Processing ${PROCESSED_COUNT} dSYM file(s). Upload will continue in background, see ${LOG_FILE} for the results."
 
 exit 0
