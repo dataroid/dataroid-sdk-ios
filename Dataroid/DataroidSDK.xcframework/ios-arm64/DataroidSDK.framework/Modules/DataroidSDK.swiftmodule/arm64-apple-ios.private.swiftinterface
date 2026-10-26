@@ -23,7 +23,6 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-import MachO.dyld
 import zlib
 @_inheritsConvenienceInitializers @objc(DTRMutableHttpCallAttributes) @objcMembers final public class MutableHttpCallAttributes : ObjectiveC.NSObject {
   final public var success: Swift.Bool?

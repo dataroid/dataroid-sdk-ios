@@ -188,6 +188,9 @@
         "revalidate_immediate_dispatch": {
             "value": false
         },
+        "crash_reporting_version": {
+            "value": "v1"
+        },
         "immediateEventList": [
             {
                 "event": "device.update.pushToken"
