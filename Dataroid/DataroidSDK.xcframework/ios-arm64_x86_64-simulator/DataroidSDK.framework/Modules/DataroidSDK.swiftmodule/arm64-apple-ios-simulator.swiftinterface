@@ -1498,9 +1498,6 @@ final public class InAppMessage : Swift.Codable {
   final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-extension Foundation.UUID {
-  public static func timeBasedUUID() -> Foundation.UUID
-}
 @objc(DTRRemoveFromWishListEventAttributes) @objcMembers final public class RemoveFromWishListEventAttributes : DataroidSDK.Attributes {
   @objc public init(product: DataroidSDK.Product)
   @objc deinit
